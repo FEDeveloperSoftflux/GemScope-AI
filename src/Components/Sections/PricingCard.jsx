@@ -12,6 +12,7 @@ const PricingCard = ({
   color = '',
   className = '',
   onSelectPlan,
+  iconBg = '',
   ...props 
 }) => {
   return (
@@ -23,11 +24,12 @@ const PricingCard = ({
       >
         {/* Header */}
         <div className="text-left mb-6">
-          <h3 className="text-xl font-bold text-white mb-2">{name}</h3>
-          <div className="mb-2">
-            <span className="text-4xl font-bold text-white">${price}</span>
+          <h3 className="font-['Lato'] font-weight-400 text-[16px] mb-2 text-white/80 ">{name}</h3>
+          <div className="mb-2 flex items-end">
+            <span className="text-[20px] text-white/80  mb-1 font-['Lato']">£</span>
+            <span className="text-5xl font-bold text-white leading-none font-['Lato']">{price}</span>
+            <span className="text-base text-white/60 ml-2 mb-1font-['Lato']"> / {period}</span>
           </div>
-          <p className="text-gray-400 text-sm">{period}</p>
         </div>
         
         {/* Features - flexible height */}
@@ -35,7 +37,9 @@ const PricingCard = ({
           <ul className="space-y-3 mb-8 flex-1">
             {features.map((feature, index) => (
               <li key={index} className="flex items-left text-sm">
-                <img src={Tick} alt="Tick" className="w-4 h-4 mr-3 flex-shrink-0" />
+                <div className={`w-5 h-5 flex items-center justify-center rounded-full mr-3 ${iconBg}`}>
+                  <img src={Tick} alt="Tick" className="w-3 h-3" />
+                </div>
                 <span className="text-white">{feature}</span>
               </li>
             ))}
@@ -43,7 +47,11 @@ const PricingCard = ({
           
           {/* Button - fixed at bottom */}
           <div className="flex justify-center">
-            <Button size="md">Start Free Trial</Button>
+            <Button
+              className="px-5 font-['Lato'] font-weight-700 text-[16px] leading-[26px] tracking-[-0.4px] plan-shadow"
+            >
+              Get This Plan
+            </Button>
           </div>
         </div>
       </Card>

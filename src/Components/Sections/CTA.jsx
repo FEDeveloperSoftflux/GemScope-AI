@@ -23,16 +23,18 @@ const CTA = () => {
       </div>
 
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-        <h2 className="mb-6 text-white font-medium text-center mx-auto font-['Schibsted_Grotesk'] text-[36px] sm:text-[48px] sm:leading-[58px] md:text-[60px] md:leading-[72px] lg:text-[72px] lg:leading-[86.4px] max-w-[945px]">
-          Manage The Risk, Maximise Your Potential
+      <h2 className="b-6 text-white font-medium text-center mx-auto font-['Schibsted_Grotesk'] 
+          text-[28px] tracking-tight sm:text-[36px] sm:leading-[44px] sm:tracking-tight md:text-[44px] md:leading-[54px] md:tracking-tight 
+          lg:text-[60px] lg:leading-[72px] lg:tracking-[-2.4px] max-w-[945px] font-weight-500">
+          Manage The Risk, <br/> Maximise Your Potential
         </h2>
         
-        <p className="text-xl text-gray-300 mb-8 max-w-2xl mx-auto">
-          GemScope doesn't just protect your portfolio — it brings you one step closer to life changing gains.
+        <p className="text-xl text-gray-300 mb-8 max-w-2xl mx-auto mt-6 font-['Lato'] font-weight-400 leading-[28.8px] tracking-[0.18px]">
+        GemScope doesn’t just protect your portfolio — it brings you one step closer to life changing gains.
         </p>
         
         <form onSubmit={handleSubmit} className="flex flex-col sm:flex-row gap-4 justify-center max-w-md mx-auto">
-          <div className="flex-1">
+          <div className="flex-1 font-['Lato'] font-weight-700 text-[16px] leading-[26px] tracking-[-0.4px]">
             <input
               type="email"
               value={email}
@@ -46,7 +48,7 @@ const CTA = () => {
             type="submit"
             className="px-8 py-4 bg-gradient-to-r from-purple-600 to-purple-700 hover:from-purple-700 hover:to-purple-800 text-white rounded-lg font-semibold text-lg transition-all duration-200 transform hover:scale-105 shadow-lg hover:shadow-xl whitespace-nowrap"
           >
-            Join Waitlist
+            <span className="font-['Lato'] font-weight-700 text-[16px] leading-[26px] tracking-[-0.4px]">Join Waitlist</span>
           </button>
         </form>
       </div>

@@ -16,6 +16,7 @@ import TermsAndCondition from './Components/Sections/Terms&Condition';
 import Login from './Components/Sections/Login';
 import CreateAccount from './Components/Sections/CreateAccount';
 import Verification from './Components/Sections/Verification';
+import CryptoDashboard from './pages/Dashboard';
 
 import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
 import { useLocation } from 'react-router-dom';
@@ -39,12 +40,12 @@ const AppContent = () => {
       
     },
     {
-      icon: <img src={Shield} alt="Shield" className='w-[78px] h-[78px]' />,
+      icon: <img src={Network} alt="Shield" className='w-[78px] h-[78px]' />,
       title: "High-level intel and validation assessments",
       
     },
     {
-      icon: <img src={Network} alt="Network" className='w-[78px] h-[78px]' />,
+      icon: <img src={Shield} alt="Network" className='w-[78px] h-[78px]' />,
       title: "Real-time Alerts & market updates",
       
     }
@@ -53,9 +54,9 @@ const AppContent = () => {
   // Pricing data
   const pricingPlans = [
     {
-      name: "Starter",
+      name: "Free Tier",
       price: "0",
-      period: "Free Forever",
+      period: "Month",
       features: [
         "Basic AI Analysis",
         "5 Coin Alerts/Month",
@@ -64,12 +65,13 @@ const AppContent = () => {
         "Basic Charts"
       ],
       color: "bg-[linear-gradient(360deg,_#F5DBE0_-21.35%,_#C32388_104.32%)]",
-      popular: false
+      popular: false,
+      iconBg :"bg-pink-400/40"
     },
     {
-      name: "Pro",
-      price: "29",
-      period: "per month",
+      name: "Pro Tier",
+      price: "20",
+      period: "Month",
       features: [
         "Advanced AI Analysis",
         "Unlimited Alerts",
@@ -80,12 +82,13 @@ const AppContent = () => {
         "Custom Indicators"
       ],
       color: "bg-[linear-gradient(180deg,_#7F00CE_-4.81%,_#EED4FF_125.36%)]",
-      popular: false
+      popular: false,
+      iconBg :"bg-purple-400/40"
     },
     {
       name: "Elite",
-      price: "99",
-      period: "per month",
+      price: "50",
+      period: "Month",
       features: [
         "Premium AI Models",
         "Real-time Analysis",
@@ -97,12 +100,14 @@ const AppContent = () => {
         "White-label Solution"
       ],
       color: "bg-[linear-gradient(180.57deg,_#0808FF_-4.69%,_#4EBBFF_130.44%)]",
-      popular: false
+      popular: false,
+      iconBg :"bg-blue-400/40"
+      
     },
     {
       name: "Institution",
-      price: "299",
-      period: "per month",
+      price: "150",
+      period: "Lifetime",
       features: [
         "Enterprise AI Suite",
         "Dedicated Support",
@@ -114,7 +119,8 @@ const AppContent = () => {
         "Regulatory Compliance"
       ],
       color: "bg-[linear-gradient(179.59deg,_#C4A502_-5.34%,_#FFF3B6_114.16%)]",
-      popular: false
+      popular: false,
+      iconBg :"bg-yellow-400/40"
     }
   ];
 
@@ -157,7 +163,7 @@ const AppContent = () => {
 
   return (
     <div className="min-h-screen bg-black ">
-      {location.pathname !== '/login' && location.pathname !== '/create-account' && location.pathname !== '/verification' && <Header />}
+      {location.pathname !== '/login' && location.pathname !== '/create-account' && location.pathname !== '/verification' && location.pathname !== '/dashboard' && <Header />}
       <main>
         <Routes>
           <Route path="/" element={
@@ -171,7 +177,7 @@ const AppContent = () => {
                 openFaqIndex={openFaqIndex}
                 onFaqToggle={handleFaqToggle}
               />
-              <Pricing pricingPlans={pricingPlans} onPlanSelection={handlePlanSelection} />
+              <Pricing pricingPlans={pricingPlans} onPlanSelection={handlePlanSelection} /> 
               <CTA />
             </>
           } />
@@ -180,9 +186,10 @@ const AppContent = () => {
           <Route path="/login" element={<Login />} />
           <Route path="/create-account" element={<CreateAccount />} />
           <Route path="/verification" element={<Verification />} />
+          <Route path="/dashboard" element={<CryptoDashboard />} />
         </Routes>
       </main>
-      {location.pathname !== '/login' && location.pathname !== '/create-account' && location.pathname !== '/verification' && <Footer />}
+      {location.pathname !== '/login' && location.pathname !== '/create-account' && location.pathname !== '/verification' && location.pathname !== '/dashboard' && <Footer />}
     </div>
   );
 };

@@ -1,7 +1,7 @@
 import React from 'react';
 
 const Button = ({ children, variant = 'primary', size = 'md', className = '', ...props }) => {
-  const baseClasses = 'font-extrabold rounded-3xl transition-all duration-300 inline-flex items-center justify-center text-center border-0 cursor-pointer';
+  const baseClasses = 'font-extrabold rounded-2xl transition-all duration-300 inline-flex items-center justify-center text-center border-0 cursor-pointer';
   
   const variants = {
     primary: 'text-black shadow-lg hover:shadow-xl hover:scale-105',
@@ -11,9 +11,9 @@ const Button = ({ children, variant = 'primary', size = 'md', className = '', ..
   };
   
   const sizes = {
-    sm: 'px-8 py-3 text-sm min-w-[50px] sm:min-w-[80px] md:min-w-[120px] lg:min-w-[150px]',
+    sm: 'px-8 py-4 text-sm min-w-[50px] sm:min-w-[80px] md:min-w-[120px] lg:min-w-[150px]',
     md: 'px-12 py-4 text-lg min-w-[200px]',
-    lg: 'px-16 py-5 text-xl min-w-[250px]'
+    lg: 'px-8 py-4 min-w-[100px]'
   };
   
   const primaryGradient = {

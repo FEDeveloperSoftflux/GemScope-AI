@@ -62,12 +62,12 @@ const CreateAccount = () => {
         {/* Content */}
         <div className="relative z-10 flex-1 flex flex-col justify-end">
           <h1
-            className="text-left font-medium font-schibsted text-[32px] sm:text-[48px] md:text-[60px] lg:text-[75px] leading-[38px] sm:leading-[54px] md:leading-[66px] lg:leading-[82px] tracking-[-0.03em] text-white mb-0"
+            className="text-left font-weight-500 font-['Schibsted Grotesk'] text-[32px] sm:text-[48px] md:text-[60px] lg:text-[75px] leading-[38px] sm:leading-[54px] md:leading-[66px] lg:leading-[82px] tracking-[-0.03em] text-white mb-0"
             style={{ maxWidth: '749px', height: 'auto' }}
           >
             The Crypto Gold Rush Is Now
           </h1>
-          <p className="text-left text-white text- sm:text-[20px] font-normal mt-10 font-['Lato']">Crypto isn't just the future of Money, it's the rebellion <br /> against a broken system - It's Wall Street for the people.</p>
+          <p className="text-left text-white/80 sm:text-[20px] font-weight-500 mt-10 font-['Lato']">Crypto isn't just the future of Money, it's the rebellion <br /> against a broken system - It's Wall Street for the people.</p>
         </div>
       </div>
 
@@ -78,12 +78,12 @@ const CreateAccount = () => {
           {/* Logo Section */}
           <div className="flex flex-col items-center sm:flex-row sm:items-center mb-6 sm:mb-12">
             <img src={Logo} alt="GemScope AI Logo" className="w-10 h-10 object-contain mb-2 sm:mb-0" />
-            <span className="text-white text-lg font-semibold sm:ml-3">GemScope AI</span>
+            <span className="text-white text-[25px] font-weight-400 leading-[18px] tracking-[-0.28px] sm:ml-3">GemScope AI</span>
           </div>
           {/* Welcome Section */}
           <div className="mb-6 sm:mb-12 text-center sm:text-left">
-            <h2 className="text-2xl sm:text-4xl md:text-5xl font-semibold text-white mb-2 sm:mb-3 font-['Schibsted Grotesk']">Welcome Back!</h2>
-            <p className="text-white/60 text-xs sm:text-base font-['Schibsted Grotesk'] mt-3">Please Enter Details Below</p>
+            <h2 className="text-3xl sm:text-4xl md:text-5xl  text-white mb-2 sm:mb-3 font-['Schibsted Grotesk'] font-weight-500 leading-[82px] tracking-[0.4px]">Welcome Back!</h2>
+            <p className="text-white/80 text-sm sm:text-base font-['Lato'] mt-3">Please Enter Your Details</p>
           </div>
         </div>
         {/* Create Account Form */}
@@ -191,7 +191,7 @@ const CreateAccount = () => {
               type="submit"
               disabled={isLoading}
               variant="primary"
-              className="w-full py-4 bg-gradient-to-r from-purple-600 via-purple-500 to-pink-500 font-semibold text-base rounded-xl transition-all duration-300 hover:shadow-lg hover:shadow-purple-500/25 hover:-translate-y-0.5 active:translate-y-0 disabled:opacity-70 disabled:cursor-not-allowed mt-4"
+              className="w-full py-3 sm:py-4 bg-gradient-to-r from-purple-600 via-purple-500 to-pink-500 font-semibold text-sm sm:text-base rounded-xl transition-all duration-300 hover:shadow-lg hover:shadow-purple-500/25 hover:-translate-y-0.5 active:translate-y-0 disabled:opacity-70 disabled:cursor-not-allowed mt-4"
             >
               {isLoading ? (
                 <div className="flex items-center justify-center gap-2 font-semibold">
@@ -205,7 +205,7 @@ const CreateAccount = () => {
           </form>
         </div>
         {/* Create Account absolutely at the bottom center */}
-        <div className="absolute bottom-4 left-1/2 transform -translate-x-1/2 flex justify-center items-center text-white/60 text-xs sm:text-sm text-center">
+        <div className="absolute bottom-4 left-1/2 transform -translate-x-1/2 flex justify-center items-center text-white/60 text-sm sm:text-sm text-center">
           <span>Already have an account?</span>
           <button
             onClick={handleLogin}

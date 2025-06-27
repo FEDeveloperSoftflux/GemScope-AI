@@ -1,5 +1,6 @@
 /** @type {import('tailwindcss').Config} */
 export default {
+  darkMode: 'class',
   content: ["./index.html", "./src/**/*.{js,jsx,ts,tsx}"],
   theme: {
     extend: {
@@ -16,6 +17,10 @@ export default {
       animation: {
         slide: 'slide 12s linear infinite',
         slideReverse: 'slideReverse 12s linear infinite',
+      },
+      fontFamily: {
+        lato: ['Lato', 'sans-serif'],
+        schibsted: ['Schibsted Grotesk', 'sans-serif'],
       },
     },
   },

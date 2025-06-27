@@ -31,13 +31,14 @@ const Login = () => {
     // Simulate API call
     setTimeout(() => {
       console.log('Login attempt:', formData);
-      alert('Login functionality would be implemented here!');
+      // Navigate to dashboard after successful login
+      navigate('/dashboard');
       setIsLoading(false);
     }, 2000);
   };
 
   const handleGoogleLogin = () => {
-    alert('Google OAuth integration would be implemented here!');
+    
   };
 
   const handleForgotPassword = () => {
@@ -68,12 +69,12 @@ const Login = () => {
         {/* Content */}
         <div className="relative z-10 flex-1 flex flex-col justify-end">
           <h1
-            className="text-left font-medium font-schibsted text-[32px] sm:text-[48px] md:text-[60px] lg:text-[75px] leading-[38px] sm:leading-[54px] md:leading-[66px] lg:leading-[82px] tracking-[-0.03em] text-white mb-0"
+            className="text-left font-weight-500 font-['Schibsted Grotesk'] text-[32px] sm:text-[48px] md:text-[60px] lg:text-[75px] leading-[38px] sm:leading-[54px] md:leading-[66px] lg:leading-[82px] tracking-[-0.03em] text-white mb-0"
             style={{ maxWidth: '749px', height: 'auto' }}
           >
             The Wealth Revolution Has Begun
           </h1>
-          <p className="text-left text-white text- sm:text-[20px] font-normal mt-10 font-['Lato']">Crypto isn't just the future of Money, it's the rebellion <br /> against a broken system - It's Wall Street for the people.</p>
+          <p className="text-left text-white/80 sm:text-[20px] font-weight-500 mt-10 font-['Lato']">Crypto isn't just the future of Money, it's the rebellion <br /> against a broken system - It's Wall Street for the people.</p>
         </div>
       </div>
 
@@ -84,12 +85,12 @@ const Login = () => {
           {/* Logo Section */}
           <div className="flex flex-col items-center sm:flex-row sm:items-center mb-6 sm:mb-12">
             <img src={Logo} alt="GemScope AI Logo" className="w-10 h-10 object-contain mb-2 sm:mb-0" />
-            <span className="text-white text-lg font-semibold sm:ml-3">GemScope AI</span>
+            <span className="text-white text-[25px] font-weight-400 leading-[18px] tracking-[-0.28px] sm:ml-3">GemScope AI</span>
           </div>
           {/* Welcome Section */}
           <div className="mb-6 sm:mb-12 text-center sm:text-left">
-            <h2 className="text-2xl sm:text-4xl md:text-5xl font-semibold text-white mb-2 sm:mb-3 font-['Schibsted Grotesk']">Welcome Back!</h2>
-            <p className="text-white/60 text-xs sm:text-base font-['Schibsted Grotesk'] mt-3">Please Enter Login Details Below</p>
+            <h2 className="text-3xl sm:text-4xl md:text-5xl  text-white mb-2 sm:mb-3 font-['Schibsted Grotesk'] font-weight-500 leading-[82px] tracking-[0.4px]">Welcome Back!</h2>
+            <p className="text-white/80 text-sm sm:text-base font-['Lato'] mt-3">Please Enter Login Details Below</p>
           </div>
         </div>
         {/* Login Form */}
@@ -105,7 +106,7 @@ const Login = () => {
                 onChange={handleInputChange}
                 onFocus={() => setFocusedField('email')}
                 onBlur={() => setFocusedField(null)}
-                className={`w-full px-5 py-4 bg-white/5 rounded-xl text-white placeholder-white/40 text-base transition-all duration-300 outline-none ${
+                className={`w-full px-5 py-4 bg-white/5 rounded-xl text-white font-['Schibsted Grotesk']  placeholder-white/40 text-base transition-all duration-300 outline-none ${
                   focusedField === 'email'
                     ? 'border-white bg-white/8 shadow-lg shadow-purple-500/10'
                     : 'hover:bg-white/8'
@@ -136,7 +137,7 @@ const Login = () => {
               <button
                 type="button"
                 onClick={handleForgotPassword}
-                className="text-white text-xs sm:text-sm underline hover:text-purple-400 transition-colors duration-300"
+                className="text-white text-sm sm:text-sm underline hover:text-purple-400 transition-colors duration-300 font-['Schibsted Grotesk']"
               >
                 Forgot Password?
               </button>
@@ -147,7 +148,7 @@ const Login = () => {
               onClick={handleSubmit}
               disabled={isLoading}
               variant="primary"
-              className="w-full py-4 bg-gradient-to-r from-purple-600 via-purple-500 to-pink-500 font-semibold text-base rounded-xl transition-all duration-300 hover:shadow-lg hover:shadow-purple-500/25 hover:-translate-y-0.5 active:translate-y-0 disabled:opacity-70 disabled:cursor-not-allowed"
+              className="w-full py-3 sm:py-4 bg-gradient-to-r from-purple-600 via-purple-500 to-pink-500 font-semibold text-sm sm:text-base rounded-xl transition-all duration-300 hover:shadow-lg hover:shadow-purple-500/25 hover:-translate-y-0.5 active:translate-y-0 disabled:opacity-70 disabled:cursor-not-allowed"
             >
               {isLoading ? (
                 <div className="flex items-center justify-center gap-2 font-semibold">
@@ -155,7 +156,7 @@ const Login = () => {
                   Logging in...
                 </div>
               ) : (
-                <span className="font-bold font-['Schibsted Grotesk']">Login</span>
+                <span className="font-s font-['Schibsted Grotesk']">Login</span>
               )}
             </Button>
           </div>
@@ -163,14 +164,14 @@ const Login = () => {
           {/* Google Login */}
           <button
             onClick={handleGoogleLogin}
-            className="w-full py-4 bg-transparent border border-white text-white font-medium text-base rounded-xl transition-all duration-300 hover:bg-white/5 hover:border-white/30 flex items-center justify-center gap-3"
+            className="w-full py-3 sm:py-4 bg-transparent border border-white text-white font-medium text-sm sm:text-base rounded-xl transition-all duration-300 hover:bg-white/5 hover:border-white/30 flex items-center justify-center gap-3"
           >
             <img src={GoogleIcon} alt="Google" className="w-5 h-5" />
             <span className="font-bold font-['Schibsted Grotesk']">Log in with Google</span>
           </button>
         </div>
         {/* Create Account absolutely at the bottom center */}
-        <div className="absolute bottom-4 left-1/2 transform -translate-x-1/2 flex justify-center items-center text-white/60 text-xs sm:text-sm text-center">
+        <div className="absolute bottom-4 left-1/2 transform -translate-x-1/2 flex justify-center items-center text-white/60 text-sm sm:text-sm text-center">
           <span>Don't have an account?</span>
           <button
             onClick={handleCreateAccount}

@@ -1,3 +1,14 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@400&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Schibsted+Grotesk:wght@500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Schibsted+Grotesk:wght@0400&display=swap');
 @import "tailwindcss";
 
 
+::selection {
+  font-family: 'Schibsted Grotesk', 'Lato', sans-serif;
+}
+
+
+.plan-shadow {
+  box-shadow: 0 4px 32px 0 rgba(186, 148, 255, 0.3), 0 1.5px 16px 0 rgba(255, 148, 186, 0.3);
+}

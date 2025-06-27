@@ -64,14 +64,15 @@ const LifeChanging = () => {
     <section className="py-20">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div className="text-center mb-12">
-      <h2 className="mb-6 text-white font-medium text-center mx-auto font-['Schibsted_Grotesk'] mt-[10px]
-          text-[28px] tracking-tight sm:text-[36px] sm:leading-[44px] sm:tracking-tight md:text-[44px] md:leading-[54px] md:tracking-tight lg:text-[54px] lg:leading-[64px] lg:tracking-tight max-w-[945px]">
+      <h2 className="mb-6 text-white font-medium text-center mx-auto font-['Schibsted_Grotesk'] 
+          text-[28px] tracking-tight sm:text-[36px] sm:leading-[44px] sm:tracking-tight md:text-[44px] md:leading-[54px] md:tracking-tight 
+          lg:text-[60px] lg:leading-[72px] lg:tracking-[-2.4px] max-w-[945px] font-weight-500">
             One Prompt Away from Life
             <br />
             Changing Gains
           </h2>
-          <p className="text-base sm:text-lg md:text-xl text-gray-300 mb-8 max-w-3xl mx-auto leading-relaxed">    
-            Skip hours of research, risk, and doubt with curated AI guided crypto analysis – 
+          <p className="text-[18px] text-white/80 max-w-3xl mx-auto leading-[28.8px] tracking-[0.18px] font-['Lato']">    
+            Skip hours of research, risk, and doubt with curated AI guided crypto analysis – <br/>
             from dissecting your favourite coins to trading hidden gems.
           </p>
         </div>
@@ -84,9 +85,9 @@ const LifeChanging = () => {
               <AnimatedLogosRow logos={cryptoLogos} direction="left" />
               <AnimatedLogosRow logos={cryptoLogos} direction="right" />
               {/* Heading and Text */}
-              <h3 className="text-white text-xl md:text-2xl font-bold mb-2">GemScope. Built For Every Crypto Investors Dream.</h3>
-              <p className="text-gray-300 text-sm md:text-base mb-2">
-                From true tokenomic insight and detection scans to AI powered analysis – GemScope guides you through it all, in one place.
+              <h3 className="text-white text-[20px]  font-weight-700 mb-2 leading-[26px] tracking-[-0.4px]">GemScope. Built For Every Crypto Investors Dream.</h3>
+              <p className="text-white/60 text-[14px] mb-2 font-['Lato'] font-weight-400">
+              From true tokenomic insight and detection scans to AI powered analysis - GemScope guides you <br/> through it all, in one place.
               </p>
             </div>
             {/* Two more containers below, stacked vertically on small screens, side by side on larger screens */}
@@ -103,20 +104,20 @@ const LifeChanging = () => {
           </div>
                     {/* Right side: green box */}
                     <div
-            className="w-full md:w-[340px] min-h-[640px] rounded-2xl flex-shrink-0 mt-8 md:mt-0 bg-cover bg-center relative"
+            className="w-full md:w-[340px] min-h-[640px] rounded-2xl flex-shrink-0 mt-8 md:mt-0 bg-cover bg-center relative overflow-hidden"
             style={{ backgroundImage: `url(${Image1})` }}
           >
-                        <p className="text-white  p-2  ml-10 mt-5  text-sm md:text-base font-bold font-['Schibsted_Grotesk']">
-                        Complete Market Research, Mapped Out For You
+            <p className="text-white  p-2  ml-10 mt-5 font-['Lato'] font-weight-700 text-[20px] leading-[26px] tracking-[-0.4px]">
+              Complete Market Research, Mapped Out For You
             </p>
-            <p className="text-white  p-2 ml-10 text-sm md:text-base">
+            <p className="text-white/60  p-2 ml-10 e font-['Lato'] font-weight-400 text-[14px] leading-[20px]">
               GemScope tracks every live endpoint to ensure real time analysis - so the guidance you follow and the decisions you make are always aligned with the latest market updates.
             </p>
             <img 
               src={Image2} 
               alt="Lower Right" 
-              className="absolute right-0 bottom-0 w-120 h-150" 
-              style={{ maxWidth: '70%', minWidth: '80px' }}
+              className="absolute right-0 bottom-0 w-1/2 min-w-[60px] max-w-xs  sm:w-[80%] sm:h-[70%]  md:w-[80%] md:h-[70%]  lg:w-[80%] lg:h-[75%]" 
+              style={{ minWidth: '60px' }}
             />
           </div>
 

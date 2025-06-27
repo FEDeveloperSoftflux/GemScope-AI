@@ -48,47 +48,53 @@ const PrivacyPolicy = () => {
 
   return (
     <>
-      <section className="min-h-screen bg-black text-white py-20 px-4 flex flex-col items-center justify-center">
+      <section className="min-h-screen bg-black text-white py-6 px-4 flex flex-col items-center justify-center">
         {/* Header Box */}
         <div 
-          className="max-w-3xl w-full bg-black/80 shadow-lg pt-12 pb-6 px-6 relative overflow-hidden mb-6"
+          className="max-w-3xl w-full bg-black/80 shadow-lg pt-4 pb-6 px-6 relative overflow-hidden mb-2"
           style={{
             backgroundImage: `url(${PrivacyGradient})`,
-            backgroundSize: 'cover',
+            backgroundSize: '90%',
             backgroundPosition: 'center',
             backgroundRepeat: 'no-repeat'
           }}
         >
           {/* Breadcrumb Navigation */}
-          <nav className="mb-4 flex items-center justify-center space-x-2 text-base relative z-10">
-            <Link to="/" className="text-gray-400 hover:text-white transition-colors">Home</Link>
+          <nav className=" flex items-center justify-center space-x-1 text-base relative z-10 pt-10">
+            <Link to="/" className="text-gray-400 hover:text-white transition-colors font-['Lato'] text-[12px] leading-[20px]">Home</Link>
             <span className="text-white">&gt;</span>
-            <span className="text-white font-medium">Privacy Policy</span>
+            <span className="text-white font-medium font-['Lato'] text-[12px] leading-[70px]">Terms of service</span>
           </nav>
-          <h1 className="text-3xl md:text-4xl font-medium mb-2 text-center font-['Schibsted_Grotesk'] relative z-10">Privacy Policy</h1>
+          <h1 className="text-3xl md:text-4xl font-weight-700 mb-24 text-center font-['Schibsted_Grotesk'] relative z-1 ">Terms of service</h1>
         </div>
 
         {/* Content Box */}
-        <div className="max-w-3xl w-full bg-black/90 p-6 rounded-lg shadow-lg">
+        <div className="max-w-3xl w-full bg-black/90 rounded-lg shadow-lg">
+        <span className="text-white font-['Schibsted_Grotesk'] text-[30px] leading-[20px] pl-2 mb-12">Terms of service</span>
+        <div className="mb-6" />
           {/* Custom styles for content */}
           <style>{`
-            .policy-heading {
-              font-size: 20px;
-              line-height: 20px;
-              color: #fff;
-              font-weight: 400;
+           .policy-heading {
+              font-size: 23px;
+              line-height: 30px;
+              color: #ffffff;
+              font-weight: 500;
               margin-top: 10px;
-              margin-bottom: 0px;
+              margin-bottom: 10px;
+              line-height: 30px;
               padding-left: 10px;
               font-family: 'Schibsted Grotesk'
+              font-weight: 500;
             }
             .policy-paragraph {
-              font-size: 10px;
+              font-size: 13px;
               line-height: 20px;
               color: #a3a3a3;
+              line-height: 25px;
               margin-bottom: 8px;
               padding-left: 10px;
               font-family: 'Lato'
+              font-weight: 500;
             }
             .policy-content ul, .policy-content ol {
               padding-left: 2rem;

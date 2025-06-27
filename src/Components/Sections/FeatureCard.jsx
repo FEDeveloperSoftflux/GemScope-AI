@@ -20,7 +20,7 @@ const FeatureCard = ({
       )}
       
       {title && (
-        <h3 className="text-[20px] font-medium text-white mb-3 font-['Lato']leadind -[26px">
+        <h3 className="text-[18px] font-medium text-white/80 mb-3 font-['Lato'] leading-[26px] tracking-[0.18px] font-weight-700 text-center">
           {title}
         </h3>
       )}

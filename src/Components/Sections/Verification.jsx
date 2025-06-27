@@ -60,10 +60,13 @@ const Verification = () => {
           </div>
           <div className="absolute inset-0 bg-black/40"></div>
           <div className="relative z-10 flex-1 flex flex-col justify-end">
-            <h1 className="text-left font-medium font-schibsted text-[32px] sm:text-[48px] md:text-[60px] lg:text-[75px] leading-[38px] sm:leading-[54px] md:leading-[66px] lg:leading-[82px] tracking-[-0.03em] text-white mb-0">
-              The Wealth Revolution Has Begun
-            </h1>
-            <p className="text-left text-white sm:text-[20px] font-normal mt-10 font-['Lato']">
+          <h1
+            className="text-left font-weight-500 font-['Schibsted Grotesk'] text-[32px] sm:text-[48px] md:text-[60px] lg:text-[75px] leading-[38px] sm:leading-[54px] md:leading-[66px] lg:leading-[82px] tracking-[-0.03em] text-white mb-0"
+            style={{ maxWidth: '749px', height: 'auto' }}
+          >
+            The Wealth Revolution Has Begun
+          </h1>
+            <p className="text-left text-white/80 sm:text-[20px] font-weight-500 mt-10 font-['Lato']">
               Crypto isn't just the future of Money, it's the rebellion <br /> against a broken system - It's Wall Street for the people.
             </p>
           </div>
@@ -73,14 +76,14 @@ const Verification = () => {
           <div className="w-full max-w-2xl mx-auto px-4 sm:px-8">
             {/* Logo Section */}
             <div className="flex flex-col items-center sm:flex-row sm:items-center mb-6 sm:mb-12">
-              <img src={Logo} alt="GemScope AI Logo" className="w-10 h-10 object-contain mb-2 sm:mb-0" />
-              <span className="text-white text-lg font-semibold sm:ml-3">GemScope AI</span>
-            </div>
+            <img src={Logo} alt="GemScope AI Logo" className="w-10 h-10 object-contain mb-2 sm:mb-0" />
+            <span className="text-white text-[25px] font-weight-400 leading-[18px] tracking-[-0.28px] sm:ml-3">GemScope AI</span>
+          </div>
             {/* Welcome Section */}
             <div className="mb-6 sm:mb-12 text-center sm:text-left">
-              <h2 className="text-2xl sm:text-4xl md:text-5xl font-semibold text-white mb-2 sm:mb-3 font-['Schibsted Grotesk']">Verification!</h2>
-              <p className="text-white/60 text-xs sm:text-base font-['Schibsted Grotesk'] mt-3">Please complete your verification</p>
-            </div>
+            <h2 className="text-3xl sm:text-4xl md:text-5xl  text-white mb-2 sm:mb-3 font-['Schibsted Grotesk'] font-weight-500 leading-[82px] tracking-[0.4px]">Verification!</h2>
+            <p className="text-white/80 text-sm sm:text-base font-['Lato'] mt-3">Please complete your verification</p>
+          </div>
           </div>
 
           {/* Verification Form */}
@@ -89,14 +92,14 @@ const Verification = () => {
             <div className="flex rounded-2xl overflow-hidden mb-6">
               <button
                 type="button"
-                className={`flex-1 py-3 text-lg font-semibold transition-all duration-200 ${tab === 'phone' ? 'bg-gradient-to-r from-purple-400 via-white to-pink-400 text-black' : 'bg-black text-gray-400'}`}
+                className={`flex-1 py-2 sm:py-3 text-base sm:text-lg font-['Schibsted Grotesk'] font-bold transition-all duration-200 ${tab === 'phone' ? 'bg-gradient-to-r from-purple-400 via-white to-pink-400 text-black' : 'bg-black text-gray-400'}`}
                 onClick={() => handleTab('phone')}
               >
                 Phone Number
               </button>
               <button
                 type="button"
-                className={`flex-1 py-3 text-lg font-semibold transition-all duration-200 ${tab === 'email' ? 'bg-gradient-to-r from-purple-400 via-white to-pink-400 text-black' : 'bg-black text-gray-400'}`}
+                className={`flex-1 py-2 sm:py-3 text-base sm:text-lg font-['Schibsted Grotesk'] font-bold transition-all duration-200 ${tab === 'email' ? 'bg-gradient-to-r from-purple-400 via-white to-pink-400 text-black' : 'bg-black text-gray-400'}`}
                 onClick={() => handleTab('email')}
               >
                 Email Address
@@ -144,7 +147,7 @@ const Verification = () => {
             {/* Send Code Button */}
             <button
               type="submit"
-              className="w-full py-4 rounded-2xl font-semibold text-lg bg-gradient-to-r from-purple-400 via-white to-pink-400 text-black shadow-md transition-all duration-200"
+              className="w-full py-3 sm:py-4 rounded-2xl font-['Schibsted Grotesk'] font-bold text-base sm:text-lg bg-gradient-to-r from-purple-400 via-white to-pink-400 text-black shadow-md transition-all duration-200"
             >
               Send Code
             </button>
@@ -157,7 +160,7 @@ const Verification = () => {
           <div className="fixed inset-0 z-40 backdrop-blur-[6px] bg-black/30"></div>
           <div className="fixed inset-0 z-50 flex items-center justify-center px-2 sm:px-0">
             <div className="bg-zinc-800 rounded-2xl p-4 sm:p-8 w-full max-w-xs sm:max-w-md md:max-w-lg lg:w-[500px] max-w-[90vw] flex flex-col items-center shadow-2xl">
-              <h3 className="text-xl sm:text-2xl font-semibold text-white mb-6 sm:mb-8 text-center">Enter OTP Code</h3>
+              <h3 className="text-2xl sm:text-2xl font-semibold text-white mb-6 sm:mb-8 text-center">Enter OTP Code</h3>
               <form onSubmit={handleVerifyCode} className="w-full flex flex-col items-center">
                 <div className="flex justify-center gap-2 sm:gap-3 mb-4 sm:mb-6">
                   {otp.map((digit, idx) => (
@@ -175,12 +178,12 @@ const Verification = () => {
                   ))}
                 </div>
                 <div className="flex flex-col items-center gap-1 sm:gap-2 mb-4 sm:mb-6">
-                  <button type="button" className="text-gray-600 text-xs sm:text-sm hover:text-white transition-colors font-['Schibsted Grotesk']">Resend Code</button>
-                  <button type="button" className="text-gray-600 text-xs sm:text-sm hover:text-white transition-colors font-['Schibsted Grotesk']">Call Request</button>
+                  <button type="button" className="text-gray-600 text-sm sm:text-sm hover:text-white transition-colors font-['Schibsted Grotesk']">Resend Code</button>
+                  <button type="button" className="text-gray-600 text-sm sm:text-sm hover:text-white transition-colors font-['Schibsted Grotesk']">Call Request</button>
                 </div>
                 <button
                   type="submit"
-                  className="w-full py-2 sm:py-3 rounded-2xl font-semibold text-base sm:text-lg bg-gradient-to-r from-purple-400 via-white to-pink-400 text-black shadow-md transition-all duration-200"
+                  className="w-full py-2 sm:py-3 rounded-2xl font-semibold text-sm sm:text-lg bg-gradient-to-r from-purple-400 via-white to-pink-400 text-black shadow-md transition-all duration-200"
                 >
                   Verify Code
                 </button>
