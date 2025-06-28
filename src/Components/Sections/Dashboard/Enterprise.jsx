@@ -27,19 +27,13 @@ const EnterpriseUpgrade = ({ onUpgradeClick }) => (
       <p className="text-[12px] text-gray-200 text-left mb-6 drop-shadow w-full font-['Lato']">
         Unleash the full power of AI.
       </p>
-      <div
-        className={`px-4 py-3 flex items-center gap-3 rounded-xl transition-colors cursor-pointer relative 
-          bg-gradient-to-r from-purple-400 via-white to-pink-300 text-black shadow-lg
-        `}
-        style={{ boxShadow: '0 4px 24px 0 rgba(236, 72, 153, 0.15)' }}
-      >
-        <button
+
+        {/* <button
           className="bg-transparent border-none outline-none text-sm font-bold w-72 px-4 py-1 rounded-md transition-all font-['Schibsted_Grotesk'] text-[15px] leading-[20px] font-weight-800"
           onClick={onUpgradeClick}
         >
           Upgrade Now
-        </button>
-      </div>
+        </button> */}
     </div>
     <div className="absolute top-4 right-4 z-50">
     </div>

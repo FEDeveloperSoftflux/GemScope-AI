@@ -36,32 +36,6 @@ const NavItem = ({ icon, label, active }) => (
   </div>
 );
 
-// Dark Mode Toggle Component
-const DarkModeToggle = ({ mode, setMode }) => (
-  <div className="w-full p-1 rounded-2xl ">
-    <div className="flex w-full h-14 rounded-2xl p-1">
-      <button
-        onClick={() => setMode('light')}
-        className={`flex-1 flex items-center justify-center gap-2 rounded-xl transition-all font-semibold h-full
-          ${mode === 'light' ? 'bg-gradient-to-r from-purple-200 via-white to-pink-200 text-black shadow-lg' : 'text-purple-200'}
-        `}
-      >
-        <Sun size={22} />
-        <span className="font-semibold font-['Schibsted Grotesk'] font-weight-500 text-[16px] leading-[26px] tracking-[-0.4px]">Light </span>
-      </button>
-      <button
-        onClick={() => setMode('dark')}
-        className={`flex-1 flex items-center justify-center gap-2 rounded-xl transition-all font-semibold h-full
-          ${mode === 'dark' ? 'bg-gradient-to-r from-purple-200 via-white to-pink-200 text-black shadow-lg' : 'text-purple-200'}
-        `}
-      >
-        <Moon size={22} />
-        <span className="font-semibold font-['Schibsted Grotesk'] font-weight-500 text-[16px] leading-[26px] tracking-[-0.4px]">Dark</span>
-      </button>
-    </div>
-  </div>
-);
-
 // Main Sidebar Component
 const Sidebar = () => {
   const navItems = [
@@ -145,9 +119,6 @@ const Sidebar = () => {
               </div>
             ))}
           </nav>
-          <div className="mt-auto">
-            <DarkModeToggle mode={mode} setMode={setMode} />
-          </div>
         </div>
       </div>
     </>

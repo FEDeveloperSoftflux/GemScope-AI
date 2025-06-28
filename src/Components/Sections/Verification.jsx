@@ -11,12 +11,18 @@ const Verification = () => {
   const [email, setEmail] = useState('');
   const [showOtpModal, setShowOtpModal] = useState(false);
   const [otp, setOtp] = useState(['', '', '', '', '', '']);
+  const [isLoading, setIsLoading] = useState(false);
 
   const handleTab = (type) => setTab(type);
 
   const handleSendCode = (e) => {
     e.preventDefault();
-    setShowOtpModal(true);
+    setIsLoading(true);
+    // Simulate API call
+    setTimeout(() => {
+      setShowOtpModal(true);
+      setIsLoading(false);
+    }, 2000);
   };
 
   const handleOtpChange = (e, idx) => {
@@ -89,22 +95,32 @@ const Verification = () => {
           {/* Verification Form */}
           <form onSubmit={handleSendCode} className="w-full max-w-2xl space-y-8 mx-auto text-center sm:text-left px-4 sm:px-8 pb-16">
             {/* Tab Switcher */}
-            <div className="flex rounded-2xl overflow-hidden mb-6">
-              <button
-                type="button"
-                className={`flex-1 py-2 sm:py-3 text-base sm:text-lg font-['Schibsted Grotesk'] font-bold transition-all duration-200 ${tab === 'phone' ? 'bg-gradient-to-r from-purple-400 via-white to-pink-400 text-black' : 'bg-black text-gray-400'}`}
-                onClick={() => handleTab('phone')}
-              >
-                Phone Number
-              </button>
-              <button
-                type="button"
-                className={`flex-1 py-2 sm:py-3 text-base sm:text-lg font-['Schibsted Grotesk'] font-bold transition-all duration-200 ${tab === 'email' ? 'bg-gradient-to-r from-purple-400 via-white to-pink-400 text-black' : 'bg-black text-gray-400'}`}
-                onClick={() => handleTab('email')}
-              >
-                Email Address
-              </button>
-            </div>
+            <div className="flex gap-4">
+  <button
+    type="button"
+    onClick={() => handleTab('phone')}
+    className={`flex-1 py-3 text-sm sm:text-base font-medium text-black rounded-xl shadow-black/60 drop-shadow-lg transition-all duration-300 ease-in-out active:scale-95 font-['Schibsted_Grotesk'] shadow-[inset_-4px_0_8px_rgba(0,0,0,0.3),inset_4px_0_8px_rgba(0,0,0,0.3)] ${
+      tab === 'phone'
+        ? 'bg-gradient-to-r from-purple-400 via-white to-pink-300'
+        : 'bg-black text-gray-400'
+    }`}
+  >
+    Phone Number
+  </button>
+
+  <button
+    type="button"
+    onClick={() => handleTab('email')}
+    className={`flex-1 py-3 text-sm sm:text-base font-medium text-black rounded-xl shadow-black/60 drop-shadow-lg transition-all duration-300 ease-in-out active:scale-95 font-['Schibsted_Grotesk'] shadow-[inset_-4px_0_8px_rgba(0,0,0,0.3),inset_4px_0_8px_rgba(0,0,0,0.3)] ${
+      tab === 'email'
+        ? 'bg-gradient-to-r from-purple-400 via-white to-pink-300'
+        : 'bg-black text-gray-400'
+    }`}
+  >
+    Email Address
+  </button>
+</div>
+
 
             {/* Input Fields */}
             {tab === 'phone' ? (
@@ -147,9 +163,19 @@ const Verification = () => {
             {/* Send Code Button */}
             <button
               type="submit"
-              className="w-full py-3 sm:py-4 rounded-2xl font-['Schibsted Grotesk'] font-bold text-base sm:text-lg bg-gradient-to-r from-purple-400 via-white to-pink-400 text-black shadow-md transition-all duration-200"
+              disabled={isLoading}
+              className={`relative w-full py-3 text-sm sm:text-base font-medium text-black bg-gradient-to-r from-purple-400 via-white to-pink-300 rounded-xl shadow-black/60 drop-shadow-lg transition-all duration-300 ease-in-out active:scale-95 font-['Schibsted Grotesk'] shadow-[inset_-4px_0_8px_rgba(0,0,0,0.3),inset_4px_0_8px_rgba(0,0,0,0.3)] ${
+                isLoading ? 'opacity-70 cursor-not-allowed' : ''
+              }`}
             >
-              Send Code
+              {isLoading ? (
+                <div className="flex items-center justify-center gap-2 font-semibold text-black">
+                  <div className="w-4 h-4 border-2 border-black/30 border-t-black rounded-full animate-spin"></div>
+                  Sending Code...
+                </div>
+              ) : (
+                <span className="font-['Schibsted Grotesk']">Send Code</span>
+              )}
             </button>
           </form>
         </div>

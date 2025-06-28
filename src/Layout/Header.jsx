@@ -8,7 +8,7 @@ const Header = () => {
   const isSpecialPage = location.pathname === '/privacy' || location.pathname === '/terms';
 
   return (
-    <header className="fixed top-0 w-full h-[60px] md:h-[100px] z-50 bg-black/80 backdrop-blur-md border-b border-white/10">
+    <header className="fixed top-0 w-full h-[60px] md:h-[100px] z-50 bg-black/80 backdrop-blur-md border-b">
       <div className="w-full px-4 md:px-10">
         {/* Header Row: Logo left, Login right (only on non-special pages) */}
         {!isSpecialPage && (
