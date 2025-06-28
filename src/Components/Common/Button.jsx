@@ -1,7 +1,7 @@
 import React from 'react';
 
 const Button = ({ children, variant = 'primary', size = 'md', className = '', ...props }) => {
-  const baseClasses = 'font-extrabold rounded-2xl transition-all duration-300 inline-flex items-center justify-center text-center border-0 cursor-pointer';
+  const baseClasses = 'font-extrabold rounded-full transition-all duration-300 inline-flex items-center justify-center text-center border-0 cursor-pointer';
   
   const variants = {
     primary: 'text-black shadow-lg hover:shadow-xl hover:scale-105',
@@ -18,7 +18,6 @@ const Button = ({ children, variant = 'primary', size = 'md', className = '', ..
   
   const primaryGradient = {
     background: 'linear-gradient(135deg, #b983ff 0%, #e8c5ff 30%, #ffffff 50%, #ffc0e8 70%, #fa71cd 100%)',
-    boxShadow: '0 8px 32px rgba(185, 131, 255, 0.4)',
   };
   
   return (

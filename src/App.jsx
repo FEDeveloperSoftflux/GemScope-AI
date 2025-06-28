@@ -58,11 +58,8 @@ const AppContent = () => {
       price: "0",
       period: "Month",
       features: [
-        "Basic AI Analysis",
-        "5 Coin Alerts/Month",
-        "Email Support",
-        "Market Overview",
-        "Basic Charts"
+        "Project Tokenomics",
+        "3 AI Prompt Searches/Month",
       ],
       color: "bg-[linear-gradient(360deg,_#F5DBE0_-21.35%,_#C32388_104.32%)]",
       popular: false,
@@ -73,50 +70,46 @@ const AppContent = () => {
       price: "20",
       period: "Month",
       features: [
-        "Advanced AI Analysis",
-        "Unlimited Alerts",
-        "Priority Support",
-        "Risk Assessment",
-        "Portfolio Tracking",
-        "API Access",
-        "Custom Indicators"
+        "Everything in Free +",
+        "Social Engagement Scores",
+        "5 Exchange Listing Options",
+        "CEX & DEX Liquidity Volume",
+        "Code Base Reddit Link Summary",
+        "30 AI Prompt Searches/Month",
       ],
       color: "bg-[linear-gradient(180deg,_#7F00CE_-4.81%,_#EED4FF_125.36%)]",
       popular: false,
       iconBg :"bg-purple-400/40"
     },
     {
-      name: "Elite",
+      name: "Enterprise Tier",
       price: "50",
       period: "Month",
       features: [
-        "Premium AI Models",
-        "Real-time Analysis",
-        "1-on-1 Consultation",
-        "Advanced Risk Models",
-        "Multi-Exchange Support",
-        "Custom Strategies",
-        "Backtesting Tools",
-        "White-label Solution"
+        "Everything In Pro +",
+        "Team Analysis",
+        "Bot Detection",
+        "Developer Activity",
+        "AI Whitepaper Analysis",
+        "Gem Score + AI Summary",
+        "Red Flag Risk Score + AI Concern Report",
+        "Unlimited AI Prompt Searches/Month.",
+        "Dashboard Features"
+        
       ],
       color: "bg-[linear-gradient(180.57deg,_#0808FF_-4.69%,_#4EBBFF_130.44%)]",
-      popular: false,
+      popular: true,
       iconBg :"bg-blue-400/40"
       
     },
     {
-      name: "Institution",
+      name: "Lifetime Enterprise Tier",
       price: "150",
       period: "Lifetime",
       features: [
-        "Enterprise AI Suite",
-        "Dedicated Support",
-        "Custom Integration",
-        "Advanced Analytics",
-        "Team Management",
-        "SLA Guarantee",
-        "Custom Training",
-        "Regulatory Compliance"
+        "A Lifetime Of Enterprise Services",
+        "One Off Payment",
+        "Saves You Money + Instant Access"
       ],
       color: "bg-[linear-gradient(179.59deg,_#C4A502_-5.34%,_#FFF3B6_114.16%)]",
       popular: false,
@@ -128,23 +121,23 @@ const AppContent = () => {
   const faqData = [
     {
       question: "What is GemScope AI?",
-      answer: "GemScope AI is an advanced cryptocurrency analysis platform that uses artificial intelligence to identify high-potential investment opportunities before they become mainstream. Our proprietary algorithms analyze market data, social sentiment, and on-chain metrics to give you the edge in crypto trading."
+      answer: "GemScope.Al is a platform that uses Al to assess and uncover undervalued or unknown crypto projects, providing detailed analysis scores and summaries."
     },
     {
       question: "How does the AI analysis work?",
-      answer: "Our AI algorithms analyze thousands of data points including price movements, trading volume, social sentiment, on-chain metrics, and market patterns. We use advanced machine learning models trained on historical data to identify potential opportunities and assess risk levels for different cryptocurrency investments."
+      answer: "We use GPT-4 to evaluate various aspects of crypto projects, including their potential, authenticity, and risks, presenting the findings in an easy-to-understand format."
     },
     {
-      question: "Is there a free version available?",
-      answer: "Yes, we offer a free starter plan that includes basic AI analysis and limited alerts to help you get started with our platform. This allows you to experience our technology before upgrading to a paid plan for more advanced features."
+       question: "Which crypto data sources are used?",
+       answer: "Our Al gathers data from CoinGecko, Luna Crush, DexTools, Reddit, and other trusted sources to ensure comprehensive analysis.",
+    },
+    {  
+    question: "Is there a free version available?",
+    answer: "Yes, we offer a free tier that includes basic analysis features for users to get started."
     },
     {
-      question: "Can I integrate with my exchange?",
-      answer: "Yes, we support secure API integration with major cryptocurrency exchanges including Binance, Coinbase Pro, Kraken, and many others. This allows for seamless portfolio tracking and automated trading capabilities while maintaining the highest security standards."
-    },
-    {
-      question: "How accurate are the AI predictions?",
-      answer: "While past performance doesn't guarantee future results, our AI models have shown strong performance in backtesting and live trading scenarios. We provide confidence levels with each prediction and encourage users to combine our insights with their own research and risk management strategies."
+      question: "Can I change my subscription tier?",
+      answer: "Absolutely, you can upgrade or downgrade your subscription at any time through your account settings."
     }
   ];
 
@@ -162,7 +155,7 @@ const AppContent = () => {
   };
 
   return (
-    <div className="min-h-screen bg-black ">
+    <div className="min-h-screen bg-black  ">
       {location.pathname !== '/login' && location.pathname !== '/create-account' && location.pathname !== '/verification' && location.pathname !== '/dashboard' && <Header />}
       <main>
         <Routes>

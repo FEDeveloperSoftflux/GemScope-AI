@@ -16,12 +16,17 @@ const PricingCard = ({
   ...props 
 }) => {
   return (
-    <div className={`relative`}>
+    <div className={`relative flex justify-center ml-20 mr-20`}>
       <Card 
-        className={`h-[540px] ${color} flex flex-col`}
+        className={`w-[300px] h-[600px] rounded-[20px] ${color} flex flex-col ${className}`}
         hover={true}
         {...props}
       >
+        {popular && (
+          <div className="absolute top-4 ml-40 bg-white/20 text-white px-5 py-2 rounded-full text-[10px] font-medium shadow-md z-20 backdrop-blur-md font-['Lato']" >
+            Most popular
+          </div>
+        )}
         {/* Header */}
         <div className="text-left mb-6">
           <h3 className="font-['Lato'] font-weight-400 text-[16px] mb-2 text-white/80 ">{name}</h3>
@@ -38,20 +43,20 @@ const PricingCard = ({
             {features.map((feature, index) => (
               <li key={index} className="flex items-left text-sm">
                 <div className={`w-5 h-5 flex items-center justify-center rounded-full mr-3 ${iconBg}`}>
-                  <img src={Tick} alt="Tick" className="w-3 h-3" />
+                  <img src={Tick} alt="Tick" className="w-[12px] h-[12px]" />
                 </div>
-                <span className="text-white">{feature}</span>
+                <span className="text-white/80 font-['Lato']  text-[15px] leading-[23px] tracking-[-0.02em] mr-5">{feature}</span>
               </li>
             ))}
           </ul>
           
           {/* Button - fixed at bottom */}
           <div className="flex justify-center">
-            <Button
-              className="px-5 font-['Lato'] font-weight-700 text-[16px] leading-[26px] tracking-[-0.4px] plan-shadow"
-            >
-              Get This Plan
-            </Button>
+          <button className="relative px-18 py-3 text-[16px] font-medium  text-black bg-gradient-to-r from-purple-400 via-white to-pink-300 rounded-xl 
+           shadow-black/30 drop-shadow-lg transform transition-all duration-300 ease-in-out active:scale-95
+           font-['Schibsted_Grotesk'] shadow-[inset_-4px_0_8px_rgba(0,0,0,0.3),inset_4px_0_8px_rgba(0,0,0,0.3)]">
+        Get This Plan
+      </button>
           </div>
         </div>
       </Card>

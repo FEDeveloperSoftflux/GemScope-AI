@@ -12,8 +12,9 @@ const Features = ({ features = [] }) => {
     <section id="features" className="py-20  relative">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
-        <h2 className="mb-2 text-white font-normal text-center mx-auto font-['Schibsted_Grotesk' mt-[10px]
-          text-[28px] tracking-tight sm:text-[36px] sm:leading-[44px] sm:tracking-tight md:text-[44px] md:leading-[54px] md:tracking-tight lg:text-[50px] lg:leading-[72px] lg:tracking-[-2.4px] max-w-[945px] font-['Schibsted_Grotesk']">
+        <h2 className="mb-2 text-white font-light text-center mx-auto font-['Schibsted_Grotesk' mt-[10px]
+          text-[28px] tracking-tight sm:text-[36px] sm:leading-[44px] sm:tracking-tight md:text-[44px] md:leading-[54px] md:tracking-tight 
+          lg:text-[50px] lg:leading-[72px] lg:tracking-[-2.4px] max-w-[945px] font-['Schibsted_Grotesk']">
             Built for the 0.1% who profit before the crowd
           </h2>
           <p className="text-[18px] text-white/80 max-w-3xl mx-auto leading-[28.8px] tracking-[0.18px] font-['Lato']">
@@ -21,7 +22,7 @@ const Features = ({ features = [] }) => {
           </p>
         </div>
         
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 justify-center">
           {features.map((feature, index) => (
             <FeatureCard
               key={index}
@@ -33,7 +34,7 @@ const Features = ({ features = [] }) => {
 
         <div className="mt-16 text-center overflow-hidden">
           <div className="flex flex-col items-center space-y-6 opacity-100">
-            <p className="text-[20px] text-white/80 max-w-3xl leading-[26px] tracking-[0.px] mb-[40px] font-['Lato'] font-weight-700">
+            <p className="text-[20px] text-white/80 max-w-3xl leading-[26px] tracking-[0.18px] mb-[1px] font-['Lato'] font-weight-700">
             Seamless Integration of Trusted Partnerships - Centralised For Your Convenience.
             </p>
 

@@ -118,7 +118,7 @@ const CryptoDashboard = () => {
           <div className="fixed inset-0 flex items-center justify-center backdrop-blur-2xl bg-opacity-60 z-50">
             <div className="bg-[#202020] rounded-2xl p-14 lg:pr-24 relative max-w-7xl w-full min-h-[600px]">
               <CrossButton onClick={() => setShowPricingCard(false)} className="absolute top-4 right-4 z-10" />
-              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10">
                 {pricingPlans.map((plan, idx) => (
                   <PricingCard key={idx} {...plan} />
                 ))}
