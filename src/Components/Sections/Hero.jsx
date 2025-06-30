@@ -49,7 +49,7 @@ const HeroContent = () => {
           className={` font-[Schibsted_Grotesk] mb-6 text-white font-normal text-center mx-auto font-schibsted mt-[100px]
             text-[28px] tracking-tight sm:text-[36px] sm:leading-[44px] sm:tracking-tight md:text-[44px] md:leading-[54px] md:tracking-tight lg:text-[54px] lg:leading-[64px] lg:tracking-tight max-w-[945px]
             transition-all duration-1000 ease-out
-            ${headlineVisible ? 'opacity-100 scale-100 drop-shadow-[0_0_16px_rgba(0,255,255,0.5)]' : 'opacity-0 scale-90'}
+            ${headlineVisible ? 'opacity-100 scale-100' : 'opacity-0 scale-90'}
           `}
 
         >
@@ -71,9 +71,7 @@ const HeroContent = () => {
 
         <div className="flex flex-col sm:flex-row gap-4 justify-center mb-12">
           <Link to="/create-account">
-          <button className="relative px-7 py-3 text-[16px] font-semibold  text-black bg-gradient-to-r from-purple-400 via-white to-pink-300 rounded-xl 
-           shadow-black/40 drop-shadow-lg  transform transition-all duration-300 ease-in-out active:scale-95
-           font-['Schibsted_Grotesk'] shadow-[inset_-4px_0_8px_rgba(0,0,0,0.3),inset_4px_0_8px_rgba(0,0,0,0.3)]">
+          <button className="relative px-7 py-3 text-[16px] font-medium text-black bg-gradient-to-r from-purple-400 via-white to-pink-300 rounded-xl shadow-black/40 drop-shadow-lg transform transition-all duration-300 ease-in-out active:scale-95 font-['Schibsted_Grotesk'] shadow-[inset_-4px_0_8px_rgba(0,0,0,0.3),inset_4px_0_8px_rgba(0,0,0,0.3)] flex justify-center items-center">
         Register Now
       </button>
           </Link>
@@ -82,7 +80,7 @@ const HeroContent = () => {
 
       {/* Dashboard Image - always in flow and responsive */}
       <div className="w-full flex justify-center mt-auto px-4 pb-4 sm:mt-0 sm:pb-0" ref={imageRef}>
-        <div className="border-t-4 border-l-4 border-r-4 border-gray-600  rounded-tl-2xl rounded-tr-2xl shadow-xl max-w-full sm:max-w-[90%] md:max-w-[80%] lg:max-w-5xl h-auto bg-black/30">
+        <div className="border-t-7 border-l-7 border-r-7 border-transparent  rounded-tl-3xl rounded-tr-2xl shadow-xl max-w-full sm:max-w-[90%] md:max-w-[80%] lg:max-w-5xl h-auto bg-black/30">
           <img
             src={dashboardImage}
             alt="Dashboard Preview"

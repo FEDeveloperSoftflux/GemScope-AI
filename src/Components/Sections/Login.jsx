@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import Background from '../../assets/Login.png';
-import Logo from '../../assets/Logo.png';
+import Logo from '../../assets/Logo.svg';
 import Button from '../Common/Button';
 import GoogleIcon from '../../assets/Google.svg';
 import { useNavigate } from 'react-router-dom';
@@ -57,10 +57,10 @@ const Login = () => {
   }}
 >
 
-        <div className="absolute top-4 left-4 sm:top-8 sm:left-8 text-white text-xl sm:text-2xl font-semibold px-3 py-1 rounded-lg shadow-md z-20 font-['Schibsted Grotesk'] ">
-          A Wise Quote
+        <div className="absolute top-4 left-4 sm:top-8 sm:left-8 text-white text-xl sm:text-2xl font-medium px-3 py-1 rounded-lg shadow-md z-20 font-['Schibsted Grotesk'] ">
+          A WISE QUOTE
         </div>
-        <div className="absolute inset-0 bg-black/40"></div>
+        <div className="absolute inset-0 "></div>
         <div className="relative flex-1 flex flex-col justify-end items-start">
           <h1 className="font-['Schibsted Grotesk'] font-medium text-[28px] sm:text-[42px] md:text-[52px] lg:text-[65px] leading-[34px] sm:leading-[48px] md:leading-[58px] lg:leading-[70px] tracking-[-0.03em] text-white mb-0" style={{ maxWidth: '749px' }}>
             The Wealth Revolution Has Begun
@@ -75,14 +75,14 @@ const Login = () => {
       {/* Right Panel */}
       <div className="w-full lg:flex-1 bg-gray-950 flex flex-col justify-center items-center p-4 sm:p-6 md:p-8 lg:p-6 rounded-3xl lg:rounded-4xl relative">
         {/* Logo + Welcome Section */}
-        <div className="w-full max-w-2xl mx-auto px-4 sm:px-6">
-          <div className="flex flex-col items-center sm:flex-row sm:items-center mb-4 sm:mb-6">
+        <div className="w-full max-w-2xl mx-auto px-2 sm:px-6">
+          <div className="flex flex-col items-center sm:flex-row sm:items-center mb-20 sm:mb-10">
             <img src={Logo} alt="GemScope AI Logo" className="w-10 h-10 object-contain mb-2 sm:mb-0" />
             <span className="text-white text-[22px] font-weight-400 leading-[18px] tracking-[-0.28px] sm:ml-3">GemScope AI</span>
           </div>
           <div className="mb-4 sm:mb-6 text-center sm:text-left">
-            <h2 className="text-2xl sm:text-3xl md:text-4xl text-white mb-2 font-['Schibsted Grotesk'] font-weight-500 leading-[48px] tracking-[0.4px]">Welcome Back!</h2>
-            <p className="text-white/80 text-sm sm:text-base font-['Lato']">Please Enter Login Details Below</p>
+            <h2 className="text-2xl sm:text-3xl md:text-4xl text-white mb-2 font-['Schibsted Grotesk'] font-weight-500 leading-[48px] tracking-[0.4px] font-semibold">Welcome Back!</h2>
+            <p className="text-white/80 text-[14px] font-['Lato'] mt-4">Please Enter Login Details Below</p>
           </div>
         </div>
 

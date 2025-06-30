@@ -28,12 +28,14 @@ const EnterpriseUpgrade = ({ onUpgradeClick }) => (
         Unleash the full power of AI.
       </p>
 
-        {/* <button
-          className="bg-transparent border-none outline-none text-sm font-bold w-72 px-4 py-1 rounded-md transition-all font-['Schibsted_Grotesk'] text-[15px] leading-[20px] font-weight-800"
+         <button
+          className="relative px-18 py-3 text-[16px] font-medium  text-black bg-gradient-to-r from-purple-400 via-white to-pink-300 rounded-xl 
+           shadow-black/30 drop-shadow-lg transform transition-all duration-300 ease-in-out active:scale-95
+           font-['Schibsted_Grotesk'] shadow-[inset_-4px_0_8px_rgba(0,0,0,0.3),inset_4px_0_8px_rgba(0,0,0,0.3)]"
           onClick={onUpgradeClick}
         >
           Upgrade Now
-        </button> */}
+        </button> 
     </div>
     <div className="absolute top-4 right-4 z-50">
     </div>

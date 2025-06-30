@@ -1,7 +1,6 @@
 import React from 'react';
 import { useLocation, Link } from 'react-router-dom';
-import Button from '../Components/Common/Button';
-import logo from '../assets/logo.png'; 
+import logo from '../assets/Logo.svg'; 
 
 const Header = () => {
   const location = useLocation();
@@ -14,9 +13,9 @@ const Header = () => {
         {!isSpecialPage && (
           <div className="flex items-center justify-between w-full h-full py-3 md:py-6">
             {/* Logo Container */}
-            <div className="flex items-center space-x-1">
-              <img src={logo} alt="Logo" className="w-9 h-8 " />
-              <span className="font-['Schibsted_Grotesk'] font-light text-white text-[21px] leading-[18px] tracking-[-0.28px]">
+            <div className="flex items-center space-x-2">
+              <img src={logo} alt="Logo" className="w-[50.6px] h-[42.31px] " />
+              <span className="font-['Schibsted_Grotesk']  text-white text-[25px] leading-[18px] tracking-[-0.28px]  font-weight-800">
                 GemScope AI
               </span>
             </div>

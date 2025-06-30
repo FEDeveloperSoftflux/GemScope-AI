@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import Background from '../../assets/Background.png';
-import Logo from '../../assets/Logo.png';
+import Logo from '../../assets/Logo.svg';
 import Button from '../Common/Button';
 import PhoneInput from 'react-phone-input-2';
 import 'react-phone-input-2/lib/style.css';
@@ -61,21 +61,19 @@ const Verification = () => {
             backgroundColor: '#000',
           }}
         >
-          <div className="absolute top-4 left-4 sm:top-8 sm:left-8 text-white text-xl sm:text-2xl font-semibold bg-black/30 px-3 py-1 rounded-lg shadow-md z-20 font-['Schibsted Grotesk']">
-            A Wise Quote
+          <div className="absolute top-4 left-4 sm:top-8 sm:left-8 text-white text-xl sm:text-2xl font-semibold  px-3 py-1 rounded-lg shadow-md z-20 font-['Schibsted Grotesk']">
+            A WISE QUOTE
           </div>
-          <div className="absolute inset-0 bg-black/40"></div>
+          <div className="absolute inset-0 "></div>
           <div className="relative z-10 flex-1 flex flex-col justify-end">
-          <h1
-            className="text-left font-weight-500 font-['Schibsted Grotesk'] text-[32px] sm:text-[48px] md:text-[60px] lg:text-[75px] leading-[38px] sm:leading-[54px] md:leading-[66px] lg:leading-[82px] tracking-[-0.03em] text-white mb-0"
-            style={{ maxWidth: '749px', height: 'auto' }}
-          >
-            The Wealth Revolution Has Begun
+          <h1 className="text-left font-weight-500 font-medium font-['Schibsted Grotesk'] text-[28px] sm:text-[42px] md:text-[52px] lg:text-[65px] leading-[34px] sm:leading-[48px] md:leading-[58px] lg:leading-[70px] tracking-[-0.03em] text-white mb-0" style={{ maxWidth: '749px' }}>
+            The Crypto Gold Rush Is Now
           </h1>
-            <p className="text-left text-white/80 sm:text-[20px] font-weight-500 mt-10 font-['Lato']">
-              Crypto isn't just the future of Money, it's the rebellion <br /> against a broken system - It's Wall Street for the people.
-            </p>
-          </div>
+          <p className="text-left text-white text-sm sm:text-base font-weight-500 mt-4 font-['Lato']">
+            Crypto isn't just the future of Money, it's the rebellion <br />
+            against a broken system - It's Wall Street for the people.
+          </p>
+        </div>
         </div>
         {/* Right Panel */}
         <div className="w-full lg:flex-1 bg-gray-950 flex flex-col justify-center items-center p-4 sm:p-10 md:p-14 lg:p-10 rounded-3xl lg:rounded-4xl relative">

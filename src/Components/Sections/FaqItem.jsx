@@ -45,7 +45,7 @@ const FaqItem = ({
       
       {isOpen && (
         <div className="mt-3 pt-3 border-t border-white/10 animate-in slide-in-from-top duration-200">
-          <div className="text-[14px] text-white/80 max-w-3xl leading-[22px] tracking-[0.px] mb-[20px] font-['Lato'] font-weight-700">
+          <div className="text-[15px] text-white/80 max-w-3xl leading-[22px] tracking-[0.18px] mb-[20px] font-['Schibsted_Grotesk'] font-weight-700">
             {typeof answer === 'string' ? (
               <p>{answer}</p>
             ) : (

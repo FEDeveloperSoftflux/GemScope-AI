@@ -1,9 +1,16 @@
 @import url('https://fonts.googleapis.com/css2?family=Lato:wght@400&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@200&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@100&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@900&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Schibsted+Grotesk:wght@500&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Schibsted+Grotesk:wght@0400&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Schibsted+Grotesk:wght@300&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Schibsted+Grotesk:wght@400&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Schibsted+Grotesk:wght@500&display=swap');
+
 @import "tailwindcss";
 
 

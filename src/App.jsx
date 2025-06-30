@@ -36,7 +36,7 @@ const AppContent = () => {
   const features = [
     {
       icon: <img src={AI} alt="AI" className='w-[78px] h-[78px]'/>,
-      title: "AI-Powered Analysis",
+      title: "AI-Powered Integration",
       
     },
     {
@@ -46,7 +46,7 @@ const AppContent = () => {
     },
     {
       icon: <img src={Shield} alt="Network" className='w-[78px] h-[78px]' />,
-      title: "Real-time Alerts & market updates",
+      title: "Real-time project & market updates",
       
     }
   ];
@@ -158,6 +158,7 @@ const AppContent = () => {
     <div className="min-h-screen bg-black  ">
       {location.pathname !== '/login' && location.pathname !== '/create-account' && location.pathname !== '/verification' && location.pathname !== '/dashboard' && <Header />}
       <main>
+        /*
         <Routes>
           <Route path="/" element={
             <>

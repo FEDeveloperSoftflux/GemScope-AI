@@ -1,13 +1,13 @@
 import React, { useState, useEffect } from 'react';
 import {Sun, Moon, Menu } from 'lucide-react';
 import Background from '../../../assets/Background.png';
-import LogoImg from '../../../assets/Logo.png';
+import LogoImg from '../../../assets/Logo.svg';
 import Account from '../../../assets/Account.svg';
 import Billing from '../../../assets/Billing.svg';
 import History from '../../../assets/History.svg';
 import Activate from '../../../assets/ActivateAI.svg';
 import Dashboard from '../../../assets/Dashboard.svg';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 
 // Logo Component
 const Logo = () => (
@@ -39,53 +39,33 @@ const NavItem = ({ icon, label, active }) => (
 // Main Sidebar Component
 const Sidebar = () => {
   const navItems = [
-    { icon: Dashboard, label: 'Dashboard' },
-    { icon: Activate, label: 'Activate AI' },
-    { icon: History, label: 'History' },
-    { icon: Billing, label: 'Billing' },
-    { icon: Account, label: 'Account' }
+    { icon: Dashboard, label: 'Dashboard', path: '/dashboard' },
+    { icon: Activate, label: 'Activate AI', path: '/activate-ai' },
+    { icon: History, label: 'History', path: '/history' },
+    { icon: Billing, label: 'Billing', path: '/billing' },
+    { icon: Account, label: 'Account', path: '/account' }
   ];
 
   const [activeIndex, setActiveIndex] = useState(0);
-  const [mode, setMode] = useState('dark');
   const [mobileOpen, setMobileOpen] = useState(false);
+  const navigate = useNavigate();
 
-  useEffect(() => {
-    if (mode === 'dark') {
-      document.documentElement.classList.add('dark');
-    } else {
-      document.documentElement.classList.remove('dark');
-    }
-  }, [mode]);
+
 
   return (
     <>
-      {/* Hamburger for mobile */}
-      {/*<button
-        className="fixed top-4 left-4 z-50 md:hidden bg-black/80 p-2 rounded-lg shadow-lg"
-        onClick={() => setMobileOpen(true)}
-        aria-label="Open sidebar"
-      >
-        <Menu size={28} className="text-white" />
-      </button>*}
-
-      {/* Mobile overlay 
-      {mobileOpen && (
-        <div
-          className="fixed inset-0 z-40 bg-black/40 md:hidden"
-          onClick={() => setMobileOpen(false)}
-        />
-      )}*/}
 
       {/* Single Sidebar - responsive */}
       <div
         className={`
-          fixed md:static top-0 left-0 h-full w-64 bg-black p-6 z-50
+          fixed md:static top-0 left-0 w-64 bg-black p-6 z-50
           transform transition-transform duration-300
           md:transform-none md:translate-x-0
           ${mobileOpen ? 'translate-x-0' : '-translate-x-full md:translate-x-0'}
-          rounded-r-3xl md:rounded-r-3xl
+          rounded-3xl
           relative overflow-hidden
+          ml-4
+          h-[95vh] my-4
         `}
       >
         {/* Close button for mobile */}
@@ -106,11 +86,11 @@ const Sidebar = () => {
         />
 
         {/* Sidebar content */}
-        <div className="relative z-10 flex flex-col h-full overflow-y-auto max-h-[90vh] mb-6 ">
+        <div className="relative z-10 flex flex-col h-full mb-6 ">
           <Logo />
           <nav className="space-y-2 flex-1">
             {navItems.map((item, index) => (
-              <div key={index} onClick={() => setActiveIndex(index)}>
+              <div key={index} onClick={() => { setActiveIndex(index); navigate(item.path); }}>
                 <NavItem 
                   icon={item.icon} 
                   label={item.label} 

@@ -4,9 +4,12 @@ import DHeader from '../Components/Sections/Dashboard/DHeader';
 import WelcomeSection from '../Components/Sections/Dashboard/Welcome';
 import ActionCards from '../Components/Sections/Dashboard/ActionCard';
 import Watchlist from '../Components/Sections/Dashboard/Watchlist';
-import RightSidebar from '../Components/Sections/Dashboard/DashBoard';
+import RightSidebar from '../Components/Sections/Dashboard/RightBar';
 import PricingCard from '../Components/Sections/PricingCard';
 import CrossButton from '../Components/Common/CrossButton';
+import CurveDao from '../assets/CurveDao.svg';
+import COTI from '../assets/COTI.svg';
+import XDC from '../assets/XDC.svg';
 
 const CryptoDashboard = () => {
   // Sample data 
@@ -22,9 +25,9 @@ const CryptoDashboard = () => {
   ];
 
   const hotTokens = [
-    { name: 'XDC Network', symbol: 'XDC', change: '+281.19%' },
-    { name: 'COTI', symbol: 'COTI', change: '+43.21%' },
-    { name: 'Curve DAO', symbol: 'CRV', change: '+27.1%' }
+    { name: 'XDC Network', symbol: 'XDC', change: '+281.19%', icon: XDC },
+    { name: 'COTI', symbol: 'COTI', change: '+43.21%', icon: COTI },
+    { name: 'Curve DAO', symbol: 'CRV', change: '+27.1%', icon: CurveDao }
   ];
 
   const [showPricingCard, setShowPricingCard] = useState(false);
@@ -112,15 +115,21 @@ const CryptoDashboard = () => {
         
         <div className="grid grid-cols-3 gap-6 ml-10">
           <Watchlist cryptoData={cryptoData} />
-          <RightSidebar hotTokens={hotTokens} onUpgradeClick={() => setShowPricingCard(true)} />
+         <RightSidebar hotTokens={hotTokens} onUpgradeClick={() => setShowPricingCard(true)} />
         </div>
         {showPricingCard && (
           <div className="fixed inset-0 flex items-center justify-center backdrop-blur-2xl bg-opacity-60 z-50">
-            <div className="bg-[#202020] rounded-2xl p-14 lg:pr-24 relative max-w-7xl w-full min-h-[600px]">
-              <CrossButton onClick={() => setShowPricingCard(false)} className="absolute top-4 right-4 z-10" />
-              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10">
-                {pricingPlans.map((plan, idx) => (
-                  <PricingCard key={idx} {...plan} />
+            <div className="bg-[#202020] rounded-2xl p-8 relative max-w-5xl w-full min-h-[600px]">
+              <CrossButton onClick={() => setShowPricingCard(false)} className="absolute top-2 right-2 " />
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
+                {pricingPlans.filter(plan => plan.name !== "Free Tier").map((plan, idx) => (
+                  <PricingCard 
+                    key={idx} 
+                    {...plan} 
+                    buttonTextClassName="whitespace-nowrap" 
+                    width="w-[270px]" 
+                    buttonSizeClasses="px-12 py-2 text-sm"
+                  />
                 ))}
               </div>
             </div>

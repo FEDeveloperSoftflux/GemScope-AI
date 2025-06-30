@@ -1,5 +1,5 @@
 import React from 'react';
-import Logo from '../assets/Logo.png';
+import Logo from '../assets/Logo.svg';
 import { Link } from 'react-router-dom';
 
 const Footer = () => {
@@ -9,7 +9,7 @@ const Footer = () => {
         {/* Centered Logo and Brand Side by Side */}
         <div className="flex flex-row items-center justify-center mb-5 space-x-1">
           <img src={Logo} alt="GemScope AI Logo" className="w-10 h-10" />
-          <span className="text-white text-[22px] font-['Schibsted_Grotesk'] font-weight-700 leading-[26px] tracking-[-0.4px]">GemScope AI</span>
+          <span className="text-white text-[22px] font-['Schibsted_Grotesk'] font-weight-700 leading-[26px] tracking-[-0.4px] ml-1">GemScope AI</span>
         </div>
         {/* Divider */}
         <div className="w-full border-t border-white/20 my-1 align-center" />
