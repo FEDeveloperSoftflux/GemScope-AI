@@ -7,11 +7,11 @@ import Watchlist from '../Components/Sections/Dashboard/Watchlist';
 import RightSidebar from '../Components/Sections/Dashboard/RightBar';
 import PricingCard from '../Components/Sections/PricingCard';
 import CrossButton from '../Components/Common/CrossButton';
-import CurveDao from '../assets/CurveDao.svg';
+import CurveDao from '../assets/CurveDAO.png';
 import COTI from '../assets/COTI.svg';
 import XDC from '../assets/XDC.svg';
 
-const CryptoDashboard = () => {
+const CryptoDashboard = ({ plan, setUserPlan }) => {
   // Sample data 
   const cryptoData = [
     { name: 'Bitcoin', symbol: 'BTC', price: '$98,430', change: '+2.23%', positive: true },
@@ -109,7 +109,7 @@ const CryptoDashboard = () => {
       <Sidebar />
       
       <div className="flex-1 p-6 overflow-y-auto">
-        <DHeader />
+      <DHeader plan={plan} setUserPlan={setUserPlan} />
         <WelcomeSection />
         <ActionCards />
         

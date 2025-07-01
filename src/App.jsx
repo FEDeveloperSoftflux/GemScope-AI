@@ -16,7 +16,16 @@ import TermsAndCondition from './Components/Sections/Terms&Condition';
 import Login from './Components/Sections/Login';
 import CreateAccount from './Components/Sections/CreateAccount';
 import Verification from './Components/Sections/Verification';
-import CryptoDashboard from './pages/Dashboard';
+import Dashboard from './pages/Dashboard';
+import DashboardPro from './pages/DashboardPro';
+import DashboardEnterprise from './pages/DashboardEnterprise';
+import ActivateAI from './pages/ActivateAI';
+import ActivateAIPro from './pages/ActivateaiPro';
+import ActivateAIEnterprise from './pages/ActivateaiEnterprise';
+import History from './pages/History';
+import Billing from './pages/Billing';
+import Account from './pages/Account';
+
 
 import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
 import { useLocation } from 'react-router-dom';
@@ -143,6 +152,7 @@ const AppContent = () => {
 
   // State for FAQ toggle - tracks which FAQ item is currently open
   const [openFaqIndex, setOpenFaqIndex] = useState(null);
+  const [userPlan, setUserPlan] = useState("pro");
 
   // Handle FAQ toggle - only one FAQ can be open at a time
   const handleFaqToggle = (index) => {
@@ -156,15 +166,14 @@ const AppContent = () => {
 
   return (
     <div className="min-h-screen bg-black  ">
-      {location.pathname !== '/login' && location.pathname !== '/create-account' && location.pathname !== '/verification' && location.pathname !== '/dashboard' && <Header />}
+      {location.pathname !== '/login' && location.pathname !== '/create-account' && location.pathname !== '/verification' && location.pathname !== '/dashboard' && location.pathname !== '/activate-ai' && location.pathname !== '/history' && location.pathname !== '/billing' && location.pathname !== '/account' && <Header />}
       <main>
-        /*
         <Routes>
           <Route path="/" element={
             <>
               <HeroContent />
               <Features features={features} />
-              <AICrypto />
+              <AICrypto  />
               <LifeChanging />
               <FAQ 
                 faqData={faqData} 
@@ -180,10 +189,30 @@ const AppContent = () => {
           <Route path="/login" element={<Login />} />
           <Route path="/create-account" element={<CreateAccount />} />
           <Route path="/verification" element={<Verification />} />
-          <Route path="/dashboard" element={<CryptoDashboard />} />
+          <Route path="/dashboard" element={
+            userPlan === "pro" ? (
+              <DashboardPro plan={userPlan} setUserPlan={setUserPlan} />
+            ) : userPlan === "enterprise" ? (
+              <DashboardEnterprise plan={userPlan} setUserPlan={setUserPlan} />
+            ) : (
+              <Dashboard plan={userPlan} setUserPlan={setUserPlan} />
+            )
+          } />
+          <Route path="/activate-ai" element={
+            userPlan === "pro" ? (
+              <ActivateAIPro plan={userPlan} setUserPlan={setUserPlan} />
+            ) : userPlan === "enterprise" ? (
+              <ActivateAIEnterprise plan={userPlan} setUserPlan={setUserPlan} />
+            ) : (
+              <ActivateAI plan={userPlan} setUserPlan={setUserPlan} />
+            )
+          } />
+          <Route path="/history" element={<History />} />
+          <Route path="/billing" element={<Billing />} />
+          <Route path="/account" element={<Account />} />
         </Routes>
       </main>
-      {location.pathname !== '/login' && location.pathname !== '/create-account' && location.pathname !== '/verification' && location.pathname !== '/dashboard' && <Footer />}
+      {location.pathname !== '/login' && location.pathname !== '/create-account' && location.pathname !== '/verification' && location.pathname !== '/dashboard' && location.pathname !== '/activate-ai' && location.pathname !== '/history' && location.pathname !== '/billing' && location.pathname !== '/account' && <Footer />}
     </div>
   );
 };

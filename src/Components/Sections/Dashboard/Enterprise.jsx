@@ -1,7 +1,7 @@
 import React from 'react';
-import { Lock } from 'lucide-react';
+import Lock from '../../../assets/Lock.svg';
 import BackgroundImg from '../../../assets/Background.png';
-import CrossButton from '../../Common/CrossButton';
+
 
 const EnterpriseUpgrade = ({ onUpgradeClick }) => (
   <div
@@ -19,7 +19,7 @@ const EnterpriseUpgrade = ({ onUpgradeClick }) => (
     <div className="absolute inset-0 " />
     <div className="relative z-10 flex flex-col items-center justify-center h-full">
       <div className="mb-6 w-full flex justify-start">
-        <Lock size={64} className="mb-2 text-white drop-shadow-lg" />
+        <img src={Lock} alt="Lock" className="w-12 h-12 mb-2 drop-shadow-lg border-2 border-white/50 rounded-lg p-2" />
       </div>
       <h3 className="font-medium mb-1 text-left text-white text-lg drop-shadow w-full font-['Schibsted_Grotesk']">
         Unlock Full Insights With Enterprise

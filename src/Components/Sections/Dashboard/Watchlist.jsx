@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Plus, TrendingUp, TrendingDown, Trash2 } from 'lucide-react';
+import { Plus,Trash2 } from 'lucide-react';
 import Avalanche from '../../../assets/Avalanche.svg';
 import SUI from '../../../assets/SUI.svg';
 import DogeCoin from '../../../assets/DogeCoin.svg';
@@ -10,6 +10,7 @@ import Ethereum from '../../../assets/Ethereum.svg';
 import Bitcoin1 from '../../../assets/Bitcoin1.svg';
 import Trendup from '../../../assets/Trendup.svg';
 import Trenddown from '../../../assets/Trenddown.svg';
+import AddCoinModal from './modal/AddCoinModal';
 
 // Define the initial crypto data with SVG icons
 const initialCryptoData = [
@@ -67,9 +68,17 @@ const CryptoRow = ({ crypto, onDelete }) => (
 // Main Watchlist Component
 const Watchlist = () => {
   const [cryptoData, setCryptoData] = useState(initialCryptoData);
+  const [showModal, setShowModal] = useState(false);
 
   const handleDelete = (symbol) => {
     setCryptoData((prev) => prev.filter((c) => c.symbol !== symbol));
+  };
+
+  const handleAddCoin = (coin) => {
+    if (!cryptoData.some(c => c.symbol === coin.symbol)) {
+      setCryptoData(prev => [...prev, coin]);
+    }
+    setShowModal(false);
   };
 
   return (
@@ -78,7 +87,11 @@ const Watchlist = () => {
         <h3 className="text-xl sm:text-2xl font-extrabold text-white flex items-end gap-2">
           <span className="font-['Schibsted_Grotesk'] text-[30px] leading-[20px] font-weight-700">My Watchlist</span>
         </h3>
-        <button className=" font-['Schibsted_Grotesk'] bg-gradient-to-r from-purple-400 via-white to-pink-300 text-black px-4 py-2 rounded-xl font-semibold flex items-center gap-2 shadow-lg transition-all" style={{ boxShadow: '0 4px 24px 0 rgba(236, 72, 153, 0.15)' }}>
+        <button
+          className="relative px-4 py-2 text-[16px] font-medium text-black bg-gradient-to-r from-purple-400 via-white to-pink-300 rounded-xl shadow-black/30 drop-shadow-lg transform transition-all duration-300 ease-in-out active:scale-95 font-['Schibsted_Grotesk'] shadow-[inset_-4px_0_8px_rgba(0,0,0,0.3),inset_4px_0_8px_rgba(0,0,0,0.3)] flex items-center gap-2"
+          style={{ boxShadow: '0 4px 24px 0 rgba(236, 72, 153, 0.15)' }}
+          onClick={() => setShowModal(true)}
+        >
           <Plus size={18} />
           Add Coin
         </button>
@@ -93,6 +106,12 @@ const Watchlist = () => {
           </React.Fragment>
         ))}
       </div>
+      <AddCoinModal
+        show={showModal}
+        onClose={() => setShowModal(false)}
+        coins={initialCryptoData.filter(c => !cryptoData.some(w => w.symbol === c.symbol))}
+        onAdd={handleAddCoin}
+      />
     </div>
   );
 };

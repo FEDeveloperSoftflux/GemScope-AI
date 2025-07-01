@@ -1,7 +1,13 @@
 import React, { useState, useRef, useEffect } from 'react';
 import House from '../../../assets/House.svg';
 
-const DHeader = ({ user }) => {
+const planColors = {
+  free: "bg-gradient-to-b from-pink-400 to-pink-100 bg-clip-text text-transparent",
+  pro: "bg-gradient-to-b from-purple-700 to-purple-100 bg-clip-text text-transparent",
+  enterprise: "bg-gradient-to-b from-blue-700 to-blue-100 bg-clip-text text-transparent"
+};
+
+const DHeader = ({ user, title = "Dashboard", icon, plan = "free", setUserPlan }) => {
   const [dropdownOpen, setDropdownOpen] = useState(false);
   const [notifOpen, setNotifOpen] = useState(false);
   const dropdownRef = useRef(null);
@@ -42,13 +48,38 @@ const DHeader = ({ user }) => {
     <div className="flex flex-row items-center justify-between gap-2 sm:gap-4 mb-6 w-full px-2 sm:px-0">
       <div className="flex items-center gap-2 sm:gap-4 w-auto">
         <div className="w-8 h-8 flex items-center justify-center border-2 border-gray-500 rounded-md bg-black ml-2 sm:ml-10">
-          <img src={House} alt="House" className="w-5 h-5" />
+          {icon ? (
+            <img src={icon} alt="Icon" className="w-5 h-5" />
+          ) : (
+            <img src={House} alt="House" className="w-5 h-5" />
+          )}
         </div>
         <div className="flex items-center gap-2 sm:gap-3">
-          <h1 className="text-base sm:text-lg font-bold text-white font-['Schibsted_Grotesk']">Dashboard</h1>
-          <div className="px-1.5 sm:px-2 py-0.5 sm:py-0.5 rounded-full bg-gradient-to-r from-[#2A1A2E] to-[#232026] flex items-center mt-1">
-            <span className="text-[10px] sm:text-xs font-medium bg-gradient-to-b from-pink-400 to-pink-100 bg-clip-text text-transparent font-['Schibsted_Grotesk']">Free Plan</span>
-          </div>
+        <h1 className="text-base sm:text-lg font-bold text-white font-['Schibsted_Grotesk']">{title}</h1>
+<div className="px-1.5 sm:px-2 py-0.5 sm:py-0.5 rounded-full bg-gradient-to-r from-[#2A1A2E] to-[#232026] flex items-center mt-1 relative">
+  <span
+    className={`text-[10px] sm:text-xs font-medium font-['Schibsted_Grotesk'] ${planColors[plan]}`}
+  >
+    {plan === 'free' && 'Free Plan'}
+    {plan === 'pro' && 'Pro Plan'}
+    {plan === 'enterprise' && 'Enterprise Plan'}
+  </span>
+  {setUserPlan && (
+    <div className="relative ml-2 flex items-center">
+      <select
+        value={plan}
+        onChange={e => setUserPlan(e.target.value)}
+        className="absolute inset-0 w-full h-full opacity-0 cursor-pointer text-white bg-[#202020]rounded-full"
+        aria-label="Change plan"
+      >
+        <option value="free" className="text-white bg-black font-['Schibsted_Grotesk'] text-[15px]">Free</option>
+        <option value="pro" className="text-white bg-black font-['Schibsted_Grotesk']text-[15px]">Pro</option>
+        <option value="enterprise" className="text-white bg-black font-['Schibsted_Grotesk'] text-[15px]">Enterprise</option>
+      </select>
+      <span className="text-xs text-white pointer-events-none z-10 ml-1">▼</span>
+    </div>
+  )}
+</div>
         </div>
       </div>
       {/* Desktop: Notification and Profile */}

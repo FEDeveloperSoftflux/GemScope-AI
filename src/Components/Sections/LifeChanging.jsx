@@ -81,7 +81,7 @@ const LifeChanging = () => {
           </div>
                     {/* Right side: green box */}
                     <div
-            className="w-full md:w-[340px] min-h-[640px] rounded-2xl flex-shrink-0 mt-8 md:mt-0 bg-cover bg-center relative overflow-hidden"
+            className="w-full md:w-[340px] min-h-[640px] rounded-2xl flex-shrink-0 mt-8 md:mt-0 bg-cover bg-center relative overflow-hidden border-b-1 border-gray-600"
             style={{ backgroundImage: `url(${Image1})` }}
           >
             <p className="text-white  p-2  ml-5 mt-5 font-['Lato'] font-weight-700 text-[20px] leading-[26px] tracking-[-0.4px]">

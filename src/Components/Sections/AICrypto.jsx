@@ -49,7 +49,7 @@ const AICrypto = () => {
   );
 
   const LiveDataAnalysisCard = ({ className = "" }) => (
-    <div className={`bg-black rounded-xl p-4 border border-gray-700/50 
+    <div className={`bg-black rounded-xl p-4 border border-gray-600/50 
       w-full sm:w-[382px] h-auto sm:h-[150px] ${className}`}>
       <div className="flex items-start gap-3 h-full">
         <div className="w-8 h-8 sm:w-10 sm:h-10 rounded-xl flex items-center justify-center flex-shrink-0">
@@ -69,7 +69,7 @@ const AICrypto = () => {
   );
 
   const SummariesExplainedCard = ({ className = "" }) => (
-    <div className={`bg-black backdrop-blur-sm rounded-xl p-4 sm:p-6 border border-gray-700/50 
+    <div className={`bg-black backdrop-blur-sm rounded-xl p-4 sm:p-6 border border-gray-600/50  
       w-full sm:w-100 h-auto sm:h-36 ${className}`}>
       <div className="flex items-start gap-3 sm:gap-4 h-full">
         <div className="w-10 h-10 sm:w-14 sm:h-14 rounded-xl flex items-center justify-center flex-shrink-0">
@@ -150,7 +150,6 @@ const AICrypto = () => {
                 alt="AI Crypto"
                 className="w-full rounded-4xl h-[600px] clear-both"
               />
-              <div className="absolute inset-0 bg-black/30 rounded-4xl"></div>
               
               {/* Feature Cards */}
               <div className="absolute inset-0">
@@ -170,7 +169,7 @@ const AICrypto = () => {
                     className="absolute top-64 right-4 lg:right-8 left-auto lg:left-15 transform animate-fade-in-up animation-delay-200"
                   />
                   <SummariesExplainedCard
-                    className="absolute top-125 left-80 transform -translate-x-1/2 animate-fade-in-up animation-delay-400"
+                    className="absolute top-120 left-80 transform -translate-x-1/2 animate-fade-in-up animation-delay-400"
                   />
                 </div>
               </div>

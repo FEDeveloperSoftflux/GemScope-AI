@@ -1,7 +1,7 @@
 import React, { useEffect, useRef, useState } from 'react';
 import { Link } from 'react-router-dom';
 import Button from '../Common/Button';
-import backgroundImage from '../../assets/Background.png';
+import backgroundImage from '../../assets/Hero.png';
 import dashboardImage from '../../assets/DashboardImage.png';
 
 const headlineFull = 'AI Engine To Analyse Coins & Uncover The Next 100x';

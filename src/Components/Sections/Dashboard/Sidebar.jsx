@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import {Sun, Moon, Menu } from 'lucide-react';
 import Background from '../../../assets/Background.png';
 import LogoImg from '../../../assets/Logo.svg';
@@ -7,7 +7,7 @@ import Billing from '../../../assets/Billing.svg';
 import History from '../../../assets/History.svg';
 import Activate from '../../../assets/ActivateAI.svg';
 import Dashboard from '../../../assets/Dashboard.svg';
-import { Link, useNavigate } from 'react-router-dom';
+import { Link, useNavigate, useLocation } from 'react-router-dom';
 
 // Logo Component
 const Logo = () => (
@@ -46,11 +46,9 @@ const Sidebar = () => {
     { icon: Account, label: 'Account', path: '/account' }
   ];
 
-  const [activeIndex, setActiveIndex] = useState(0);
-  const [mobileOpen, setMobileOpen] = useState(false);
+  const [mobileOpen, setMobileOpen] = React.useState(false);
   const navigate = useNavigate();
-
-
+  const location = useLocation();
 
   return (
     <>
@@ -90,11 +88,11 @@ const Sidebar = () => {
           <Logo />
           <nav className="space-y-2 flex-1">
             {navItems.map((item, index) => (
-              <div key={index} onClick={() => { setActiveIndex(index); navigate(item.path); }}>
+              <div key={index} onClick={() => navigate(item.path)}>
                 <NavItem 
                   icon={item.icon} 
                   label={item.label} 
-                  active={activeIndex === index} 
+                  active={location.pathname === item.path} 
                 />
               </div>
             ))}

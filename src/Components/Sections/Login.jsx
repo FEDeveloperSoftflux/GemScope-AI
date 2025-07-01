@@ -48,14 +48,13 @@ const Login = () => {
     <div className="h-screen flex flex-col lg:flex-row bg-black  p-3 sm:p-5 rounded-3xl lg:rounded-4xl">
       {/* Left Panel */}
       <div
-  className="w-full lg:flex-1 relative flex flex-col justify-between p-4 sm:p-6 md:p-8 lg:p-10 pl-2 sm:pl-4 md:pl-8 lg:pl-10 rounded-3xl lg:rounded-4xl h-[40vh] lg:h-auto mb-4 lg:mb-0"
-  style={{
-    backgroundImage: `url(${Background})`,
-    backgroundSize: 'cover',
-    backgroundPosition: 'bottom',  
-    backgroundRepeat: 'no-repeat',
-  }}
->
+      className="w-full lg:flex-1 relative flex flex-col justify-between p-4 sm:p-6 md:p-8 lg:p-10 pl-2 sm:pl-4 md:pl-8 lg:pl-10 rounded-3xl lg:rounded-4xl h-[40vh] lg:h-auto mb-4 lg:mb-0"
+      style={{
+        backgroundImage: `url(${Background})`,
+        backgroundSize: 'cover',
+        backgroundPosition: 'bottom',  
+        backgroundRepeat: 'no-repeat',
+      }}>
 
         <div className="absolute top-4 left-4 sm:top-8 sm:left-8 text-white text-xl sm:text-2xl font-medium px-3 py-1 rounded-lg shadow-md z-20 font-['Schibsted Grotesk'] ">
           A WISE QUOTE

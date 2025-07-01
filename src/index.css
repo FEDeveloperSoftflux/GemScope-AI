@@ -22,3 +22,53 @@
 .plan-shadow {
   box-shadow: 0 4px 32px 0 rgba(186, 148, 255, 0.3), 0 1.5px 16px 0 rgba(255, 148, 186, 0.3);
 }
+
+/* Hide scrollbar for AddCoinModal results */
+.hide-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.hide-scrollbar {
+  -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;     /* Firefox */
+}
+
+.custom-datepicker-calendar {
+  background: #202020 !important;
+  color: #fff !important;
+  border: 1px solid #333 !important;
+  border-radius: 12px !important;
+  box-shadow: 0 4px 24px 0 rgba(0, 0, 0, 0.5);
+  font-family: Manrope;
+}
+
+.custom-datepicker-calendar:hover {
+  background: #000 !important;
+}
+
+.custom-datepicker-calendar .react-datepicker__header {
+  background: #202020 !important;
+  border-bottom: 1px solid #333 !important;
+}
+
+.custom-datepicker-calendar .react-datepicker__current-month,
+.custom-datepicker-calendar .react-datepicker__day-name,
+.custom-datepicker-calendar .react-datepicker__day,
+.custom-datepicker-calendar .react-datepicker__day--selected,
+.custom-datepicker-calendar .react-datepicker__day--keyboard-selected {
+  color: #fff !important;
+}
+
+.custom-datepicker-calendar .react-datepicker__day--selected,
+.custom-datepicker-calendar .react-datepicker__day--keyboard-selected {
+  background: #4f46e5 !important;
+  color: #red !important;
+}
+
+.custom-datepicker-calendar .react-datepicker__day--disabled {
+  color: #555 !important;
+}
+
+.custom-datepicker-calendar .react-datepicker__day:hover {
+  color: #000 !important;
+  background: #fff !important;
+}

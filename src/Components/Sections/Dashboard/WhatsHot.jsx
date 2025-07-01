@@ -1,12 +1,12 @@
 import React from 'react';
 import { ArrowUpRight } from 'lucide-react';
-import CurveDao from '../../../assets/Bitcoin.svg';
+import CurveDao from '../../../assets/CurveDAO.png';
 import COTI from '../../../assets/COTI.svg';
 import XDC from '../../../assets/XDC.svg';
 import TrendUp from '../../../assets/Trendup.svg'
 
 // Hardcoded hot tokens data
-const hotTokens = [
+const defaultHotTokens = [
   {
     name: 'CurveDAO',
     value: 1.23,
@@ -53,18 +53,21 @@ const HotToken = ({ token, index }) => (
 );
 
 // What's Hot Component
-const WhatsHot = () => (
-  <div className="bg-[#18191C] rounded-2xl p-6 shadow-md max-w-md mx-auto">
-    <h3 className="font-bold text-[25px] text-white mb-6 text-left font-['Schibsted_Grotesk'] font-weight-500">What's Hot? <span role="img" aria-label="fire">🔥</span></h3>
-    <div>
-      {hotTokens.map((token, index) => (
-        <React.Fragment key={index}>
-          <HotToken token={token} index={index} />
-          {index !== hotTokens.length - 1 && <hr className="border-gray-700 my-0" />}
-        </React.Fragment>
-      ))}
+const WhatsHot = ({ hotTokens }) => {
+  const tokens = hotTokens && hotTokens.length > 0 ? hotTokens : defaultHotTokens;
+  return (
+    <div className="bg-[#18191C] rounded-2xl p-6 shadow-md max-w-md mx-auto">
+      <h3 className="font-bold text-[25px] text-white mb-6 text-left font-['Schibsted_Grotesk'] font-weight-500">What's Hot? <span role="img" aria-label="fire">🔥</span></h3>
+      <div>
+        {tokens.map((token, index) => (
+          <React.Fragment key={index}>
+            <HotToken token={token} index={index} />
+            {index !== tokens.length - 1 && <hr className="border-gray-700 my-0" />}
+          </React.Fragment>
+        ))}
+      </div>
     </div>
-  </div>
-);
+  );
+};
 
 export default WhatsHot;
