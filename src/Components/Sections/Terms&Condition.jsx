@@ -31,7 +31,7 @@ const TermsCondition = () => {
           <span className="text-white font-['Schibsted_Grotesk'] text-[30px] leading-[20px] pl-2 mb-12">Terms of Service</span>
           <div className="mb-6" />
           <style>{`
-            .terms-heading {
+              .terms-heading {
               font-size: 23px;
               line-height: 30px;
               color: #ffffff;
@@ -50,8 +50,15 @@ const TermsCondition = () => {
               font-family: 'Lato';
               font-weight: 500;
             }
-            .terms-content ul, .terms-content ol {
+            .terms-content ul {
               list-style-type: disc;
+              list-style-position: outside;
+              padding-left: 50px;
+              margin-bottom: 8px;
+              font-family: 'Lato';
+            }
+            .terms-content ol {
+              list-style-type: decimal;
               list-style-position: inside;
               padding-left: 2rem;
               margin-bottom: 8px;
@@ -60,6 +67,7 @@ const TermsCondition = () => {
             .terms-content li {
               font-size: 13px;
               line-height: 20px;
+              padding-left: 0;
               color: #a3a3a3;
               margin-bottom: 8px;
               font-family: 'Lato';
@@ -67,9 +75,13 @@ const TermsCondition = () => {
             .terms-content li::marker {
               color: #a3a3a3;
               font-size: 16px;
+              padding-left-2px
+            }
+            .terms-content {
+              max-width: 100%;
             }
           `}</style>
-          <div className="terms-content px-2 py-4">
+          <div className="terms-content px-2 py-4" style={{maxWidth: '900px'}}>
             <h2 className="terms-heading">Welcome To GemScope AI</h2>
             <p className="terms-paragraph">
               These Terms of Service ("Terms") govern your access to and use of our website, software, and services (collectively, the "Platform"). By accessing or using the Platform, you agree to be bound by these Terms. If you do not agree, please do not use our services.
@@ -98,15 +110,16 @@ const TermsCondition = () => {
             </ul>
 
             <h2 className="terms-heading">Use Of The Platform</h2>
+            <p className="terms-paragraph">
+              You agree to use the Platform only for lawful purposes and in compliance with all applicable laws.
+            </p>
+            <p className="terms-paragraph">
+              You will not:
+            </p>
             <ul>
-              <li>You agree to use the Platform only for lawful purposes and in compliance with all applicable laws.</li>
-              <li>You will not:
-                <ul>
-                  <li>Attempt to disrupt or interfere with the Platform's operation.</li>
-                  <li>Reverse engineer, decompile, or attempt to extract the source code of the Platform.</li>
-                  <li>Share or redistribute the Platform or your access credentials without permission.</li>
-                </ul>
-              </li>
+              <li>Attempt to disrupt or interfere with the Platform's operation.</li>
+              <li>Reverse engineer, decompile, or attempt to extract the source code of the Platform.</li>
+              <li>Share or redistribute the Platform or your access credentials without permission.</li>
             </ul>
 
             <h2 className="terms-heading">Content And Intellectual Property</h2>
@@ -171,7 +184,7 @@ const TermsCondition = () => {
 
             <h2 className="terms-heading">Contact Information</h2>
             <p className="terms-paragraph">
-              If you have questions about these Terms, contact us at: <a href="mailto:Support@gemscope-ai.com" className="text-purple-400 underline">Support@gemscope-ai.com</a>
+              If you have questions about these Terms, contact us at: <a href="mailto:support@gemscope-ai.com" className="text-purple-400 underline">support@gemscope-ai.com</a>
             </p>
             <p className="terms-paragraph">
               <b>Effective Date:</b> [Insert Launch Date]<br/>

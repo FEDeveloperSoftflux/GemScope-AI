@@ -50,33 +50,32 @@ const Verification = () => {
   return (
     <>
       <div className="min-h-screen flex flex-col lg:flex-row bg-black overflow-hidden p-5">
-        {/* Left Panel */}
-        <div
-          className="w-full lg:flex-1 relative flex flex-col justify-between p-4 sm:p-6 md:p-10 lg:p-16 pl-2 sm:pl-6 md:pl-10 lg:pl-16 rounded-3xl lg:rounded-4xl mb-6 lg:mb-0 h-72 sm:h-96 lg:h-auto"
-          style={{
-            backgroundImage: `url(${Background})`,
-            backgroundSize: 'cover',
-            backgroundPosition: 'center',
-            backgroundRepeat: 'no-repeat',
-            backgroundColor: '#000',
-          }}
-        >
-          <div className="absolute top-4 left-4 sm:top-8 sm:left-8 text-white text-xl sm:text-2xl font-semibold  px-3 py-1 rounded-lg shadow-md z-20 font-['Schibsted Grotesk']">
-            A WISE QUOTE
-          </div>
-          <div className="absolute inset-0 "></div>
-          <div className="relative z-10 flex-1 flex flex-col justify-end">
-          <h1 className="text-left font-weight-500 font-medium font-['Schibsted Grotesk'] text-[28px] sm:text-[42px] md:text-[52px] lg:text-[65px] leading-[34px] sm:leading-[48px] md:leading-[58px] lg:leading-[70px] tracking-[-0.03em] text-white mb-0" style={{ maxWidth: '749px' }}>
-            The Crypto Gold Rush Is Now
+              {/* Left Panel */}
+      <div
+      className="w-full lg:flex-1 relative flex flex-col justify-between p-4 sm:p-6 md:p-8 lg:p-10 pl-2 sm:pl-4 md:pl-8 lg:pl-10 rounded-3xl lg:rounded-4xl h-[40vh] lg:h-auto mb-4 lg:mb-0"
+      style={{
+        backgroundImage: `url(${Background})`,
+        backgroundSize: 'cover',
+        backgroundPosition: 'bottom',  
+        backgroundRepeat: 'no-repeat',
+      }}>
+
+        <div className="absolute top-4 left-4 sm:top-8 sm:left-8 text-white text-xl sm:text-2xl font-medium px-3 py-1 rounded-lg shadow-md z-20 font-['Schibsted Grotesk'] ">
+          A WISE QUOTE
+        </div>
+        <div className="absolute inset-0 "></div>
+        <div className="relative flex-1 flex flex-col justify-end items-start">
+          <h1 className="font-['Schibsted Grotesk'] font-medium text-[28px] sm:text-[42px] md:text-[52px] lg:text-[65px] leading-[34px] sm:leading-[48px] md:leading-[58px] lg:leading-[70px] tracking-[-0.03em] text-white mb-0" style={{ maxWidth: '749px' }}>
+            The Wealth Revolution Has Begun
           </h1>
-          <p className="text-left text-white text-sm sm:text-base font-weight-500 mt-4 font-['Lato']">
+          <p className="text-white text-sm sm:text-base font-medium mt-4 font-['Lato'] text-left">
             Crypto isn't just the future of Money, it's the rebellion <br />
             against a broken system - It's Wall Street for the people.
           </p>
         </div>
-        </div>
+      </div>
         {/* Right Panel */}
-        <div className="w-full lg:flex-1 bg-gray-950 flex flex-col justify-center items-center p-4 sm:p-10 md:p-14 lg:p-10 rounded-3xl lg:rounded-4xl relative">
+        <div className="w-full lg:flex-1 bg-black flex flex-col justify-center items-center p-4 sm:p-10 md:p-14 lg:p-10 rounded-3xl lg:rounded-4xl relative">
           <div className="w-full max-w-2xl mx-auto px-4 sm:px-8">
             {/* Logo Section */}
             <div className="flex flex-col items-center sm:flex-row sm:items-center mb-6 sm:mb-12">
@@ -183,7 +182,7 @@ const Verification = () => {
         <>
           <div className="fixed inset-0 z-40 backdrop-blur-[6px] bg-black/30"></div>
           <div className="fixed inset-0 z-50 flex items-center justify-center px-2 sm:px-0">
-            <div className="bg-zinc-800 rounded-2xl p-4 sm:p-8 w-full max-w-xs sm:max-w-md md:max-w-lg lg:w-[500px] max-w-[90vw] flex flex-col items-center shadow-2xl">
+            <div className="bg-[#202020] rounded-2xl p-4 sm:p-8 w-full max-w-xs sm:max-w-md md:max-w-lg lg:w-[500px] max-w-[90vw] flex flex-col items-center shadow-2xl">
               <h3 className="text-2xl sm:text-2xl font-semibold text-white mb-6 sm:mb-8 text-center">Enter OTP Code</h3>
               <form onSubmit={handleVerifyCode} className="w-full flex flex-col items-center">
                 <div className="flex justify-center gap-2 sm:gap-3 mb-4 sm:mb-6">
@@ -202,12 +201,12 @@ const Verification = () => {
                   ))}
                 </div>
                 <div className="flex flex-col items-center gap-1 sm:gap-2 mb-4 sm:mb-6">
-                  <button type="button" className="text-gray-600 text-sm sm:text-sm hover:text-white transition-colors font-['Schibsted Grotesk']">Resend Code</button>
-                  <button type="button" className="text-gray-600 text-sm sm:text-sm hover:text-white transition-colors font-['Schibsted Grotesk']">Call Request</button>
+                  <button type="button" className="text-gray-200 text-sm sm:text-sm hover:text-white transition-colors font-['Schibsted Grotesk']">Resend Code</button>
+                  <button type="button" className="text-gray-200 text-sm sm:text-sm hover:text-white transition-colors font-['Schibsted Grotesk']">Call Request</button>
                 </div>
                 <button
                   type="submit"
-                  className="w-full py-2 sm:py-3 rounded-2xl font-semibold text-sm sm:text-lg bg-gradient-to-r from-purple-400 via-white to-pink-400 text-black shadow-md transition-all duration-200"
+                  className={`w-full py-2 sm:py-3 rounded-2xl font-medium text-sm sm:text-lg text-black shadow-black/60 drop-shadow-lg transition-all duration-300 ease-in-out active:scale-95 font-['Schibsted_Grotesk'] shadow-[inset_-4px_0_8px_rgba(0,0,0,0.3),inset_4px_0_8px_rgba(0,0,0,0.3)] bg-gradient-to-r from-purple-400 via-white to-pink-400`}
                 >
                   Verify Code
                 </button>

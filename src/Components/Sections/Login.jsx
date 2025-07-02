@@ -72,7 +72,7 @@ const Login = () => {
       </div>
 
       {/* Right Panel */}
-      <div className="w-full lg:flex-1 bg-gray-950 flex flex-col justify-center items-center p-4 sm:p-6 md:p-8 lg:p-6 rounded-3xl lg:rounded-4xl relative">
+      <div className="w-full lg:flex-1 bg-black flex flex-col justify-center items-center p-4 sm:p-6 md:p-8 lg:p-6 rounded-3xl lg:rounded-4xl relative">
         {/* Logo + Welcome Section */}
         <div className="w-full max-w-2xl mx-auto px-2 sm:px-6">
           <div className="flex flex-col items-center sm:flex-row sm:items-center mb-20 sm:mb-10">

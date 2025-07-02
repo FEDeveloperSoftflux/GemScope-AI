@@ -1,7 +1,8 @@
 import React, { useEffect, useState } from 'react';
 import CrossButton from '../../../Common/CrossButton';
+import Crown from '../../../../assets/Crown.svg'
 
-const AIAnalysisModal = ({ open, onClose, plan = 'Free Tier', promptsRemaining = 3, progress = 100 }) => {
+const AIAnalysisModal = ({ open, onClose, onComplete, plan = 'Free Tier', promptsRemaining = 3, progress = 100 }) => {
   const [animatedProgress, setAnimatedProgress] = useState(0);
 
   useEffect(() => {
@@ -15,13 +16,14 @@ const AIAnalysisModal = ({ open, onClose, plan = 'Free Tier', promptsRemaining =
       }, 100); // Adjust speed here
       return () => clearTimeout(timeout);
     } else if (animatedProgress === 100) {
-      // Wait a moment, then close the modal
+      // Wait a moment, then call onComplete and close the modal
       const closeTimeout = setTimeout(() => {
+        if (onComplete) onComplete();
         onClose();
       }, 500); // 0.5s after reaching 100%
       return () => clearTimeout(closeTimeout);
     }
-  }, [animatedProgress, open, onClose]);
+  }, [animatedProgress, open, onClose, onComplete]);
 
   if (!open) return null;
 
@@ -46,7 +48,7 @@ const AIAnalysisModal = ({ open, onClose, plan = 'Free Tier', promptsRemaining =
           <span className="text-white text-xl font-medium  font-['Schibsted_Grotesk']">AI Analysis in Progress</span>
         </div>
         {/* Animated Progress Bar */}
-        <div className="w-full flex flex-col items-center">
+        <div className="w-full flex flex-col items-center mb-4">
           <div className="w-full h-5 bg-black rounded-full overflow-hidden relative">
             <div
               className="h-full absolute left-0 top-0 transition-all duration-500"
@@ -59,6 +61,16 @@ const AIAnalysisModal = ({ open, onClose, plan = 'Free Tier', promptsRemaining =
             <span className="absolute right-4 top-1/2 -translate-y-1/2 text-white text-lg font-medium font-['Schibsted_Grotesk']">{animatedProgress}%</span>
           </div>
         </div>
+        {/* Upgrade Now Button if last prompt */}
+        {promptsRemaining === 0 && (
+          <button
+            className="w-full mt-4 py-2 rounded-2xl text-lg font-semibold flex items-center justify-center gap-2 bg-gradient-to-r from-purple-600 via-white to-pink-300 text-black shadow-lg transition hover:scale-105"
+            style={{ boxShadow: '0 4px 50px 0 rgba(236, 72, 153, 0.15)' }}
+          >
+            <img src={Crown} alt="Crown" className="w-5 h-5" /> 
+            <span className="font-['Schibsted_Grotesk'] font-medium">Upgrade Now</span>
+          </button>
+        )}
         {/* CrossButton for closing */}
         <div className="absolute top-4 right-4">
           <CrossButton onClick={onClose} />

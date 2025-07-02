@@ -1,6 +1,6 @@
 import React from 'react';
 import Card from '../Common/Card';
-import ContainerImage from '../../assets/Container.png';
+import ContainerImage from '../../assets/Middle.png';
 import OverlayImage from '../../assets/Overlay.png';
 import Image1 from '../../assets/Image1.png';
 import Image2 from '../../assets/Image11.png';
@@ -11,6 +11,7 @@ import SolanaLogo from '../../assets/Solane.svg';
 import TetherLogo from '../../assets/Tether.svg';
 import BinanceLogo from '../../assets/Binance.svg';
 import EthereumLogo from '../../assets/Ethreum.svg';
+import Chat from '../../assets/Chat.png'
 
 const cryptoLogos1 = [CardanoLogo, BitcoinLogo, XrpLogo, SolanaLogo];
 const cryptoLogos2 = [TetherLogo, BinanceLogo, EthereumLogo];
@@ -64,7 +65,21 @@ const LifeChanging = () => {
             {/* Two more containers below, stacked vertically on small screens, side by side on larger screens */}
             <div className="flex flex-col sm:flex-row gap-6 mt-8">
               <div className="bg-black/80 rounded-2xl shadow-lg w-full sm:w-1/2 relative overflow-hidden min-h-[300px]">
+                <div className="absolute top-4 left-0 w-full px-4 sm:px-6 z-10 flex justify-center">
+                  <div className="bg-black rounded-2xl py-1 px-6 flex flex-col items-center ">
+                    <img src={Chat} alt="Chat Icon" className="h-60 w-80 object-contain" />
+                    <button className="relative px-14 py-2 text-[16px] font-medium sm:text-[12px] md:text-[16px] text-black bg-gradient-to-r from-purple-400 via-white to-pink-300 rounded-xl 
+           shadow-black/60 drop-shadow-lg transform transition-all duration-300 ease-in-out active:scale-95
+           font-['Schibsted_Grotesk'] shadow-[inset_-4px_0_8px_rgba(0,0,0,0.3),inset_4px_0_8px_rgba(0,0,0,0.3)] mb-3">
+                      Sign Up For Answers
+                    </button>
+                  </div>
+                </div>
                 <img src={ContainerImage} alt="image" className="w-full h-full " />
+                <div className="absolute bottom-4 left-0 w-full px-4 sm:px-6">
+                  <p className="text-white text-left text-[20px] font-['Lato'] font-bold mb-4">Clarity Over Complexity</p>
+                  <p className="text-white/90 text-left text-[15px] font-['Lato'] mr-2 text-light mb-2">No jargon. No BS scam projects. Just straight high level investment analysis for confidence you're doing it right.</p>
+                </div>
               </div>
           
               <div className="bg-zinc-950 border border-white/10 rounded-2xl  w-full sm:w-1/2 relative overflow-hidden min-h-[300px] p-6">
@@ -74,14 +89,14 @@ const LifeChanging = () => {
               <p className="text-white/70 font-['Lato'] text-[16px] leading-[20px] mr-10">
                 One wrong move could waste your time. More importantly, your portfolio could be completely wiped out. GemScope helps you avoid rug pulls and keeps you from HODL'ing unworthy coins.
                 </p>
-                <img src={OverlayImage} alt="image" className="absolute bottom-0 left-1/2 -translate-x-1/2 w-75 h-65 mb-2 align-middle"/>
+                <img src={OverlayImage} alt="image" className="absolute bottom-0 left-1/2 -translate-x-1/2 w-80 h-65 mb-2 align-middle"/>
               </div>
           
             </div>
           </div>
                     {/* Right side: green box */}
                     <div
-            className="w-full md:w-[340px] min-h-[640px] rounded-2xl flex-shrink-0 mt-8 md:mt-0 bg-cover bg-center relative overflow-hidden border-b-1 border-gray-600"
+            className="w-full md:w-[340px] min-h-[640px] rounded-2xl flex-shrink-0 mt-8 md:mt-0 bg-cover bg-center relative overflow-hidden "
             style={{ backgroundImage: `url(${Image1})` }}
           >
             <p className="text-white  p-2  ml-5 mt-5 font-['Lato'] font-weight-700 text-[20px] leading-[26px] tracking-[-0.4px]">
@@ -93,7 +108,7 @@ const LifeChanging = () => {
             <img 
               src={Image2} 
               alt="Lower Right" 
-              className="absolute right-0 bottom-0 w-1/2 min-w-[60px] max-w-xs  sm:w-[90%] sm:h-[70%]  md:w-[90%] md:h-[70%]  lg:w-[90%] lg:h-[70%]" 
+              className="absolute right-0 bottom-0 w-1/2 min-w-[60px] max-w-xs  sm:w-[90%] sm:h-[70%]  md:w-[90%] md:h-[70%]  lg:w-[90%] lg:h-[72%]" 
               style={{ minWidth: '60px' }}
             />
           </div>

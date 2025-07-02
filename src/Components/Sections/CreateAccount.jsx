@@ -62,14 +62,13 @@ const CreateAccount = () => {
             The Crypto Gold Rush Is Now
           </h1>
           <p className="text-left text-white text-sm sm:text-base font-weight-500 mt-4 font-['Lato']">
-            Crypto isn't just the future of Money, it's the rebellion <br />
-            against a broken system - It's Wall Street for the people.
+          This is the greatest wealth transfer in human history. You're<br/>either in early... or you'll wish you were.
           </p>
         </div>
       </div>
 
       {/* Right Panel */}
-      <div className="w-full lg:flex-1 bg-gray-950 flex flex-col justify-center items-center p-4 sm:p-6 md:p-8 lg:p-6 rounded-3xl lg:rounded-4xl relative">
+      <div className="w-full lg:flex-1 bg-black flex flex-col justify-center items-center p-4 sm:p-6 md:p-8 lg:p-6 rounded-3xl lg:rounded-4xl relative">
         <div className="w-full max-w-3xl mx-auto px-4 sm:px-6">
           <div className="flex flex-col items-center sm:flex-row sm:items-center mb-4 sm:mb-10">
             <img src={Logo} alt="GemScope AI Logo" className="w-10 h-10 object-contain mb-2 sm:mb-0" />

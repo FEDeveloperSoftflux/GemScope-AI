@@ -130,15 +130,15 @@ const AppContent = () => {
   const faqData = [
     {
       question: "What is GemScope AI?",
-      answer: "GemScope.Al is a platform that uses Al to assess and uncover undervalued or unknown crypto projects, providing detailed analysis scores and summaries."
+      answer: "GemScope AI is a platform that uses AI to assess and uncover undervalued or unknown crypto projects, providing detailed scores and summaries. It is also a tool to analyse your favourite coins to retrieve never before seen data so you can get the best investment insights"
     },
     {
       question: "How does the AI analysis work?",
-      answer: "We use GPT-4 to evaluate various aspects of crypto projects, including their potential, authenticity, and risks, presenting the findings in an easy-to-understand format."
+      answer: "We use AI to evaluate various aspects of crypto projects, including their potential, authenticity, and risks, presenting the findings in an easy-to-understand format."
     },
     {
        question: "Which crypto data sources are used?",
-       answer: "Our Al gathers data from CoinGecko, Luna Crush, DexTools, Reddit, and other trusted sources to ensure comprehensive analysis.",
+       answer: "Our AI gathers data from CoinGecko, Luna Crush, DexTools, Reddit, and other trusted sources to ensure comprehensive analysis.",
     },
     {  
     question: "Is there a free version available?",
@@ -152,7 +152,7 @@ const AppContent = () => {
 
   // State for FAQ toggle - tracks which FAQ item is currently open
   const [openFaqIndex, setOpenFaqIndex] = useState(null);
-  const [userPlan, setUserPlan] = useState("pro");
+  const [userPlan, setUserPlan] = useState("free");
 
   // Handle FAQ toggle - only one FAQ can be open at a time
   const handleFaqToggle = (index) => {
