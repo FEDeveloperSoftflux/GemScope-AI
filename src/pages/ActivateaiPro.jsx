@@ -8,6 +8,9 @@ import UpgradeRequiredModal from '../Components/Sections/Dashboard/modal/Upgrade
 import BitcoinLogo from '../assets/Bitcoin1.svg';
 import Meter from '../assets/Meter.svg'
 import DownloadG from '../assets/DownloadG.svg';
+import BinanceLogo from '../assets/Binance.svg';
+import GithubRepo from '../assets/GithubRepo.svg';
+import GithubRepo2 from '../assets/GitRepo2.svg';
 
 const promptOptions = [
   'Show me a hidden gem',
@@ -32,7 +35,56 @@ const coinData = [
     circulatingSupply: '19,756,231',
     inflationModel: 'Capped',
   },
-  // Add more coins here as needed
+];
+
+
+// Add this after coinData
+const exchangeCoinData = [
+  {
+    logo: BinanceLogo,
+    name: 'Binance',
+    type: 'CEX',
+    pair: 'BTC/USDT',
+    volume: '$19,756,231',
+    trust: 'No Trust',
+    trustColor: 'bg-red-900/30 text-red-600',
+  },
+  {
+    logo: '', // Bybit logo not found, use placeholder or BinanceLogo
+    name: 'Bybit',
+    type: 'CEX',
+    pair: 'BTC/USDT',
+    volume: '$19,756,231',
+    trust: 'Fair Trust',
+    trustColor: 'bg-yellow-900/30 text-yellow-600',
+  },
+  {
+    logo: '', // OKX logo not found, use placeholder or BinanceLogo
+    name: 'OKX',
+    type: 'CEX',
+    pair: 'BTC/USDT',
+    volume: '$19,756,231',
+    trust: 'High Trust',
+    trustColor: 'bg-green-900/30 text-green-600',
+  },
+  {
+    logo: '', // Coinbase logo not found, use placeholder or BinanceLogo
+    name: 'Coinbase',
+    type: 'CEX',
+    pair: 'BTC/USDT',
+    volume: '$19,756,231',
+    trust: 'No Trust',
+    trustColor: 'bg-red-900/30 text-red-600',
+  },
+  {
+    logo: BinanceLogo,
+    name: 'Binance',
+    type: 'CEX',
+    pair: 'BTC/USDT',
+    volume: '$19,756,231',
+    trust: 'High Trust',
+    trustColor: 'bg-green-900/30 text-green-600',
+  },
 ];
 
 const ActivateAI = ({ plan, setUserPlan }) => {
@@ -148,7 +200,7 @@ const ActivateAI = ({ plan, setUserPlan }) => {
                 Export PDF
               </button>
           </div>
-          <div className="rounded-3xl p-4 bg-[#202020] shadow-lg border border-[#23232B] w-full max-w-full mx-auto mb-0 pb-0">
+          <div className="rounded-3xl p-4 bg-[#202020] shadow-lg border border-[#23232B] w-full max-w-full mx-auto mb-0 pb-0 overflow-hidden">
             <div className="overflow-x-auto">
               <table className="min-w-full text-left">
                 <thead>
@@ -267,47 +319,86 @@ const ActivateAI = ({ plan, setUserPlan }) => {
             </div>
           </div>
         </div>
+        {/*Git Section */}
+        <div className="mt-10 mb-4 w-full max-w-6xl mx-auto">
+          <div className="flex items-center justify-between mb-2">
+            <div className="flex items-center">
+              <h2 className="text-2xl font-medium text-white mr-4 font-[Schibsted_Grotesk]">
+                GitHub Social Profile Activity + Link
+              </h2>
+            </div>
+          </div>
+          <div className="rounded-3xl px-6 py-4 bg-[#202020] shadow-lg border border-[#23232B] w-full max-w-full mx-auto mb-0 pb-0">
+            <div>
+              <span className="block text-white mb-4 mt-2 font-['Lato'] text-[18px]">
+                This repo has 84169 stars, 30 contributors, and 30 commits in recent history.
+              </span>
+              <a
+                href="#"
+                className="hover:underline text-sm mb-6 inline-block font-['Lato'] text-[16px] bg-gradient-to-r from-pink-500 via-purple-500 to-blue-500 text-transparent bg-clip-text"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                View Repository
+                <img
+                  src="/src/assets/GithubRepo.svg"
+                  alt="GitHub Repo"
+                  className="inline-block w-4 h-3 ml-1 align-text-bottom"
+                  style={{ display: 'inline', verticalAlign: 'middle' }}
+                />
+              </a>
+            </div>
+          </div>
+        </div>
 
         <div className="mt-10 mb-4 w-full max-w-6xl mx-auto">
           <div className="flex items-center justify-between mb-2">
             <div className="flex items-center">
-              <h2 className="text-2xl font-medium text-white mr-4 font-[Schibsted_Grotesk]">Tokenomics</h2>
+              <h2 className="text-2xl font-medium text-white mr-4 font-[Schibsted_Grotesk]">Top 5 Exchange Listings (If Applicable)</h2>
             </div>
           </div>
-          <div className="rounded-3xl p-4 bg-[#202020] shadow-lg border border-[#23232B] w-full max-w-full mx-auto mb-0 pb-0">
+          <div className="rounded-3xl p-4 bg-[#202020] shadow-lg border border-[#23232B] w-full max-w-full mx-auto mb-0 pb-0 overflow-hidden">
             <div className="overflow-x-auto">
-              <table className="min-w-full text-left">
-                <thead>
-                  <tr className="bg-black text-white text-sm">
-                    <th className="py-2 px-6 font-semibold font-['Schibsted_Grotesk'] bg-black rounded-tl-2xl rounded-bl-2xl">Coin Name</th>
-                    <th className="py-2 px-6 font-normal font-['Schibsted_Grotesk'] text-gray-400">Price</th>
-                    <th className="py-2 px-6 font-normal font-['Schibsted_Grotesk'] text-gray-400">Market Cap</th>
-                    <th className="py-2 px-6 font-normal font-['Schibsted_Grotesk'] text-gray-400">Market Cap Rank</th>
-                    <th className="py-2 px-6 font-normal font-['Schibsted_Grotesk'] text-gray-400">Total Supply</th>
-                    <th className="py-2 px-6 font-normal font-['Schibsted_Grotesk'] text-gray-400">Max Supply</th>
-                    <th className="py-2 px-6 font-normal font-['Schibsted_Grotesk'] text-gray-400">Circulating Supply</th>
-                    <th className="py-2 px-6 font-normal font-['Schibsted_Grotesk'] text-gray-400 rounded-tr-2xl rounded-br-2xl">Inflation Model</th>
+              <table className="min-w-full w-full text-left block overflow-x-auto overflow-hidden">
+                <thead className="w-full block">
+                  <tr className="bg-black text-white text-sm w-full flex rounded-tl-2xl rounded-tr-2xl rounded-bl-2xl rounded-br-2xl overflow-hidden">
+                    <th className="py-2 px-6 font-normal font-['Schibsted_Grotesk'] text-gray-400 flex-1 text-left">Exchange Number</th>
+                    <th className="py-2 px-6 font-normal font-['Schibsted_Grotesk'] text-gray-400 flex-1 text-left">Exchange Listing</th>
+                    <th className="py-2 px-6 font-normal font-['Schibsted_Grotesk'] text-gray-400 flex-1 text-left">Trading Pair</th>
+                    <th className="py-2 px-6 font-normal font-['Schibsted_Grotesk'] text-gray-400 flex-1 text-left">24h Volume </th>
+                    <th className="py-2 px-6 font-normal font-['Schibsted_Grotesk'] text-gray-400 flex-1 text-left">Trust Score</th>
                   </tr>
                 </thead>
-                <tbody className="bg-[#202020] text-white text-base">
-                  {coinData.map((coin, idx) => (
-                    <tr key={idx} className=" transition text-white border-t border-[#232323]">
-                      <td className="py-4 px-6 flex items-center gap-3 font-['Schibsted_Grotesk']">
-                        <img src={coin.logo} alt={coin.symbol} className="w-7 h-7" />
+                <tbody className="bg-[#202020] text-white text-base w-full block">
+                  {exchangeCoinData.map((exchange, idx) => (
+                    <tr key={idx} className={`transition text-white border-t border-[#232323] w-full flex${idx === exchangeCoinData.length - 1 ? ' rounded-bl-2xl rounded-br-2xl overflow-hidden' : ''}`}>
+                      {/* Exchange Number */}
+                      <td className="py-4 px-6 flex-1 flex items-center font-['Schibsted_Grotesk']">{idx + 1}</td>
+                      {/* Exchange Listing: logo, name, type */}
+                      <td className="py-4 px-6 flex-1 flex items-center gap-3 font-['Schibsted_Grotesk']">
+                        {exchange.logo ? (
+                          <img src={exchange.logo} alt={exchange.name} className="w-7 h-7" />
+                        ) : (
+                          <div className="w-7 h-7 rounded-full flex items-center justify-center font-bold text-black" style={{background: exchange.name === 'Bybit' ? '#F9D23C' : exchange.name === 'OKX' ? '#222' : exchange.name === 'Coinbase' ? '#1652F0' : '#ccc'}}>
+                            {exchange.name.slice(0,2).toUpperCase()}
+                          </div>
+                        )}
                         <div>
-                          <div className="font-semibold">{coin.name}</div>
-                          <div className="text-xs text-white/60">{coin.symbol}</div>
+                          <div className="font-semibold">{exchange.name}</div>
+                          <div className="text-xs text-white/60">{exchange.type}</div>
                         </div>
                       </td>
-                      <td className="py-4 px-6 text-green-400 font-normal font-['Schibsted_Grotesk']">{coin.price}</td>
-                      <td className="py-4 px-6 font-['Schibsted_Grotesk']">{coin.marketCap}</td>
-                      <td className="py-4 px-6 font-['Schibsted_Grotesk']">
-                        <span className="bg-green-900/30 text-green-400 px-4 py-1 rounded-full text-xs font-normal">{coin.rank}</span>
+                      {/* Trading Pair */}
+                      <td className="py-4 px-6 flex-1 font-['Schibsted_Grotesk'] flex items-center ">
+                        {exchange.pair}
+                        <span className="ml-1 mb-2">
+                          <img src={GithubRepo2} alt="link" className="inline-block w-3 h-3 align-text-bottom" />
+                        </span>
                       </td>
-                      <td className="py-4 px-6 font-['Schibsted_Grotesk']">{coin.totalSupply}</td>
-                      <td className="py-4 px-6 font-['Schibsted_Grotesk']">{coin.maxSupply}</td>
-                      <td className="py-4 px-6 font-['Schibsted_Grotesk']">{coin.circulatingSupply}</td>
-                      <td className="py-4 px-6 font-['Schibsted_Grotesk']">{coin.inflationModel}</td>
+                      {/* 24h Volume */}
+                      <td className="py-4 px-6 flex-1 font-['Schibsted_Grotesk']">{exchange.volume}</td>
+                      {/* Trust Score */}
+                      <td className={`py-4 px-6 flex-1 font-['Schibsted_Grotesk']${idx === exchangeCoinData.length - 1 ? ' rounded-br-2xl' : ''}`}> <span className={`${exchange.trustColor} px-4 py-1 rounded-full text-xs font-normal`}>{exchange.trust}</span></td>
                     </tr>
                   ))}
                 </tbody>
@@ -320,7 +411,7 @@ const ActivateAI = ({ plan, setUserPlan }) => {
         open={modalOpen}
         onClose={() => setModalOpen(false)}
         onComplete={handleAnalysisComplete}
-        plan={'Free Tier'}
+        plan={'pro'}
         promptsRemaining={promptsRemaining}
         progress={progress}
       />

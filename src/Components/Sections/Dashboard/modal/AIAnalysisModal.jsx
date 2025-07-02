@@ -32,16 +32,22 @@ const AIAnalysisModal = ({ open, onClose, onComplete, plan = 'Free Tier', prompt
       <div className="bg-[#202020] rounded-3xl shadow-2xl p-10 w-[600px] relative flex flex-col items-center">
         {/* Plan and Prompts Remaining */}
         <div className="flex flex-row items-center w-full mb-8">
-          <span className=" text-white text-xl font-medium font-['Schibsted_Grotesk']">{plan}</span>
-          <span
-            className="px-4 py-1 rounded-full text-sm font-normal shadow-lg font-['Schibsted_Grotesk'] ml-4"
-            style={{
-              background: 'rgba(120, 58, 129, 0.18)', // translucent purple
-              color: '#d48aff', // soft pink
-            }}
-          >
-            {promptsRemaining} AI Prompts Remaining
-          </span>
+          <span className=" text-white text-xl font-medium font-['Schibsted_Grotesk']">{
+            plan === 'pro' ? 'Pro Tier' :
+            plan === 'enterprise' || plan === 'Enterprise Tier' ? 'Enterprise Tier' :
+            plan === 'free' || plan === 'Free Tier' ? 'Free Tier' : plan
+          }</span>
+          {(plan === 'Free Tier' || plan === 'pro') && (
+            <span
+              className="px-4 py-1 rounded-full text-sm font-normal shadow-lg font-['Schibsted_Grotesk'] ml-4"
+              style={{
+                background: 'rgba(120, 58, 129, 0.18)', // translucent purple
+                color: '#d48aff', // soft pink
+              }}
+            >
+              {promptsRemaining} AI Prompts Remaining
+            </span>
+          )}
         </div>
         {/* Analysis Text */}
         <div className="w-full flex flex-col items-left mb-8">
@@ -61,8 +67,8 @@ const AIAnalysisModal = ({ open, onClose, onComplete, plan = 'Free Tier', prompt
             <span className="absolute right-4 top-1/2 -translate-y-1/2 text-white text-lg font-medium font-['Schibsted_Grotesk']">{animatedProgress}%</span>
           </div>
         </div>
-        {/* Upgrade Now Button if last prompt */}
-        {promptsRemaining === 0 && (
+        {/* Upgrade Now Button if last prompt (not for Enterprise) */}
+        {plan !== 'Enterprise' && promptsRemaining === 0 && (
           <button
             className="w-full mt-4 py-2 rounded-2xl text-lg font-semibold flex items-center justify-center gap-2 bg-gradient-to-r from-purple-600 via-white to-pink-300 text-black shadow-lg transition hover:scale-105"
             style={{ boxShadow: '0 4px 50px 0 rgba(236, 72, 153, 0.15)' }}
@@ -81,3 +87,6 @@ const AIAnalysisModal = ({ open, onClose, onComplete, plan = 'Free Tier', prompt
 };
 
 export default AIAnalysisModal; 
+
+
+

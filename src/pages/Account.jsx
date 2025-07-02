@@ -5,7 +5,7 @@ import AccountIcon from '../assets/Account.svg';
 import EditIcon from '../assets/Edit.svg';
 import EyeIcon from '../assets/Eye.svg';
 
-const Account = () => {
+const Account = ({ plan = "free", setUserPlan }) => {
   const [form, setForm] = useState({
     name: 'Jaydeep',
     email: 'jkmethot@gmail.com',
@@ -49,7 +49,7 @@ const Account = () => {
     <div className="h-screen bg-black text-white flex">
       <Sidebar selected="Account" />
       <div className="flex-1 p-6 overflow-y-auto flex flex-col">
-        <DHeader title="Account" icon={AccountIcon} />
+        <DHeader title="Account" icon={AccountIcon} plan={plan} setUserPlan={setUserPlan} />
         <div className="w-full max-w-6xl mx-auto rounded-3xl p-8 bg-[#202020] shadow-lg border border-[#23232B] mt-4 relative flex flex-col flex-grow min-h-[calc(100vh-120px)]">
           <form onSubmit={handleSave} className="grid grid-cols-1 md:grid-cols-2 gap-6 flex-grow">
             <div className="flex flex-col gap-4">

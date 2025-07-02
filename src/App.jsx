@@ -207,9 +207,9 @@ const AppContent = () => {
               <ActivateAI plan={userPlan} setUserPlan={setUserPlan} />
             )
           } />
-          <Route path="/history" element={<History />} />
-          <Route path="/billing" element={<Billing />} />
-          <Route path="/account" element={<Account />} />
+          <Route path="/history" element={<History plan={userPlan} setUserPlan={setUserPlan} />} />
+          <Route path="/billing" element={<Billing plan={userPlan} setUserPlan={setUserPlan} />} />
+          <Route path="/account" element={<Account plan={userPlan} setUserPlan={setUserPlan} />} />
         </Routes>
       </main>
       {location.pathname !== '/login' && location.pathname !== '/create-account' && location.pathname !== '/verification' && location.pathname !== '/dashboard' && location.pathname !== '/activate-ai' && location.pathname !== '/history' && location.pathname !== '/billing' && location.pathname !== '/account' && <Footer />}

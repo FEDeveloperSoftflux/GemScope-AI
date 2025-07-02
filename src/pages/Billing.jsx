@@ -19,7 +19,7 @@ const tierColors = {
   'ENTERPRISE': 'bg-blue-900 text-blue-200',
 };
 
-const Billing = () => {
+const Billing = ({ plan = "free", setUserPlan }) => {
   const [search, setSearch] = useState('');
   const [selectedDate, setSelectedDate] = useState(new Date());
   const [showDatePicker, setShowDatePicker] = useState(false);
@@ -32,7 +32,7 @@ const Billing = () => {
     <div className="h-screen text-white flex">
       <Sidebar />
       <div className="flex-1 p-6 overflow-y-auto">
-        <DHeader title="Billing" icon={BillingIcon} />
+        <DHeader title="Billing" icon={BillingIcon} plan={plan} setUserPlan={setUserPlan} />
         <div className="mt-4 flex flex-col w-full">
           <div className="flex items-center justify-between mb-4">
             <div className="flex items-center gap-4 max-w-xl mr-8">

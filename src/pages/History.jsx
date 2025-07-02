@@ -57,7 +57,7 @@ const CustomCheckbox = ({ checked, onChange, className = '' }) => (
   </label>
 );
 
-const History = () => {
+const History = ({ plan = "free", setUserPlan }) => {
   const [search, setSearch] = useState('');
   const [selected, setSelected] = useState([]);
   const [selectAll, setSelectAll] = useState(false);
@@ -79,7 +79,7 @@ const History = () => {
     <div className="h-screen text-white flex">
       <Sidebar />
       <div className="flex-1 p-6 overflow-y-auto">
-        <DHeader title="Historic Prompts" icon={HistoryIcon} />
+        <DHeader title="Historic Prompts" icon={HistoryIcon} plan={plan} setUserPlan={setUserPlan} />
         <div className="mt-4 flex flex-col w-full">
           <div className="flex items-center justify-between mb-4">
             <div className="flex items-center gap-4 max-w-xl mr-8">
