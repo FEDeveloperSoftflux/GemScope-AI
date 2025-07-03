@@ -11,6 +11,8 @@ import CurveDao from '../assets/CurveDAO.png';
 import COTI from '../assets/COTI.svg';
 import XDC from '../assets/XDC.svg';
 import WhatsHot from '../Components/Sections/Dashboard/WhatsHot';
+import SupportModal from '../Components/Sections/Dashboard/modal/SupportModal';
+import SuccessModal from '../Components/Sections/Dashboard/modal/SuccessModal';
 
 const CryptoDashboard = ({ plan = "free", setUserPlan }) => {
   // Sample data 
@@ -37,9 +39,10 @@ const CryptoDashboard = ({ plan = "free", setUserPlan }) => {
     { name: 'Cardano', symbol: 'ADA', change: '+7.3%', icon: CurveDao }
   ];
 
-
-
- 
+  const [showSupportModal, setShowSupportModal] = useState(false);
+  const [supportEmail, setSupportEmail] = useState('');
+  const [supportMessage, setSupportMessage] = useState('');
+  const [showSuccessModal, setShowSuccessModal] = useState(false);
 
   return (
     <div className="h-screen bg-black text-white flex">
@@ -48,13 +51,23 @@ const CryptoDashboard = ({ plan = "free", setUserPlan }) => {
       <div className="flex-1 p-6 overflow-y-auto">
       <DHeader plan={plan} setUserPlan={setUserPlan} />
         <WelcomeSection />
-        <ActionCards />
+        <ActionCards onSupportClick={() => setShowSupportModal(true)} />
         
         <div className="grid grid-cols-3 gap-6 ml-10">
           <Watchlist cryptoData={cryptoData} />
           <div className="w-90 h-[800px]"><WhatsHot hotTokens={hotTokens} /></div>
         </div>
       </div> 
+      <SupportModal
+        open={showSupportModal}
+        onClose={() => setShowSupportModal(false)}
+        email={supportEmail}
+        setEmail={setSupportEmail}
+        message={supportMessage}
+        setMessage={setSupportMessage}
+        onSuccess={() => { setShowSupportModal(false); setShowSuccessModal(true); }}
+      />
+      <SuccessModal open={showSuccessModal} onClose={() => setShowSuccessModal(false)} />
     </div>
   );
 };

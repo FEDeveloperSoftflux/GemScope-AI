@@ -1,18 +1,26 @@
 import React, { useState } from 'react';
 import Sidebar from '../Components/Sections/Dashboard/Sidebar';
 import DHeader from '../Components/Sections/Dashboard/DHeader';
-import Background from '../assets/Background.png';
+import Background from '../assets/ActivateaiBG.png';
 import ActivateAIIcon from '../assets/ActivateAI.svg';
 import AIAnalysisModal from '../Components/Sections/Dashboard/modal/AIAnalysisModal';
 import UpgradeRequiredModal from '../Components/Sections/Dashboard/modal/UpgradeRequiredModal';
 import BitcoinLogo from '../assets/Bitcoin1.svg';
 import Meter from '../assets/Meter.svg'
+import Meter2 from '../assets/Meter2.svg'
 import DownloadG from '../assets/DownloadG.svg';
 import BinanceLogo from '../assets/Binance.svg';
 import GithubRepo from '../assets/GithubRepo.svg';
 import GithubRepo2 from '../assets/GitRepo2.svg';
 import Bot from '../assets/Bot.svg';
 import Diamond from '../assets/Diamond.svg';
+import RedFlag from '../assets/RedFlag.svg';
+
+import Binance from '../assets/Binance2.svg';
+import Bybit from '../assets/Bybit.svg';
+import OKX from '../assets/OKX.svg';
+import CoinBase from '../assets/CoinBase.svg';
+
 
 const promptOptions = [
   'Show me a hidden gem',
@@ -39,11 +47,23 @@ const coinData = [
   },
 ];
 
+const SocialData = [
+  {
+    Interactions : '80,203,498',
+    SpamPosts:'26',
+    SocialVolume : '88,686',
+    UniquePosts	:'836',
+    MultiSocialGalaxyScore :Meter,
+    SocialRanking :'1',
+    MarketSentiment: Meter,
+  },
+];
+
 
 // Add this after coinData
 const exchangeCoinData = [
   {
-    logo: BinanceLogo,
+    logo: Binance,
     name: 'Binance',
     type: 'CEX',
     pair: 'BTC/USDT',
@@ -52,7 +72,7 @@ const exchangeCoinData = [
     trustColor: 'bg-red-900/30 text-red-600',
   },
   {
-    logo: '', // Bybit logo not found, use placeholder or BinanceLogo
+    logo: Bybit, // Bybit logo not found, use placeholder or BinanceLogo
     name: 'Bybit',
     type: 'CEX',
     pair: 'BTC/USDT',
@@ -61,7 +81,7 @@ const exchangeCoinData = [
     trustColor: 'bg-yellow-900/30 text-yellow-600',
   },
   {
-    logo: '', // OKX logo not found, use placeholder or BinanceLogo
+    logo: OKX, // OKX logo not found, use placeholder or BinanceLogo
     name: 'OKX',
     type: 'CEX',
     pair: 'BTC/USDT',
@@ -70,7 +90,7 @@ const exchangeCoinData = [
     trustColor: 'bg-green-900/30 text-green-600',
   },
   {
-    logo: '', // Coinbase logo not found, use placeholder or BinanceLogo
+    logo: CoinBase, // Coinbase logo not found, use placeholder or BinanceLogo
     name: 'Coinbase',
     type: 'CEX',
     pair: 'BTC/USDT',
@@ -79,7 +99,7 @@ const exchangeCoinData = [
     trustColor: 'bg-red-900/30 text-red-600',
   },
   {
-    logo: BinanceLogo,
+    logo: Binance,
     name: 'Binance',
     type: 'CEX',
     pair: 'BTC/USDT',
@@ -146,7 +166,7 @@ const ActivateAI = ({ plan, setUserPlan }) => {
             <h1 className="text-[50px] font-medium mb-4 text-white text-center font-[Schibsted_Grotesk]">
               AI Powered <span className="bg-gradient-to-r from-yellow-400 via-orange-400 via-red-400  to-red-500 bg-clip-text text-transparent">Search & Analytics</span>
             </h1>
-            <p className="text-white/80 text-center mb-8 mt-4 text-lg font-['Lato] leading[28.8px]tracking-[0.18px]">Use natural language to discover and analyse cryptocurrency opportunities</p>
+            <p className="text-white/70 text-center mb-8 text-[17px] font-['Lato] leading[28.8px]tracking-[0.18px]">Use natural language to discover and analyse cryptocurrency opportunities</p>
             <div className="relative w-[800px] h-[65px] mx-auto mb-6 ">
               <input
                 type="text"
@@ -164,23 +184,23 @@ const ActivateAI = ({ plan, setUserPlan }) => {
               </button>
             </div>
             {/* Prompt Buttons */}
-            <div className="flex flex-col items-center w-full mt-8 gap-4">
-              <div className="flex justify-center gap-6 w-full">
+            <div className="flex flex-col items-center w-full mt-8 gap-8">
+              <div className="flex justify-center gap-5 w-full">
                 {promptOptions.slice(0, 4).map((prompt, idx) => (
                   <button
                     key={idx}
-                    className="px-3 py-2 rounded-xl bg-white/10 text-white/80 font-normal hover:bg-white hover:text-black transition font-['Lato'] text-[14px] leading-[22px] min-w-[150px] text-center"
+                    className="px-2 py-3 rounded-xl bg-white/10 text-white/80 font-normal hover:bg-white hover:text-black transition font-['Lato'] text-[14px] leading-[22px] min-w-[150px] text-center"
                     onClick={() => setSearch(prompt)}
                   >
                     {prompt}
                   </button>
                 ))}
               </div>
-              <div className="flex justify-center gap-4 w-full">
+              <div className="flex justify-center gap-5 w-full mb-5">
                 {promptOptions.slice(4).map((prompt, idx) => (
                   <button
                     key={idx + 4}
-                    className="px-3 py-2 rounded-xl bg-white/10 text-white/80 font-normal hover:bg-white hover:text-black transition font-['Lato'] text-[14px] leading-[22px] min-w-[150px] text-center"
+                    className="px-2 py-3 rounded-xl bg-white/10 text-white/80 font-normal hover:bg-white hover:text-black transition font-['Lato'] text-[14px] leading-[22px] min-w-[150px] text-center"
                     onClick={() => setSearch(prompt)}
                   >
                     {prompt}
@@ -191,51 +211,51 @@ const ActivateAI = ({ plan, setUserPlan }) => {
           </div>
         </div>
         {/* Tokenomics Section */}
-        <div className="mt-10 mb-4 w-full max-w-6xl mx-auto">
+        <div className="mt-10 mb-4 w-full max-w-6xl ">
           <div className="flex items-center justify-between mb-2">
             <div className="flex items-center">
-              <h2 className="text-2xl font-medium text-white mr-4 font-[Schibsted_Grotesk]">Tokenomics</h2>
-              <span className="bg-purple-900/30 text-purple-400 text-xs px-1 py-1 rounded-full font-normal ml-2 font-['Schibsted_Grotesk']">Pro Plan</span>
+              <h2 className="text-2xl font-medium text-white mr-4 font-[Schibsted_Grotesk] mb-4">Tokenomics</h2>
+              
             </div>
             <button className="px-4 py-2 rounded-lg bg-[#202020] hover:bg-[#2e2e2e] text-white/60 text-sm font-normal border border-[#333] font-[Schibsted_Grotesk] ">
                 <img src={DownloadG} alt="Download" className="inline-block w-5 h-4 mr-2 align-middle" />
-                Export PDF
+                Export Results
               </button>
           </div>
           <div className="rounded-3xl p-4 bg-[#202020] shadow-lg border border-[#23232B] w-full max-w-full mx-auto mb-0 pb-0 overflow-hidden">
             <div className="overflow-x-auto">
-              <table className="min-w-full text-left">
+              <table className="min-w-full text-center">
                 <thead>
                   <tr className="bg-black text-white text-sm">
-                    <th className="py-2 px-6 font-semibold font-['Schibsted_Grotesk'] bg-black rounded-tl-2xl rounded-bl-2xl">Coin Name</th>
-                    <th className="py-2 px-6 font-normal font-['Schibsted_Grotesk'] text-gray-400">Price</th>
-                    <th className="py-2 px-6 font-normal font-['Schibsted_Grotesk'] text-gray-400">Market Cap</th>
-                    <th className="py-2 px-6 font-normal font-['Schibsted_Grotesk'] text-gray-400">Market Cap Rank</th>
-                    <th className="py-2 px-6 font-normal font-['Schibsted_Grotesk'] text-gray-400">Total Supply</th>
-                    <th className="py-2 px-6 font-normal font-['Schibsted_Grotesk'] text-gray-400">Max Supply</th>
-                    <th className="py-2 px-6 font-normal font-['Schibsted_Grotesk'] text-gray-400">Circulating Supply</th>
-                    <th className="py-2 px-6 font-normal font-['Schibsted_Grotesk'] text-gray-400 rounded-tr-2xl rounded-br-2xl">Inflation Model</th>
+                    <th className="py-2 px-6 font-semibold font-['Schibsted_Grotesk'] bg-black rounded-tl-2xl rounded-bl-2xl text-center">Coin Name</th>
+                    <th className="py-2 px-6 font-normal font-['Schibsted_Grotesk'] text-gray-400 text-center">Price</th>
+                    <th className="py-2 px-6 font-normal font-['Schibsted_Grotesk'] text-gray-400 text-center">Market Cap</th>
+                    <th className="py-2 px-6 font-normal font-['Schibsted_Grotesk'] text-gray-400 text-center">Market Cap Rank</th>
+                    <th className="py-2 px-6 font-normal font-['Schibsted_Grotesk'] text-gray-400 text-center">Total Supply</th>
+                    <th className="py-2 px-6 font-normal font-['Schibsted_Grotesk'] text-gray-400 text-center">Max Supply</th>
+                    <th className="py-2 px-6 font-normal font-['Schibsted_Grotesk'] text-gray-400 text-center">Circulating Supply</th>
+                    <th className="py-2 px-6 font-normal font-['Schibsted_Grotesk'] text-gray-400 rounded-tr-2xl rounded-br-2xl text-center">Inflation Model</th>
                   </tr>
                 </thead>
                 <tbody className="bg-[#202020] text-white text-base">
                   {coinData.map((coin, idx) => (
                     <tr key={idx} className=" transition text-white border-t border-[#232323]">
-                      <td className="py-4 px-6 flex items-center gap-3 font-['Schibsted_Grotesk']">
+                      <td className="py-4 px-6 flex items-center gap-3 font-['Schibsted_Grotesk'] text-center">
                         <img src={coin.logo} alt={coin.symbol} className="w-7 h-7" />
                         <div>
                           <div className="font-semibold">{coin.name}</div>
-                          <div className="text-xs text-white/60">{coin.symbol}</div>
+                          <div className="text-xs text-white/60 text-left">{coin.symbol}</div>
                         </div>
                       </td>
-                      <td className="py-4 px-6 text-green-400 font-normal font-['Schibsted_Grotesk']">{coin.price}</td>
-                      <td className="py-4 px-6 font-['Schibsted_Grotesk']">{coin.marketCap}</td>
-                      <td className="py-4 px-6 font-['Schibsted_Grotesk']">
+                      <td className="py-4 px-6 text-green-400 font-normal font-['Schibsted_Grotesk'] text-center">{coin.price}</td>
+                      <td className="py-4 px-6 font-['Schibsted_Grotesk'] text-center">{coin.marketCap}</td>
+                      <td className="py-4 px-6 font-['Schibsted_Grotesk'] text-center">
                         <span className="bg-green-900/30 text-green-400 px-4 py-1 rounded-full text-xs font-normal">{coin.rank}</span>
                       </td>
-                      <td className="py-4 px-6 font-['Schibsted_Grotesk']">{coin.totalSupply}</td>
-                      <td className="py-4 px-6 font-['Schibsted_Grotesk']">{coin.maxSupply}</td>
-                      <td className="py-4 px-6 font-['Schibsted_Grotesk']">{coin.circulatingSupply}</td>
-                      <td className="py-4 px-6 font-['Schibsted_Grotesk']">{coin.inflationModel}</td>
+                      <td className="py-4 px-6 font-['Schibsted_Grotesk'] text-center">{coin.totalSupply}</td>
+                      <td className="py-4 px-6 font-['Schibsted_Grotesk'] text-center">{coin.maxSupply}</td>
+                      <td className="py-4 px-6 font-['Schibsted_Grotesk'] text-center">{coin.circulatingSupply}</td>
+                      <td className="py-4 px-6 font-['Schibsted_Grotesk'] text-center">{coin.inflationModel}</td>
                     </tr>
                   ))}
                 </tbody>
@@ -247,22 +267,22 @@ const ActivateAI = ({ plan, setUserPlan }) => {
         <div className="mb-4 w-full max-w-6xl mx-auto">
           <div className="flex items-center justify-between mb-2">
             <div className="flex items-center">
-              <h2 className="text-2xl font-medium text-white mr-4 font-[Schibsted_Grotesk]">Volume Liquidity</h2>
+              <h2 className="text-2xl font-medium text-white mr-4 font-[Schibsted_Grotesk] mb-4 mt-4">Volume Liquidity</h2>
             </div>
           </div>
           <div className="rounded-3xl p-4 bg-[#202020] shadow-lg border border-[#23232B] w-full max-w-full mx-auto mb-0 pb-0">
             <div className="overflow-x-auto">
-              <table className="min-w-full text-left">
+              <table className="w-full text-left">
                 <thead>
                   <tr className="bg-black text-white text-sm">
-                    <th className="py-2 px-6 font-normal font-['Schibsted_Grotesk'] bg-black rounded-tl-2xl rounded-bl-2xl text-gray-400">24h CEX Volume In $</th>
-                    <th className="py-2 px-6 font-normal font-['Schibsted_Grotesk'] bg-black rounded-tr-2xl rounded-br-2xl text-gray-400">24h DEX Volume In $</th>
+                    <th className="py-2 pl-4 pr-20 font-normal font-['Schibsted_Grotesk'] bg-black rounded-tl-2xl rounded-bl-2xl text-gray-400 text-left w-auto whitespace-nowrap">24h CEX Volume In $</th>
+                    <th className="py-2 px-6 font-normal font-['Schibsted_Grotesk'] bg-black rounded-tr-2xl rounded-br-2xl text-gray-400 text-left w-full whitespace-nowrap">24h DEX Volume In $</th>
                   </tr>
                 </thead>
                 <tbody className=" text-white text-base">
                   <tr>
-                    <td className="py-4 px-6 font-['Schibsted_Grotesk']">33902749477</td>
-                    <td className="py-4 px-6 font-['Schibsted_Grotesk']">Null</td>
+                    <td className="py-4 pl-8 pr-8 font-['Schibsted_Grotesk'] text-centre w-auto">33902749477</td>
+                    <td className="py-4 pl-18 pr-8 font-['Schibsted_Grotesk'] text-left w-full">Null</td>
                   </tr>
                 </tbody>
               </table>
@@ -273,45 +293,41 @@ const ActivateAI = ({ plan, setUserPlan }) => {
         <div className="mb-4 w-full max-w-6xl mx-auto">
           <div className="flex items-center justify-between mb-2">
             <div className="flex items-center">
-              <h2 className="text-2xl font-medium text-white mr-4 font-[Schibsted_Grotesk]">Social Engagement Metrics + Scores</h2>
+              <h2 className="text-2xl font-medium text-white mr-4 font-[Schibsted_Grotesk] mb-4 mt-4">Social Engagement Metrics + Scores</h2>
             </div>
           </div>
           <div className="rounded-3xl p-4 bg-[#202020] shadow-lg border border-[#23232B] w-full max-w-full mx-auto mb-0 pb-0">
             <div className="overflow-x-auto">
-              <table className="min-w-full text-left">
+              <table className="min-w-full text-center">
                 <thead>
-                  <tr className="bg-black text-white text-sm">
-                    <th className="py-2 px-6 font-semibold font-['Schibsted_Grotesk'] bg-black rounded-tl-2xl rounded-bl-2xl">Coin Name</th>
-                    <th className="py-2 px-6 font-normal font-['Schibsted_Grotesk'] text-gray-400">Price</th>
-                    <th className="py-2 px-6 font-normal font-['Schibsted_Grotesk'] text-gray-400">Market Cap</th>
-                    <th className="py-2 px-6 font-normal font-['Schibsted_Grotesk'] text-gray-400">Market Cap Rank</th>
-                    <th className="py-2 px-6 font-normal font-['Schibsted_Grotesk'] text-gray-400">Total Supply</th>
-                    <th className="py-2 px-6 font-normal font-['Schibsted_Grotesk'] text-gray-400">Max Supply</th>
-                    <th className="py-2 px-6 font-normal font-['Schibsted_Grotesk'] text-gray-400">Circulating Supply</th>
-                    <th className="py-2 px-6 font-normal font-['Schibsted_Grotesk'] text-gray-400 rounded-tr-2xl rounded-br-2xl">Inflation Model</th>
+                  <tr className="bg-black text-white text-xs">
+                    <th className="py-2 px-6 font-normal font-['Schibsted_Grotesk'] text-gray-400 bg-black rounded-tl-2xl rounded-bl-2xl text-center text-xs">24h Interactions</th>
+                    <th className="py-2 px-6 font-normal font-['Schibsted_Grotesk'] text-gray-400 text-center text-xs">24h Spam Posts</th>
+                    <th className="py-2 px-6 font-normal font-['Schibsted_Grotesk'] text-gray-400 text-center text-xs">24h Social Volume</th>
+                    <th className="py-2 px-6 font-normal font-['Schibsted_Grotesk'] text-gray-400 text-center text-xs">24h Unique Posts</th>
+                    <th className="py-2 px-6 font-normal font-['Schibsted_Grotesk'] text-gray-400 text-center text-xs">Multi Social Galaxy Score</th>
+                    <th className="py-2 px-6 font-normal font-['Schibsted_Grotesk'] text-gray-400 text-center text-xs">Social Ranking #</th>
+                    <th className="py-2 px-6 font-normal font-['Schibsted_Grotesk'] text-gray-400 rounded-tr-2xl rounded-br-2xl text-center text-xs">Market Sentiment</th>
                   </tr>
                 </thead>
                 <tbody className="bg-[#202020] text-white text-base">
-                  {coinData.map((coin, idx) => (
+                  {SocialData.map((social, idx) => (
                     <tr key={idx} className=" transition text-white border-t border-[#232323]">
-                      <td className="py-4 px-6 font-['Schibsted_Grotesk']">{coin.circulatingSupply}</td>
-                      <td className="py-4 px-6 text-green-400 font-normal font-['Schibsted_Grotesk']">{coin.price}</td>
-                      <td className="py-4 px-6 font-['Schibsted_Grotesk']">{coin.marketCap}</td>
-                      <td className="py-4 px-6 font-['Schibsted_Grotesk']">
-                        <span className="bg-green-900/30 text-green-400 px-4 py-1 rounded-full text-xs font-normal">{coin.rank}</span>
-                      </td>
-                      <td className="py-4 px-6 font-['Schibsted_Grotesk']">{coin.totalSupply}</td>
-                      <td className="py-4 px-10 flex items-center gap-3 font-['Schibsted_Grotesk']">
+                      <td className="py-4 px-6 font-['Schibsted_Grotesk'] text-center">{social.Interactions}</td>
+                      <td className="py-4 px-6 font-normal font-['Schibsted_Grotesk'] text-center">{social.SpamPosts}</td>
+                      <td className="py-4 px-6 font-['Schibsted_Grotesk'] text-center">{social.SocialVolume}</td>
+                      <td className="py-4 px-6 font-['Schibsted_Grotesk'] text-center">{social.UniquePosts}</td>
+                      <td className="py-4 px-15 flex items-center gap-3 font-['Schibsted_Grotesk'] text-center">
                         <img src={Meter} className="w-7 h-7" />
                         <div>
-                          <span className="text-md text-white/80">71.9%</span>
+                          <span className="text-md text-white/80">71.3%</span>
                         </div>
                       </td>
-                      <td className="py-4 px-6 font-['Schibsted_Grotesk']">{coin.circulatingSupply}</td>
-                      <td className="py-4 px-10 flex items-center gap-3 font-['Schibsted_Grotesk']">
+                      <td className="py-4 px-6 font-['Schibsted_Grotesk'] text-center">{social.SocialRanking}</td>
+                      <td className="py-4 px-12 flex items-center gap-3 font-['Schibsted_Grotesk'] text-center">
                         <img src={Meter} className="w-7 h-7" />
                         <div>
-                        <span className="text-md text-white/80">81%</span>
+                          <span className="text-md text-white/80">81%</span>
                         </div>
                       </td>
                     </tr>
@@ -325,12 +341,12 @@ const ActivateAI = ({ plan, setUserPlan }) => {
         <div className="mt-10 mb-4 w-full max-w-6xl mx-auto">
           <div className="flex items-center justify-between mb-2">
             <div className="flex items-center">
-              <h2 className="text-2xl font-medium text-white mr-4 font-[Schibsted_Grotesk]">
+              <h2 className="text-2xl font-medium text-white mr-4 font-[Schibsted_Grotesk] mb-4 mt-4">
                 GitHub Social Profile Activity + Link
               </h2>
             </div>
           </div>
-          <div className="rounded-3xl px-6 py-4 bg-[#202020] shadow-lg border border-[#23232B] w-full max-w-full mx-auto mb-0 pb-0">
+          <div className="rounded-3xl px-6 py-4 bg-[#202020] shadow-lg border border-[#23232B] w-full max-w-full mx-auto pb-0">
             <div>
               <span className="block text-white mb-4 mt-2 font-['Lato'] text-[18px]">
                 This repo has 84169 stars, 30 contributors, and 30 commits in recent history.
@@ -356,51 +372,61 @@ const ActivateAI = ({ plan, setUserPlan }) => {
         <div className="mt-10 mb-4 w-full max-w-6xl mx-auto">
           <div className="flex items-center justify-between mb-2">
             <div className="flex items-center">
-              <h2 className="text-2xl font-medium text-white mr-4 font-[Schibsted_Grotesk]">Top 5 Exchange Listings (If Applicable)</h2>
+              <h2 className="text-2xl font-medium text-white mr-4 font-[Schibsted_Grotesk] mb-4 mt-4">Top 5 Exchange Listings (If Applicable)</h2>
             </div>
           </div>
           <div className="rounded-3xl p-4 bg-[#202020] shadow-lg border border-[#23232B] w-full max-w-full mx-auto mb-0 pb-0 overflow-hidden">
             <div className="overflow-x-auto">
-              <table className="min-w-full w-full text-left block overflow-x-auto overflow-hidden">
+              <table className="min-w-full w-full text-center block overflow-x-auto overflow-hidden">
                 <thead className="w-full block">
                   <tr className="bg-black text-white text-sm w-full flex rounded-tl-2xl rounded-tr-2xl rounded-bl-2xl rounded-br-2xl overflow-hidden gap-8">
-                    <th className="py-2 px-6 font-normal font-['Schibsted_Grotesk'] text-gray-400 flex-1 text-left">Exchange Number</th>
-                    <th className="py-2 px-6 font-normal font-['Schibsted_Grotesk'] text-gray-400 flex-1 text-left">Exchange Listing</th>
-                    <th className="py-2 px-6 font-normal font-['Schibsted_Grotesk'] text-gray-400 flex-1 text-left">Trading Pair</th>
-                    <th className="py-2 px-6 font-normal font-['Schibsted_Grotesk'] text-gray-400 flex-1 text-left">24h Volume </th>
-                    <th className="py-2 px-6 pl-12 font-normal font-['Schibsted_Grotesk'] text-gray-400 flex-1 text-left">Trust Score</th>
+                  <th className="py-2 px-6 font-normal font-['Schibsted_Grotesk'] text-gray-400 flex-1  text-center">Exchange Number</th>
+                    <th className="py-2 px-6 font-normal font-['Schibsted_Grotesk'] text-gray-400 flex-1  text-center">Exchange Listing</th>
+                    <th className="py-2 px-6 font-normal font-['Schibsted_Grotesk'] text-gray-400 flex-1  text-center">Trading Pair</th>
+                    <th className="py-2 px-6 font-normal font-['Schibsted_Grotesk'] text-gray-400 flex-1  text-center">24h Volume </th>
+                    <th className="py-2 px-6 font-normal font-['Schibsted_Grotesk'] text-gray-400 flex-1  text-center">Trust Score</th>
                   </tr>
                 </thead>
                 <tbody className="bg-[#202020] text-white text-base w-full block">
                   {exchangeCoinData.map((exchange, idx) => (
                     <tr key={idx} className={`transition text-white border-t border-[#232323] w-full flex${idx === exchangeCoinData.length - 1 ? ' rounded-bl-2xl rounded-br-2xl overflow-hidden' : ''} gap-8`}>
                       {/* Exchange Number */}
-                      <td className="py-4 px-6 flex-1 flex items-center font-['Schibsted_Grotesk']">{idx + 1}</td>
+                      <td className="py-4 px-6 flex-1 flex items-center font-['Schibsted_Grotesk'] text-left">{idx + 1}</td>
                       {/* Exchange Listing: logo, name, type */}
-                      <td className="py-4 px-6 flex-1 flex items-center gap-3 font-['Schibsted_Grotesk']">
-                        {exchange.logo ? (
-                          <img src={exchange.logo} alt={exchange.name} className="w-7 h-7" />
-                        ) : (
-                          <div className="w-7 h-7 rounded-full flex items-center justify-center font-bold text-black" style={{background: exchange.name === 'Bybit' ? '#F9D23C' : exchange.name === 'OKX' ? '#222' : exchange.name === 'Coinbase' ? '#1652F0' : '#ccc'}}>
-                            {exchange.name.slice(0,2).toUpperCase()}
-                          </div>
-                        )}
-                        <div>
+                      <td className="py-4 px-6 flex-1 flex items-center gap-3 font-['Schibsted_Grotesk'] text-center">
+                        <span
+                          className="w-10 h-10 rounded-full flex items-center justify-center ml-3"
+                          style={{
+                            background:
+                              exchange.name === 'Binance' ? '#181A20'
+                              : exchange.name === 'Bybit' ? '#F9D23C'
+                              : exchange.name === 'OKX' ? '#000'
+                              : exchange.name === 'Coinbase' ? '#1652F0'
+                              : '#ccc'
+                          }}
+                        >
+                          {exchange.logo ? (
+                            <img src={exchange.logo} alt={exchange.name} className="w-7 h-7" />
+                          ) : (
+                            <span className="font-bold text-black">{exchange.name.slice(0,2).toUpperCase()}</span>
+                          )}
+                        </span>
+                        <div className=''>
                           <div className="font-semibold">{exchange.name}</div>
-                          <div className="text-xs text-white/60">{exchange.type}</div>
+                          <div className="text-xs text-white/60 text-left">{exchange.type}</div>
                         </div>
                       </td>
                       {/* Trading Pair */}
-                      <td className="py-4 px-6 flex-1 font-['Schibsted_Grotesk'] flex items-center ">
+                      <td className="py-4 px-6 flex-1 font-['Schibsted_Grotesk'] flex items-center text-centre ml-15">
                         {exchange.pair}
                         <span className="ml-1 mb-2">
                           <img src={GithubRepo2} alt="link" className="inline-block w-3 h-3 align-text-bottom" />
                         </span>
                       </td>
                       {/* 24h Volume */}
-                      <td className="py-4 px-6 flex-1 font-['Schibsted_Grotesk']">{exchange.volume}</td>
+                      <td className="py-4 px-6 flex-1 font-['Schibsted_Grotesk'] text-center">{exchange.volume}</td>
                       {/* Trust Score */}
-                      <td className={`py-4 px-6 pl-12 flex-1 font-['Schibsted_Grotesk']${idx === exchangeCoinData.length - 1 ? ' rounded-br-2xl' : ''}`}> <span className={`${exchange.trustColor} px-4 py-1 rounded-full text-xs font-normal`}>{exchange.trust}</span></td>
+                      <td className={`py-4 px-6 pl-12 flex-1 font-['Schibsted_Grotesk']${idx === exchangeCoinData.length - 1 ? ' rounded-br-2xl' : ''} text-center`}> <span className={`${exchange.trustColor} px-4 py-1 rounded-full text-xs font-normal`}>{exchange.trust}</span></td>
                     </tr>
                   ))}
                 </tbody>
@@ -408,10 +434,11 @@ const ActivateAI = ({ plan, setUserPlan }) => {
             </div>
           </div>
         </div>
+
         <div className="mt-10 mb-4 w-full max-w-6xl mx-auto">
           <div className="flex items-center justify-between mb-2">
             <div className="flex items-center">
-              <h2 className="text-2xl font-medium text-white mr-4 font-[Schibsted_Grotesk]">
+              <h2 className="text-2xl font-medium text-white mr-4 font-[Schibsted_Grotesk] mb-4 mt-4">
               Team Analysis + Dev Activity
               </h2>
             </div>
@@ -433,11 +460,12 @@ const ActivateAI = ({ plan, setUserPlan }) => {
             </div>
           </div>
         </div>
+
         {/*Whitepaper Analysis */}
         <div className="mt-10 mb-4 w-full max-w-6xl mx-auto">
           <div className="flex items-center justify-between mb-2">
             <div className="flex items-center">
-              <h2 className="text-2xl font-medium text-white mr-4 font-[Schibsted_Grotesk]">Whitepaper Analysis</h2>
+              <h2 className="text-2xl font-medium text-white mr-4 font-[Schibsted_Grotesk] mb-4 mt-4">Whitepaper Analysis</h2>
             </div>
           </div>
           <div className="rounded-3xl p-4 bg-[#202020] shadow-lg border border-[#23232B] w-full max-w-full mx-auto mb-0 pb-0 overflow-hidden">
@@ -456,7 +484,7 @@ const ActivateAI = ({ plan, setUserPlan }) => {
                 <span className="text-white text-lg font-semibold">10/10</span>
               </div>
               <div className="flex-1 flex flex-row items-center justify-center gap-2">
-                <img src={Meter} alt="Fluff" className="w-10 h-10" />
+                <img src={Meter2} alt="Fluff" className="w-10 h-10" />
                 <span className="text-white text-lg font-semibold">2/10</span>
               </div>
             </div>
@@ -473,7 +501,7 @@ const ActivateAI = ({ plan, setUserPlan }) => {
         <div className="mt-10 mb-4 w-full max-w-6xl mx-auto">
           <div className="flex items-center justify-between mb-2">
             <div className="flex items-center">
-              <h2 className="text-2xl font-medium text-white mr-4 font-[Schibsted_Grotesk] flex items-center">
+              <h2 className="text-2xl font-medium text-white mr-4 font-[Schibsted_Grotesk] flex items-center mb-4 mt-4">
                 GemScope's Bot Detection Scanner
                 <img src={Bot} alt="Bot" className="w-10 h-10 ml-2 inline-block align-middle" />
               </h2>
@@ -489,7 +517,7 @@ const ActivateAI = ({ plan, setUserPlan }) => {
         <div className="mt-10 mb-4 w-full max-w-6xl mx-auto">
           <div className="flex items-center justify-between mb-2">
             <div className="flex items-center">
-              <h2 className="text-2xl font-medium text-white mr-4 font-[Schibsted_Grotesk]">Gem Summary + Investment Analysis</h2>
+              <h2 className="text-2xl font-medium text-white mr-4 font-[Schibsted_Grotesk] mb-4 mt-4">Gem Summary + Investment Analysis</h2>
             </div>
           </div>
           <div className="rounded-3xl px-6 py-6 bg-[#202020] shadow-lg border border-[#23232B] w-full max-w-full mx-auto mb-0 pb-0">
@@ -512,11 +540,15 @@ const ActivateAI = ({ plan, setUserPlan }) => {
         <div className="mt-10 mb-4 w-full max-w-6xl mx-auto">
           <div className="flex items-center justify-between mb-2">
             <div className="flex items-center">
-              <h2 className="text-2xl font-medium text-white mr-4 font-[Schibsted_Grotesk]">Red Flag Score <span className="text-red-500 text-xl ml-1">🚩</span></h2>
+              <h2 className="text-2xl font-medium text-white mr-4 font-[Schibsted_Grotesk] mb-4 mt-4">Red Flag Summary + Risk Report</h2>
             </div>
           </div>
           <div className="rounded-3xl px-6 py-6 bg-[#202020] shadow-lg border border-[#23232B] w-full max-w-full mx-auto mb-0 pb-0">
-            <div className="text-white text-4xl font-bold mb-2">2/10</div>
+          <div className="flex items-center mb-2">
+              <span className="text-white text-lg font-semibold mr-2">Red Flag Score</span>
+              <img src={RedFlag} alt="RedFlag" className="w-6 h-6 mr-2 inline-block align-middle" />
+            </div>
+            <div className="text-white text-4xl font-bold mb-2">1/10</div>
             <div className="w-full h-4 bg-black rounded-full mb-6">
               <div className="h-4 bg-gradient-to-r from-red-400 to-red-600 rounded-full" style={{ width: '15%' }}></div>
             </div>

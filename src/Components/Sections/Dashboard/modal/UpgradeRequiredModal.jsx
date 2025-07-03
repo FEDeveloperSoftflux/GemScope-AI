@@ -8,7 +8,7 @@ const UpgradeRequiredModal = ({ open, onClose, onUpgrade, onMaybeLater }) => {
 
 
   return (
-    <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/20 backdrop-blur">
+    <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/10 backdrop-blur">
       <div className="bg-[#202020] rounded-3xl shadow-2xl p-10 w-[500px] relative flex flex-col items-center">
         {/* Close Button */}
         <div className="absolute top-4 right-4">

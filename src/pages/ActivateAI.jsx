@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import Sidebar from '../Components/Sections/Dashboard/Sidebar';
 import DHeader from '../Components/Sections/Dashboard/DHeader';
-import Background from '../assets/Background.png';
+import Background from '../assets/ActivateaiBG.png';
 import ActivateAIIcon from '../assets/ActivateAI.svg';
 import AIAnalysisModal from '../Components/Sections/Dashboard/modal/AIAnalysisModal';
 import UpgradeRequiredModal from '../Components/Sections/Dashboard/modal/UpgradeRequiredModal';
@@ -90,7 +90,7 @@ const ActivateAI = ({ plan, setUserPlan }) => {
             <h1 className="text-[50px] font-medium mb-4 text-white text-center font-[Schibsted_Grotesk]">
               AI Powered <span className="bg-gradient-to-r from-yellow-400 via-orange-400 via-red-400  to-red-500 bg-clip-text text-transparent">Search & Analytics</span>
             </h1>
-            <p className="text-white/80 text-center mb-8 mt-4 text-lg font-['Lato] leading[28.8px]tracking-[0.18px]">Use natural language to discover and analyse cryptocurrency opportunities</p>
+            <p className="text-white/70 text-center mb-8  text-[17px] font-['Lato] leading[28.8px]tracking-[0.18px]">Use natural language to discover and analyse cryptocurrency opportunities</p>
             <div className="relative w-[800px] h-[65px] mx-auto mb-6 ">
               <input
                 type="text"
@@ -108,23 +108,23 @@ const ActivateAI = ({ plan, setUserPlan }) => {
               </button>
             </div>
             {/* Prompt Buttons */}
-            <div className="flex flex-col items-center w-full mt-8 gap-4">
-              <div className="flex justify-center gap-6 w-full">
+            <div className="flex flex-col items-center w-full mt-8 gap-8">
+              <div className="flex justify-center gap-5 w-full">
                 {promptOptions.slice(0, 4).map((prompt, idx) => (
                   <button
                     key={idx}
-                    className="px-3 py-2 rounded-xl bg-white/10 text-white/80 font-normal hover:bg-white hover:text-black transition font-['Lato'] text-[14px] leading-[22px] min-w-[150px] text-center"
+                    className="px-2 py-3 rounded-xl bg-white/10 text-white/80 font-normal hover:bg-white hover:text-black transition font-['Lato'] text-[14px] leading-[22px] min-w-[150px] text-center"
                     onClick={() => setSearch(prompt)}
                   >
                     {prompt}
                   </button>
                 ))}
               </div>
-              <div className="flex justify-center gap-4 w-full">
+              <div className="flex justify-center gap-5 w-full mb-5">
                 {promptOptions.slice(4).map((prompt, idx) => (
                   <button
                     key={idx + 4}
-                    className="px-3 py-2 rounded-xl bg-white/10 text-white/80 font-normal hover:bg-white hover:text-black transition font-['Lato'] text-[14px] leading-[22px] min-w-[150px] text-center"
+                    className="px-2 py-3 rounded-xl bg-white/10 text-white/80 font-normal hover:bg-white hover:text-black transition font-['Lato'] text-[14px] leading-[22px] min-w-[150px] text-center"
                     onClick={() => setSearch(prompt)}
                   >
                     {prompt}
@@ -138,48 +138,47 @@ const ActivateAI = ({ plan, setUserPlan }) => {
         <div className="mt-10 mb-4 w-full max-w-6xl mx-auto">
           <div className="flex items-center justify-between mb-2">
             <div className="flex items-center">
-              <h2 className="text-2xl font-medium text-white mr-4 font-[Schibsted_Grotesk]">Tokenomics</h2>
-              <span className="bg-pink-900/30 text-pink-300 text-xs px-1 py-1 rounded-full font-semibold ml-2">Free Plan</span>
+              <h2 className="text-2xl font-medium text-white mr-4 font-[Schibsted_Grotesk] mb-4">Tokenomics</h2>
             </div>
             <button className="px-4 py-2 rounded-lg bg-[#202020] hover:bg-[#2e2e2e] text-white/60 text-sm font-normal border border-[#333] font-[Schibsted_Grotesk] ">
                 <img src={DownloadG} alt="Download" className="inline-block w-5 h-4 mr-2 align-middle" />
-                Export PDF
+                Export Results
               </button>
           </div>
           <div className="rounded-3xl p-4 bg-[#202020] shadow-lg border border-[#23232B] w-full max-w-full mx-auto mb-0 pb-0">
             <div className="overflow-x-auto">
-              <table className="min-w-full text-left">
+              <table className="min-w-full text-center">
                 <thead>
                   <tr className="bg-black text-white text-sm">
-                    <th className="py-2 px-6 font-semibold font-['Schibsted_Grotesk'] bg-black rounded-tl-2xl rounded-bl-2xl">Coin Name</th>
-                    <th className="py-2 px-6 font-normal font-['Schibsted_Grotesk'] text-gray-400">Price</th>
-                    <th className="py-2 px-6 font-normal font-['Schibsted_Grotesk'] text-gray-400">Market Cap</th>
-                    <th className="py-2 px-6 font-normal font-['Schibsted_Grotesk'] text-gray-400">Market Cap Rank</th>
-                    <th className="py-2 px-6 font-normal font-['Schibsted_Grotesk'] text-gray-400">Total Supply</th>
-                    <th className="py-2 px-6 font-normal font-['Schibsted_Grotesk'] text-gray-400">Max Supply</th>
-                    <th className="py-2 px-6 font-normal font-['Schibsted_Grotesk'] text-gray-400">Circulating Supply</th>
-                    <th className="py-2 px-6 font-normal font-['Schibsted_Grotesk'] text-gray-400 rounded-tr-2xl rounded-br-2xl">Inflation Model</th>
+                    <th className="py-2 px-6 font-semibold font-['Schibsted_Grotesk'] bg-black rounded-tl-2xl rounded-bl-2xl text-center">Coin Name</th>
+                    <th className="py-2 px-6 font-normal font-['Schibsted_Grotesk'] text-gray-400 text-center">Price</th>
+                    <th className="py-2 px-6 font-normal font-['Schibsted_Grotesk'] text-gray-400 text-center">Market Cap</th>
+                    <th className="py-2 px-6 font-normal font-['Schibsted_Grotesk'] text-gray-400 text-center">Market Cap Rank</th>
+                    <th className="py-2 px-6 font-normal font-['Schibsted_Grotesk'] text-gray-400 text-center">Total Supply</th>
+                    <th className="py-2 px-6 font-normal font-['Schibsted_Grotesk'] text-gray-400 text-center">Max Supply</th>
+                    <th className="py-2 px-6 font-normal font-['Schibsted_Grotesk'] text-gray-400 text-center">Circulating Supply</th>
+                    <th className="py-2 px-6 font-normal font-['Schibsted_Grotesk'] text-gray-400 rounded-tr-2xl rounded-br-2xl text-center">Inflation Model</th>
                   </tr>
                 </thead>
                 <tbody className="bg-[#202020] text-white text-base">
                   {coinData.map((coin, idx) => (
                     <tr key={idx} className=" transition text-white border-t border-[#232323]">
-                      <td className="py-4 px-6 flex items-center gap-3 font-['Schibsted_Grotesk']">
+                      <td className="py-4 px-6 flex items-center gap-3 font-['Schibsted_Grotesk'] text-center">
                         <img src={coin.logo} alt={coin.symbol} className="w-7 h-7" />
                         <div>
                           <div className="font-semibold">{coin.name}</div>
-                          <div className="text-xs text-white/60">{coin.symbol}</div>
+                          <div className="text-xs text-white/60 text-left">{coin.symbol}</div>
                         </div>
                       </td>
-                      <td className="py-4 px-6 text-green-400 font-normal font-['Schibsted_Grotesk']">{coin.price}</td>
-                      <td className="py-4 px-6 font-['Schibsted_Grotesk']">{coin.marketCap}</td>
-                      <td className="py-4 px-6 font-['Schibsted_Grotesk']">
+                      <td className="py-4 px-6 text-green-400 font-normal font-['Schibsted_Grotesk'] text-center">{coin.price}</td>
+                      <td className="py-4 px-6 font-['Schibsted_Grotesk'] text-center">{coin.marketCap}</td>
+                      <td className="py-4 px-6 font-['Schibsted_Grotesk'] text-center">
                         <span className="bg-green-900/30 text-green-400 px-4 py-1 rounded-full text-xs font-normal">{coin.rank}</span>
                       </td>
-                      <td className="py-4 px-6 font-['Schibsted_Grotesk']">{coin.totalSupply}</td>
-                      <td className="py-4 px-6 font-['Schibsted_Grotesk']">{coin.maxSupply}</td>
-                      <td className="py-4 px-6 font-['Schibsted_Grotesk']">{coin.circulatingSupply}</td>
-                      <td className="py-4 px-6 font-['Schibsted_Grotesk']">{coin.inflationModel}</td>
+                      <td className="py-4 px-6 font-['Schibsted_Grotesk'] text-center">{coin.totalSupply}</td>
+                      <td className="py-4 px-6 font-['Schibsted_Grotesk'] text-center">{coin.maxSupply}</td>
+                      <td className="py-4 px-6 font-['Schibsted_Grotesk'] text-center">{coin.circulatingSupply}</td>
+                      <td className="py-4 px-6 font-['Schibsted_Grotesk'] text-center">{coin.inflationModel}</td>
                     </tr>
                   ))}
                 </tbody>

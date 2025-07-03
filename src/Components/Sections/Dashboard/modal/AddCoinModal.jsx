@@ -25,7 +25,7 @@ const AddCoinModal = ({ show, onClose, coins, onAdd }) => {
 
   if (!show) return null;
   return (
-    <div className="fixed inset-0 z-50 flex items-center justify-center backdrop-blur-2xl bg-black/580">
+    <div className="fixed inset-0 z-50 flex items-center justify-center backdrop-blur-lg bg-black/10">
       <div className="bg-[#202020] rounded-2xl p-6 w-full max-w-3xl shadow-lg relative border border-white/20 min-h-[500px]">
         <CrossButton
           onClick={onClose}
@@ -36,7 +36,7 @@ const AddCoinModal = ({ show, onClose, coins, onAdd }) => {
         <form onSubmit={handleSearch} className="relative mb-4">
             <input
                 className="w-full px-4 py-2 pr-28 rounded-xl bg-[#0F0F0F] text-white border border-[#2e2e2e] placeholder-gray-400 focus:outline-none font-['Schibsted_Grotesk']"
-                placeholder="Bitco"
+                placeholder="Search the project name or coin ticker… "
                 value={search}
                 onChange={(e) => setSearch(e.target.value)}
             />

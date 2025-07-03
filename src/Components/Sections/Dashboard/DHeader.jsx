@@ -1,5 +1,5 @@
 import React, { useState, useRef, useEffect } from 'react';
-import House from '../../../assets/House.svg';
+import House from '../../../assets/Dashboard.svg';
 
 const planColors = {
   free: "bg-gradient-to-b from-pink-400 to-pink-100 bg-clip-text text-transparent",

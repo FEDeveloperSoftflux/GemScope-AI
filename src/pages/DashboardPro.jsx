@@ -10,6 +10,8 @@ import CrossButton from '../Components/Common/CrossButton';
 import CurveDao from '../assets/CurveDAO.png';
 import COTI from '../assets/COTI.svg';
 import XDC from '../assets/XDC.svg';
+import SupportModal from '../Components/Sections/Dashboard/modal/SupportModal';
+import SuccessModal from '../Components/Sections/Dashboard/modal/SuccessModal';
 
 const CryptoDashboard = ({ plan = "free", setUserPlan }) => {
   // Sample data 
@@ -32,21 +34,27 @@ const CryptoDashboard = ({ plan = "free", setUserPlan }) => {
   ];
 
   const [showPricingCard, setShowPricingCard] = useState(false);
+  const [showSupportModal, setShowSupportModal] = useState(false);
+  const [supportEmail, setSupportEmail] = useState('');
+  const [supportMessage, setSupportMessage] = useState('');
+  const [showSuccessModal, setShowSuccessModal] = useState(false);
 
-  const pricingPlans = [
+  const pricingPlans = [,
     {
-      name: "Elite",
+      name: "Enterprise Tier",
       price: "50",
       period: "Month",
       features: [
-        "Premium AI Models",
-        "Real-time Analysis",
-        "1-on-1 Consultation",
-        "Advanced Risk Models",
-        "Multi-Exchange Support",
-        "Custom Strategies",
-        "Backtesting Tools",
-        "White-label Solution"
+        "Everything In Pro +",
+        "Team Analysis",
+        "Bot Detection",
+        "Developer Activity",
+        "AI Whitepaper Analysis",
+        "Gem Score + AI Summary",
+        "Red Flag Risk Score + AI Concern Report",
+        "Unlimited AI Prompt Searches/Month.",
+        "Dashboard Features"
+        
       ],
       color: "bg-[linear-gradient(180.57deg,_#0808FF_-4.69%,_#4EBBFF_130.44%)]",
       popular: false,
@@ -54,18 +62,13 @@ const CryptoDashboard = ({ plan = "free", setUserPlan }) => {
       
     },
     {
-      name: "Institution",
+      name: "Lifetime Enterprise Tier",
       price: "150",
       period: "Lifetime",
       features: [
-        "Enterprise AI Suite",
-        "Dedicated Support",
-        "Custom Integration",
-        "Advanced Analytics",
-        "Team Management",
-        "SLA Guarantee",
-        "Custom Training",
-        "Regulatory Compliance"
+        "A Lifetime Of Enterprise Services",
+        "One Off Payment",
+        "Saves You Money + Instant Access"
       ],
       color: "bg-[linear-gradient(179.59deg,_#C4A502_-5.34%,_#FFF3B6_114.16%)]",
       popular: false,
@@ -80,7 +83,7 @@ const CryptoDashboard = ({ plan = "free", setUserPlan }) => {
       <div className="flex-1 p-6 overflow-y-auto">
       <DHeader plan={plan} setUserPlan={setUserPlan} />
         <WelcomeSection />
-        <ActionCards />
+        <ActionCards onSupportClick={() => setShowSupportModal(true)} />
         
         <div className="grid grid-cols-3 gap-6 ml-10">
           <Watchlist cryptoData={cryptoData} />
@@ -104,6 +107,16 @@ const CryptoDashboard = ({ plan = "free", setUserPlan }) => {
             </div>
           </div>
         )}
+        <SupportModal
+          open={showSupportModal}
+          onClose={() => setShowSupportModal(false)}
+          email={supportEmail}
+          setEmail={setSupportEmail}
+          message={supportMessage}
+          setMessage={setSupportMessage}
+          onSuccess={() => { setShowSupportModal(false); setShowSuccessModal(true); }}
+        />
+        <SuccessModal open={showSuccessModal} onClose={() => setShowSuccessModal(false)} />
       </div> 
     </div>
   );
