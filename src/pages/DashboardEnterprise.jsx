@@ -12,7 +12,6 @@ import COTI from '../assets/COTI.svg';
 import XDC from '../assets/XDC.svg';
 import WhatsHot from '../Components/Sections/Dashboard/WhatsHot';
 import SupportModal from '../Components/Sections/Dashboard/modal/SupportModal';
-import SuccessModal from '../Components/Sections/Dashboard/modal/SuccessModal';
 
 const CryptoDashboard = ({ plan = "free", setUserPlan }) => {
   // Sample data 
@@ -36,7 +35,6 @@ const CryptoDashboard = ({ plan = "free", setUserPlan }) => {
     { name: 'Cardano', symbol: 'ADA', change: '+7.3%', icon: CurveDao },
     { name: 'Ethereum', symbol: 'ETH', change: '+12.5%', icon: COTI },
     { name: 'Solana', symbol: 'SOL', change: '+8.9%', icon: XDC },
-    { name: 'Cardano', symbol: 'ADA', change: '+7.3%', icon: CurveDao }
   ];
 
   const [showSupportModal, setShowSupportModal] = useState(false);
@@ -45,19 +43,18 @@ const CryptoDashboard = ({ plan = "free", setUserPlan }) => {
   const [showSuccessModal, setShowSuccessModal] = useState(false);
 
   return (
-    <div className="h-screen bg-black text-white flex">
+    <div className="h-screen bg-black text-white flex flex-col md:flex-row">
       <Sidebar />
       
       <div className="flex-1 p-6 overflow-y-auto">
-      <DHeader plan={plan} setUserPlan={setUserPlan} />
+        <DHeader plan={plan} setUserPlan={setUserPlan} />
         <WelcomeSection />
         <ActionCards onSupportClick={() => setShowSupportModal(true)} />
-        
-        <div className="grid grid-cols-3 gap-6 ml-10">
-          <Watchlist cryptoData={cryptoData} />
-          <div className="w-90 h-[800px]"><WhatsHot hotTokens={hotTokens} /></div>
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 md:ml-10 mt-4">
+          <Watchlist cryptoData={cryptoData} className="col-span-2" />
+          <div className="col-span-1 w-full"><WhatsHot hotTokens={hotTokens} /></div>
         </div>
-      </div> 
+      </div>
       <SupportModal
         open={showSupportModal}
         onClose={() => setShowSupportModal(false)}
@@ -65,9 +62,8 @@ const CryptoDashboard = ({ plan = "free", setUserPlan }) => {
         setEmail={setSupportEmail}
         message={supportMessage}
         setMessage={setSupportMessage}
-        onSuccess={() => { setShowSupportModal(false); setShowSuccessModal(true); }}
+        onSuccess={() => { setShowSupportModal(false) }}
       />
-      <SuccessModal open={showSuccessModal} onClose={() => setShowSuccessModal(false)} />
     </div>
   );
 };

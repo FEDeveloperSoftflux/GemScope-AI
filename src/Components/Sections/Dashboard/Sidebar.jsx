@@ -1,5 +1,5 @@
 import React from 'react';
-import {Sun, Moon, Menu } from 'lucide-react';
+import { Sun, Moon, Menu } from 'lucide-react';
 import Background from '../../../assets/Background.png';
 import LogoImg from '../../../assets/Logo.svg';
 import Account from '../../../assets/Account.svg';
@@ -13,9 +13,13 @@ import { Link, useNavigate, useLocation } from 'react-router-dom';
 const Logo = () => (
   <div className="flex items-center gap-2 mb-8">
     <Link to="/">
-      <img src={LogoImg} alt="GemScope AI Logo" className="w-10 h-10 object-contain rounded-lg font-['Schibsted Grotesk'] " />    </Link>
-      <span className="text-lg font-semibold text-white">GemScope AI</span>
-
+      <img
+        src={LogoImg}
+        alt="GemScope AI Logo"
+        className="w-10 h-10 object-contain rounded-lg font-['Schibsted Grotesk']"
+      />
+    </Link>
+    <span className="text-lg font-semibold text-white">GemScope AI</span>
   </div>
 );
 
@@ -28,11 +32,17 @@ const NavItem = ({ icon, label, active }) => (
     style={active ? { boxShadow: '0 4px 24px 0 rgba(236, 72, 153, 0.15)' } : {}}
   >
     {typeof icon === 'string' ? (
-      <img src={icon} alt={label + ' icon'} className={`w-5 h-5 object-contain ${active ? 'filter invert-0 brightness-0' : ''}`} />
+      <img
+        src={icon}
+        alt={label + ' icon'}
+        className={`w-5 h-5 object-contain ${active ? 'filter invert-0 brightness-0' : ''}`}
+      />
     ) : (
       icon && <icon.type size={20} color={active ? 'black' : undefined} />
     )}
-    <span className="font-semibold font-['Schibsted Grotesk'] font-weight-500 text-[16px] leading-[26px] tracking-[-0.4px]">{label}</span>
+    <span className="font-semibold font-['Schibsted Grotesk'] text-[16px] leading-[26px] tracking-[-0.4px]">
+      {label}
+    </span>
   </div>
 );
 
@@ -52,23 +62,26 @@ const Sidebar = () => {
 
   return (
     <>
+      {/* Toggle button for mobile and tablet (below lg) */}
+      <button
+        className="lg:hidden fixed top-4 left-4 z-[60] bg-black text-white p-2 rounded-full shadow-lg"
+        onClick={() => setMobileOpen(true)}
+      >
+        <Menu size={24} />
+      </button>
 
-      {/* Single Sidebar - responsive */}
+      {/* Sidebar */}
       <div
         className={`
-          fixed md:static top-0 left-0 w-64 bg-black p-6 z-50
-          transform transition-transform duration-300
-          md:transform-none md:translate-x-0
-          ${mobileOpen ? 'translate-x-0' : '-translate-x-full md:translate-x-0'}
-          rounded-3xl
-          relative overflow-hidden
-          ml-4
-          h-[95vh] my-4
+          fixed top-0 left-0 w-64 bg-black p-6 z-50 h-screen overflow-hidden rounded-r-3xl
+          transform transition-transform duration-300 ease-in-out
+          ${mobileOpen ? 'translate-x-0' : '-translate-x-full'}
+          lg:translate-x-0 lg:static lg:h-[95vh] lg:rounded-3xl lg:ml-4 lg:my-4
         `}
       >
-        {/* Close button for mobile */}
+        {/* Close button for mobile and tablet (below lg) */}
         <button
-          className="absolute top-4 right-4 md:hidden text-white text-2xl z-20"
+          className="absolute top-4 right-4 lg:hidden text-white text-2xl z-20"
           onClick={() => setMobileOpen(false)}
           aria-label="Close sidebar"
         >
@@ -84,21 +97,29 @@ const Sidebar = () => {
         />
 
         {/* Sidebar content */}
-        <div className="relative z-10 flex flex-col h-full mb-6 ">
+        <div className="relative z-10 flex flex-col h-full mb-6">
           <Logo />
           <nav className="space-y-2 flex-1">
             {navItems.map((item, index) => (
-              <div key={index} onClick={() => navigate(item.path)}>
-                <NavItem 
-                  icon={item.icon} 
-                  label={item.label} 
-                  active={location.pathname === item.path} 
+              <div key={index} onClick={() => { navigate(item.path); setMobileOpen(false); }}>
+                <NavItem
+                  icon={item.icon}
+                  label={item.label}
+                  active={location.pathname === item.path}
                 />
               </div>
             ))}
           </nav>
         </div>
       </div>
+
+      {/* Dimmed background on mobile/tablet when sidebar is open */}
+      {mobileOpen && (
+        <div
+          className="fixed inset-0 bg-black/50 z-40 lg:hidden"
+          onClick={() => setMobileOpen(false)}
+        />
+      )}
     </>
   );
 };

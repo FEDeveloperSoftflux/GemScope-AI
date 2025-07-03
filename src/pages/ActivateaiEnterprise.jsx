@@ -185,44 +185,58 @@ const ActivateAI = ({ plan, setUserPlan }) => {
             </div>
             {/* Prompt Buttons */}
             <div className="flex flex-col items-center w-full mt-8 gap-8">
-              <div className="flex justify-center gap-5 w-full">
-                {promptOptions.slice(0, 4).map((prompt, idx) => (
+              {/* Mobile: only first two prompts in one row with scroll, centered */}
+              <div className="flex md:hidden w-full overflow-x-auto gap-3 pb-2 justify-center">
+                {promptOptions.slice(0, 2).map((prompt, idx) => (
                   <button
                     key={idx}
-                    className="px-2 py-3 rounded-xl bg-white/10 text-white/80 font-normal hover:bg-white hover:text-black transition font-['Lato'] text-[14px] leading-[22px] min-w-[150px] text-center"
+                    className="px-2 py-3 rounded-xl bg-white/10 text-white/80 font-normal hover:bg-white hover:text-black transition font-['Lato'] text-[14px] leading-[22px] min-w-[150px] text-center mb-2"
                     onClick={() => setSearch(prompt)}
                   >
                     {prompt}
                   </button>
                 ))}
               </div>
-              <div className="flex justify-center gap-5 w-full mb-5">
-                {promptOptions.slice(4).map((prompt, idx) => (
-                  <button
-                    key={idx + 4}
-                    className="px-2 py-3 rounded-xl bg-white/10 text-white/80 font-normal hover:bg-white hover:text-black transition font-['Lato'] text-[14px] leading-[22px] min-w-[150px] text-center"
-                    onClick={() => setSearch(prompt)}
-                  >
-                    {prompt}
-                  </button>
-                ))}
+              {/* Desktop: two rows as before */}
+              <div className="hidden md:flex flex-col w-full gap-8">
+                <div className="flex justify-center gap-5 w-full">
+                  {promptOptions.slice(0, 4).map((prompt, idx) => (
+                    <button
+                      key={idx}
+                      className="px-2 py-3 rounded-xl bg-white/10 text-white/80 font-normal hover:bg-white hover:text-black transition font-['Lato'] text-[14px] leading-[22px] min-w-[150px] text-center"
+                      onClick={() => setSearch(prompt)}
+                    >
+                      {prompt}
+                    </button>
+                  ))}
+                </div>
+                <div className="flex justify-center gap-5 w-full mb-5">
+                  {promptOptions.slice(4).map((prompt, idx) => (
+                    <button
+                      key={idx + 4}
+                      className="px-2 py-3 rounded-xl bg-white/10 text-white/80 font-normal hover:bg-white hover:text-black transition font-['Lato'] text-[14px] leading-[22px] min-w-[150px] text-center"
+                      onClick={() => setSearch(prompt)}
+                    >
+                      {prompt}
+                    </button>
+                  ))}
+                </div>
               </div>
             </div>
           </div>
         </div>
         {/* Tokenomics Section */}
-        <div className="mt-10 mb-4 w-full max-w-6xl ">
+        <div className="mt-10 mb-4 w-full max-w-6xl mx-auto">
           <div className="flex items-center justify-between mb-2">
             <div className="flex items-center">
               <h2 className="text-2xl font-medium text-white mr-4 font-[Schibsted_Grotesk] mb-4">Tokenomics</h2>
-              
             </div>
             <button className="px-4 py-2 rounded-lg bg-[#202020] hover:bg-[#2e2e2e] text-white/60 text-sm font-normal border border-[#333] font-[Schibsted_Grotesk] ">
                 <img src={DownloadG} alt="Download" className="inline-block w-5 h-4 mr-2 align-middle" />
                 Export Results
               </button>
           </div>
-          <div className="rounded-3xl p-4 bg-[#202020] shadow-lg border border-[#23232B] w-full max-w-full mx-auto mb-0 pb-0 overflow-hidden">
+          <div className="rounded-3xl p-4 bg-[#202020] shadow-lg border border-[#23232B] w-full max-w-full mx-auto mb-0 pb-0">
             <div className="overflow-x-auto">
               <table className="min-w-full text-center">
                 <thead>
@@ -359,7 +373,7 @@ const ActivateAI = ({ plan, setUserPlan }) => {
               >
                 View Repository
                 <img
-                  src="/src/assets/GithubRepo.svg"
+                  src={GithubRepo}
                   alt="GitHub Repo"
                   className="inline-block w-4 h-3 ml-1 align-text-bottom"
                   style={{ display: 'inline', verticalAlign: 'middle' }}

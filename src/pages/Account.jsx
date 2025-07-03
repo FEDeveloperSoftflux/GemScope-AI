@@ -53,7 +53,15 @@ const Account = ({ plan = "free", setUserPlan }) => {
         <div className="w-full max-w-6xl mx-auto rounded-3xl p-8 bg-[#202020] shadow-lg border border-[#23232B] mt-4 relative flex flex-col flex-grow min-h-[calc(100vh-120px)]">
           <form onSubmit={handleSave} className="grid grid-cols-1 md:grid-cols-2 gap-6 flex-grow">
             <div className="flex flex-col gap-4">
-              <label className="text-sm text-gray-400 font-['Schibsted_Grotesk']">Name</label>
+              <div className="flex items-center justify-between">
+                <label className="text-sm text-gray-400 font-['Schibsted_Grotesk']">Name</label>
+                <button
+                  type="submit"
+                  className="block md:hidden px-6 py-2 rounded-xl text-md font-medium bg-gradient-to-r from-purple-400 via-white to-pink-300 text-black shadow font-['Schibsted Grotesk']"
+                >
+                  Save
+                </button>
+              </div>
               <div className="relative">
                 <input
                   type="text"
@@ -174,10 +182,10 @@ const Account = ({ plan = "free", setUserPlan }) => {
               </div>
             </div>
           )}
-          <div className="absolute right-8 bottom-5 z-10">
+          <div className="w-full hidden md:flex mt-8 md:mt-0">
             <button
               type="submit"
-              className="px-10 py-2 rounded-xl text-md font-medium bg-gradient-to-r from-purple-400 via-white to-pink-300 text-black shadow font-['Schibsted Grotesk']"
+              className="w-full md:w-auto px-10 py-2 rounded-xl text-md font-medium bg-gradient-to-r from-purple-400 via-white to-pink-300 text-black shadow font-['Schibsted Grotesk'] md:ml-auto md:self-end"
             >
               Save
             </button>

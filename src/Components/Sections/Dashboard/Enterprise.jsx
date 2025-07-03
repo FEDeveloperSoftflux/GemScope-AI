@@ -5,7 +5,7 @@ import BackgroundImg from '../../../assets/Background.png';
 
 const EnterpriseUpgrade = ({ onUpgradeClick }) => (
   <div
-    className="rounded-2xl p-8 relative overflow-hidden shadow-xl border-1 border-gray-900"
+    className="rounded-2xl p-8 relative overflow-hidden shadow-xl border-1 border-gray-900 w-full lg:max-w-2xl lg:mx-auto"
     style={{
       backgroundImage: `url(${BackgroundImg})`,
       backgroundSize: 'cover',

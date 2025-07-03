@@ -94,9 +94,9 @@ const Billing = ({ plan = "free", setUserPlan }) => {
   );
 
   return (
-    <div className="h-screen text-white flex">
+    <div className="h-screen text-white flex flex-col md:flex-row">
       <Sidebar />
-      <div className="flex-1 p-6 overflow-y-auto">
+      <div className="flex-1 p-4 sm:p-6 overflow-y-auto w-full">
         <DHeader title="Billing" icon={BillingIcon} plan={plan} setUserPlan={setUserPlan} />
         {plan === 'free' ? (
           <>
@@ -114,9 +114,9 @@ const Billing = ({ plan = "free", setUserPlan }) => {
           </>
         ) : (
           <div className="mt-4 flex flex-col w-full">
-            <div className="flex items-center justify-between mb-4">
-              <div className="flex items-center gap-4 max-w-xl mr-8">
-                <div className="relative w-[180px] ml-8">
+            <div className="flex flex-col md:flex-row md:items-center md:justify-between mb-4 gap-4 w-full">
+              <div className="flex flex-col sm:flex-row items-center gap-2 sm:gap-4 w-full md:max-w-xl md:mr-8">
+                <div className="relative w-full sm:w-[180px] sm:ml-8">
                   <span className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400">
                     <img src={SearchIcon} alt="Search" className="w-4 h-4 ml-2" />
                   </span>
@@ -129,10 +129,10 @@ const Billing = ({ plan = "free", setUserPlan }) => {
                   />
                 </div>
               </div>
-              <div className="flex gap-2 items-center">
+              <div className="flex flex-wrap gap-2 w-full md:w-auto items-center justify-end md:justify-start">
                 <div className="relative">
                   <button
-                    className="flex items-center px-4 py-2 rounded-lg bg-[#202020] hover:bg-[#2e2e2e] text-white/60 text-sm font-normal border border-[#333] font-[Schibsted_Grotesk] mr-10 min-w-[150px]"
+                    className="flex items-center px-4 py-2 rounded-lg bg-[#202020] hover:bg-[#2e2e2e] text-white/60 text-sm font-normal border border-[#333] font-[Schibsted_Grotesk] min-w-[150px]"
                     onClick={() => setShowDatePicker((prev) => !prev)}
                     type="button"
                   >
@@ -153,9 +153,9 @@ const Billing = ({ plan = "free", setUserPlan }) => {
                 </div>
               </div>
             </div>
-            <div className="w-full max-w-6xl mx-auto rounded-3xl p-6 bg-[#202020] shadow-lg border border-[#23232B]">
+            <div className="w-full max-w-6xl mx-auto rounded-3xl p-2 sm:p-4 md:p-6 bg-[#202020] shadow-lg border border-[#23232B]">
               <div className="overflow-x-auto">
-                <table className="min-w-full text-left">
+                <table className="min-w-full text-left text-xs sm:text-sm md:text-base">
                   <thead>
                     <tr className="bg-black text-white text-sm">
                       <th className="py-2 px-4 font-normal font-['Schibsted_Grotesk'] text-gray-400 rounded-tl-2xl rounded-bl-2xl text-center">Payment Number</th>

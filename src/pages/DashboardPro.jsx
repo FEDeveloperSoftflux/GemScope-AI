@@ -11,7 +11,7 @@ import CurveDao from '../assets/CurveDAO.png';
 import COTI from '../assets/COTI.svg';
 import XDC from '../assets/XDC.svg';
 import SupportModal from '../Components/Sections/Dashboard/modal/SupportModal';
-import SuccessModal from '../Components/Sections/Dashboard/modal/SuccessModal';
+
 
 const CryptoDashboard = ({ plan = "free", setUserPlan }) => {
   // Sample data 
@@ -77,29 +77,28 @@ const CryptoDashboard = ({ plan = "free", setUserPlan }) => {
   ];
 
   return (
-    <div className="h-screen bg-black text-white flex">
+    <div className="h-screen bg-black text-white flex flex-col md:flex-row">
       <Sidebar />
       
-      <div className="flex-1 p-6 overflow-y-auto">
-      <DHeader plan={plan} setUserPlan={setUserPlan} />
+      <div className="flex-1 p-6 overflow-y-auto flex flex-col min-h-0">
+        <DHeader plan={plan} setUserPlan={setUserPlan} />
         <WelcomeSection />
         <ActionCards onSupportClick={() => setShowSupportModal(true)} />
-        
-        <div className="grid grid-cols-3 gap-6 ml-10">
-          <Watchlist cryptoData={cryptoData} />
-         <RightSidebar hotTokens={hotTokens} onUpgradeClick={() => setShowPricingCard(true)} />
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 md:ml-10 mt-4 flex-1 min-h-[60vh] items-start">
+          <Watchlist cryptoData={cryptoData} className="col-span-2" />
+          <RightSidebar hotTokens={hotTokens} onUpgradeClick={() => setShowPricingCard(true)} className="col-span-1" />
         </div>
         {showPricingCard && (
           <div className="fixed inset-0 flex items-center justify-center backdrop-blur-2xl bg-opacity-60 z-50">
             <div className="bg-[#202020] rounded-2xl p-8 relative max-w-3xl w-full min-h-[600px]">
               <CrossButton onClick={() => setShowPricingCard(false)} className="absolute top-2 right-2 " />
-              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2">
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                 {pricingPlans.filter(plan => plan.name !== "Free Tier").map((plan, idx) => (
                   <PricingCard 
                     key={idx} 
                     {...plan} 
                     buttonTextClassName="whitespace-nowrap" 
-                    width="w-[270px]" 
+                    width="w-full" 
                     buttonSizeClasses="px-12 py-2 text-sm"
                   />
                 ))}
@@ -114,10 +113,10 @@ const CryptoDashboard = ({ plan = "free", setUserPlan }) => {
           setEmail={setSupportEmail}
           message={supportMessage}
           setMessage={setSupportMessage}
-          onSuccess={() => { setShowSupportModal(false); setShowSuccessModal(true); }}
+          onSuccess={() => { setShowSupportModal(false)}}
         />
-        <SuccessModal open={showSuccessModal} onClose={() => setShowSuccessModal(false)} />
-      </div> 
+
+      </div>
     </div>
   );
 };
