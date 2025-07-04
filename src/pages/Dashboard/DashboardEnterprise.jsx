@@ -44,11 +44,11 @@ const CryptoDashboard = ({ plan = "free", setUserPlan }) => {
     <div className="h-screen bg-black text-white flex flex-col md:flex-row">
       <Sidebar />
       
-      <div className="flex-1 p-6 overflow-y-auto">
+      <div className="flex-1 px-0 py-6 sm:px-6 overflow-y-auto">
         <DHeader plan={plan} setUserPlan={setUserPlan} />
         <WelcomeSection />
         <ActionCards onSupportClick={() => setShowSupportModal(true)} />
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 md:ml-10 mt-4">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-0 md:gap-6 md:ml-10 mt-4">
           <Watchlist cryptoData={cryptoData} className="col-span-2" />
           <div className="col-span-1 w-full"><WhatsHot hotTokens={hotTokens} /></div>
         </div>

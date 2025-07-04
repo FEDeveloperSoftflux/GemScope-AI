@@ -19,7 +19,7 @@ const ActionCard = ({ title, description, icon: Icon, svgIcon, badgeText, onClic
     <div className="text-white mb-2">
       {svgIcon ? (
         <span className="inline-flex items-center justify-center border border-gray-600 rounded-xl p-2">
-          <img src={svgIcon} alt={title} style={{ width: 20, height: 20 }} />
+          <img src={svgIcon} alt={title} style={{ width: 18, height: 18 }} />
         </span>
       ) : (
         Icon && <Icon size={24} />
@@ -57,7 +57,7 @@ const ActionCards = ({ onSupportClick }) => {
   ];
 
   return (
-    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 ml-0 sm:ml-4 lg:ml-10 ">
+    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 px-4 sm:px-0 sm:ml-4 lg:ml-10">
       {cards.map((card, index) => (
         <ActionCard key={index} {...card} />
       ))}

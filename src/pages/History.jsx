@@ -57,6 +57,80 @@ const CustomCheckbox = ({ checked, onChange, className = '' }) => (
   </label>
 );
 
+// Mobile Card Component
+const MobileCard = ({ row, selected, onSelect, onDelete }) => (
+  <div className="bg-[#2a2a2a] rounded-lg p-4 mb-3 border border-[#333]">
+    <div className="flex items-start justify-between mb-3">
+      <div className="flex items-center gap-3">
+        <CustomCheckbox
+          checked={selected.includes(row.id)}
+          onChange={() => onSelect(row.id)}
+        />
+        <span className="text-white/60 text-sm font-['Schibsted_Grotesk']">
+          #{row.id.toString().padStart(2, '0')}
+        </span>
+      </div>
+      <div className="flex items-center gap-2">
+        <span
+          className={`
+            bg-gradient-to-b 
+            ${row.tier === 'Free' && 'from-[#F5DBE0]/5 to-[#C32388]/20'} 
+            ${row.tier === 'PRO' && 'from-[#2a1a3c] to-[#181c2b]'} 
+            ${row.tier === 'ENTERPRISE' && 'from-[#16213e] to-[#1a2238]'} 
+            text-[10px] font-normal rounded-full px-2 py-1 inline-block
+          `}
+        >
+          <span
+            className={`
+              bg-clip-text text-transparent 
+              ${row.tier === 'Free' && 'bg-gradient-to-b from-pink-400 to-pink-300'}
+              ${row.tier === 'PRO' && 'bg-gradient-to-b from-purple-400 to-purple-300'}
+              ${row.tier === 'ENTERPRISE' && 'bg-gradient-to-b from-blue-600 to-blue-400'}
+            `}
+          >
+            {row.tier}
+          </span>
+        </span>
+        <button
+          onClick={onDelete}
+          className="text-white/60 hover:text-red-400 transition p-1"
+          title="Delete"
+        >
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            className="h-4 w-4"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke="currentColor"
+          >
+            <path
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              strokeWidth={2}
+              d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16"
+            />
+          </svg>
+        </button>
+      </div>
+    </div>
+    
+    <div className="mb-3">
+      <p className="text-white/80 font-['Schibsted_Grotesk'] text-sm font-light leading-relaxed">
+        {row.detail}
+      </p>
+    </div>
+    
+    <div className="flex items-center justify-between">
+      <span className="text-white/60 text-xs font-['Schibsted_Grotesk']">
+        {row.date}
+      </span>
+      <button className="px-3 py-1.5 rounded-lg bg-[#202020] hover:bg-[#3a3a3a] text-white text-xs font-['Schibsted_Grotesk'] border border-gray-600 transition">
+        View Detail
+      </button>
+    </div>
+  </div>
+);
+
 const History = ({ plan = "free", setUserPlan }) => {
   const [search, setSearch] = useState('');
   const [selected, setSelected] = useState([]);
@@ -71,41 +145,55 @@ const History = ({ plan = "free", setUserPlan }) => {
     setSelected(selected.includes(id) ? selected.filter(i => i !== id) : [...selected, id]);
   };
 
+  const handleDelete = (id) => {
+    // Add delete logic here
+    console.log('Delete item:', id);
+  };
+
   const filteredData = dummyData.filter(row =>
     row.detail.toLowerCase().includes(search.toLowerCase())
   );
 
   return (
-    <div className="h-screen text-white flex flex-col md:flex-row">
+    <div className="h-screen text-white flex flex-col lg:flex-row">
       <Sidebar />
-      <div className="flex-1 p-4 sm:p-6 overflow-y-auto w-full">
+      <div className="flex-1 p-3 sm:p-4 lg:p-6 overflow-y-auto w-full">
         <DHeader title="Historic Prompts" icon={HistoryIcon} plan={plan} setUserPlan={setUserPlan} />
+        
         <div className="mt-4 flex flex-col w-full">
-          <div className="flex flex-col md:flex-row md:items-center md:justify-between mb-4 gap-4 w-full">
-            <div className="flex flex-col sm:flex-row items-center gap-2 sm:gap-4 w-full md:max-w-xl md:mr-8">
-              <div className="relative w-full sm:w-[180px] sm:ml-8">
+          {/* Controls Section */}
+          <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between mb-4 gap-4 w-full">
+            {/* Search and Select All - Mobile: Stack vertically, Desktop: Side by side */}
+            <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-3 sm:gap-4 w-full lg:max-w-xl">
+              {/* Search Input */}
+              <div className="relative w-full sm:w-[180px] lg:ml-8">
                 <span className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400">
                   <img src={SearchIcon} alt="Search" className="w-4 h-4 ml-2" />
                 </span>
                 <input
                   type="text"
-                  className="w-full h-[45px] pl-10 pr-2 rounded-lg bg-[#202020] border border-[#2e2e2e] placeholder-gray-400 focus:outline-none font-['Schibsted_Grotesk']"
+                  className="w-full h-[45px] pl-10 pr-2 rounded-lg bg-[#202020] border border-[#2e2e2e] placeholder-gray-400 focus:outline-none font-['Schibsted_Grotesk'] text-sm"
                   placeholder="Search"
                   value={search}
                   onChange={e => setSearch(e.target.value)}
                 />
               </div>
+              
+              {/* Select All Checkbox */}
               <label className="flex items-center gap-3 cursor-pointer select-none bg-black px-4 w-full sm:w-[180px] h-[45px] rounded-lg font-['Schibsted_Grotesk'] text-gray-300 hover:bg-gray-950 transition-colors">
                 <CustomCheckbox checked={selectAll} onChange={handleSelectAll} />
                 <span className="font-['Schibsted_Grotesk'] text-[16px] font-normal text-gray-400">Select All</span>
               </label>
             </div>
-            <div className="flex flex-wrap gap-2 w-full md:w-auto justify-end md:justify-start">
-              {selectAll && (
-                <button className="px-4 py-2 rounded-lg bg-white hover:bg-gray-100 text-black text-sm font-normal border border-[#333] font-[Schibsted_Grotesk] flex items-center mr-2">
+            
+            {/* Action Buttons */}
+            <div className="flex flex-col sm:flex-row gap-2 w-full lg:w-auto">
+              {/* Delete Button - Only show when items are selected */}
+              {selected.length > 0 && (
+                <button className="px-4 py-2 rounded-lg bg-white hover:bg-gray-100 text-black text-sm font-normal border border-[#333] font-[Schibsted_Grotesk] flex items-center justify-center gap-2">
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
-                    className="h-5 w-5"
+                    className="h-4 w-4"
                     fill="none"
                     viewBox="0 0 24 24"
                     stroke="currentColor"
@@ -117,21 +205,32 @@ const History = ({ plan = "free", setUserPlan }) => {
                       d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16"
                     />
                   </svg>
+                  <span className="hidden sm:inline">Delete Selected</span>
                 </button>
               )}
-              <button className="px-4 py-2 rounded-lg bg-[#202020] hover:bg-[#2e2e2e] text-white/60 text-sm font-normal border border-[#333] font-[Schibsted_Grotesk] flex items-center">
-                <img src={DownloadG} alt="Download" className="inline-block w-5 h-4 mr-2 align-middle" />
-                Export PDF
-              </button>
-              <button className="px-4 py-2 rounded-lg bg-[#202020] hover:bg-[#2e2e2e] text-white/60 text-sm font-normal border border-[#333] font-[Schibsted_Grotesk] flex items-center">
-                <img src={DownloadG} alt="Download" className="inline-block w-4 h-4 mr-2 align-middle" />
-                Export CSV
-              </button>
+              
+              {/* Export Buttons */}
+              <div className="flex gap-2">
+                <button className="flex-1 sm:flex-none px-4 py-2 rounded-lg bg-[#202020] hover:bg-[#2e2e2e] text-white/60 text-sm font-normal border border-[#333] font-[Schibsted_Grotesk] flex items-center justify-center gap-2">
+                  <img src={DownloadG} alt="Download" className="w-4 h-4" />
+                  <span className="hidden sm:inline">Export PDF</span>
+                  <span className="sm:hidden">PDF</span>
+                </button>
+                <button className="flex-1 sm:flex-none px-4 py-2 rounded-lg bg-[#202020] hover:bg-[#2e2e2e] text-white/60 text-sm font-normal border border-[#333] font-[Schibsted_Grotesk] flex items-center justify-center gap-2">
+                  <img src={DownloadG} alt="Download" className="w-4 h-4" />
+                  <span className="hidden sm:inline">Export CSV</span>
+                  <span className="sm:hidden">CSV</span>
+                </button>
+              </div>
             </div>
           </div>
-          <div className="w-full max-w-6xl mx-auto rounded-3xl p-2 sm:p-4 md:p-6 bg-[#202020] shadow-lg border border-[#23232B]">
-            <div className="overflow-x-auto">
-              <table className="min-w-full text-left text-xs sm:text-sm md:text-base">
+
+          {/* Table Container */}
+          <div className="w-full max-w-6xl mx-auto rounded-3xl p-2 sm:p-4 lg:p-6 bg-[#202020] shadow-lg border border-[#23232B]">
+            
+            {/* Desktop Table View - Hidden on mobile */}
+            <div className="hidden lg:block overflow-x-auto">
+              <table className="min-w-full text-left text-sm">
                 <thead>
                   <tr className="bg-black text-white text-sm">
                     <th className="py-2 px-0 font-semibold font-['Schibsted_Grotesk'] bg-black rounded-tl-2xl rounded-bl-2xl w-8"></th>
@@ -145,7 +244,7 @@ const History = ({ plan = "free", setUserPlan }) => {
                 <tbody className="bg-[#202020]">
                   {filteredData.map((row, idx) => (
                     <tr key={row.id} className="hover:bg-[#2a2a2a] transition text-white">
-                      {/* Checkbox cell with proper vertical alignment */}
+                      {/* Checkbox cell */}
                       <td className="py-2 px-2 align-middle">
                         <div className="flex items-center h-full">
                           <CustomCheckbox
@@ -200,6 +299,7 @@ const History = ({ plan = "free", setUserPlan }) => {
                           View Detail
                         </button>
                         <button
+                          onClick={() => handleDelete(row.id)}
                           className="text-white hover:text-red-400 transition p-1"
                           title="Delete"
                         >
@@ -236,6 +336,27 @@ const History = ({ plan = "free", setUserPlan }) => {
                 </tbody>
               </table>
             </div>
+
+            {/* Mobile Card View - Hidden on desktop */}
+            <div className="lg:hidden">
+              {filteredData.length > 0 ? (
+                <div className="space-y-3">
+                  {filteredData.map((row) => (
+                    <MobileCard
+                      key={row.id}
+                      row={row}
+                      selected={selected}
+                      onSelect={handleSelect}
+                      onDelete={() => handleDelete(row.id)}
+                    />
+                  ))}
+                </div>
+              ) : (
+                <div className="py-8 text-center text-gray-400 font-['Schibsted_Grotesk']">
+                  No records found.
+                </div>
+              )}
+            </div>
           </div>
         </div>
       </div>
@@ -243,4 +364,4 @@ const History = ({ plan = "free", setUserPlan }) => {
   );
 };
 
-export default History; 
+export default History;

@@ -47,11 +47,11 @@ const DHeader = ({ user, title = "Dashboard", icon, plan = "free", setUserPlan }
   return (
     <div className="flex flex-row items-center justify-between gap-2 sm:gap-4 mb-6 w-full px-2 sm:px-0">
       <div className="flex items-center gap-2 sm:gap-4 w-auto">
-        <div className="w-8 h-8 flex items-center justify-center border-2 border-gray-500 rounded-md bg-black ml-2 sm:ml-10">
+        <div className="w-6 h-6 flex items-center justify-center border-2 border-gray-500 rounded-md bg-black ml-2 sm:ml-10">
           {icon ? (
-            <img src={icon} alt="Icon" className="w-5 h-5" />
+            <img src={icon} alt="Icon" className="w-2 h-2" />
           ) : (
-            <img src={House} alt="House" className="w-5 h-5" />
+            <img src={House} alt="House" className="w-2 h-2" />
           )}
         </div>
         <div className="flex items-center gap-2 sm:gap-3">

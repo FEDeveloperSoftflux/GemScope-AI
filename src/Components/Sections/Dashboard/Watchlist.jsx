@@ -26,40 +26,40 @@ const initialCryptoData = [
 
 // Crypto Row Component
 const CryptoRow = ({ crypto, onDelete }) => (
-  <div className="grid grid-cols-5 items-center px-4 py-3 hover:bg-gray-800 rounded-lg transition-colors">
+  <div className="grid grid-cols-5 items-center px-2 sm:px-4 py-2 sm:py-3 hover:bg-gray-800 rounded-lg transition-colors">
     {/* Logo & Name */}
-    <div className="flex items-center gap-3 min-w-0 col-span-2">
-      <div className="w-12 h-12 rounded-md flex items-center justify-center">
+    <div className="flex items-center gap-2 sm:gap-3 min-w-0 col-span-2">
+      <div className="w-8 h-8 sm:w-12 sm:h-12 rounded-md flex items-center justify-center">
         {crypto.logo && (
-          <img src={crypto.logo} alt={crypto.name} className="w-10 h-10 rounded-full" />
+          <img src={crypto.logo} alt={crypto.name} className="w-6 h-6 sm:w-10 sm:h-10 rounded-full" />
         )}
       </div>
       <div className="min-w-0">
-        <p className="font-semibold text-white  font-['Schibsted_Grotesk'] text-[15px] leading-[20px]">{crypto.name}</p>
-        <p className="text-xs text-gray-400 uppercase truncate font-['Lato']">{crypto.symbol}</p>
+        <p className="font-semibold text-white font-['Schibsted_Grotesk'] text-[13px] sm:text-[15px] leading-[16px] sm:leading-[20px]">{crypto.name}</p>
+        <p className="text-[10px] sm:text-xs text-gray-400 uppercase truncate font-['Lato']">{crypto.symbol}</p>
       </div>
     </div>
     {/* Price */}
-    <div className="text-white font-normal text-right col-span-1 font-['Schibsted_Grotesk'] text-[15px] leading-[20px]">
+    <div className="text-white font-normal text-right col-span-1 font-['Schibsted_Grotesk'] text-[13px] sm:text-[15px] leading-[16px] sm:leading-[20px]">
       {crypto.price}
     </div>
     {/* Trend */}
-    <div className={` font-['Schibsted_Grotesk'] text-xs flex items-center gap-1 ${crypto.positive ? 'text-green-400' : 'text-red-400'} justify-end col-span-1` }>
+    <div className={`font-['Schibsted_Grotesk'] text-[10px] sm:text-xs flex items-center gap-1 justify-end col-span-1 ${crypto.positive ? 'text-green-400' : 'text-red-400'}` }>
       {crypto.positive ? (
-        <img src={Trendup} alt="Trend Up" className="w-2 h-2" />
+        <img src={Trendup} alt="Trend Up" className="w-1.5 h-1.5 sm:w-2 sm:h-2" />
       ) : (
-        <img src={Trenddown} alt="Trend Down" className="w-2 h-2" />
+        <img src={Trenddown} alt="Trend Down" className="w-1.5 h-1.5 sm:w-2 sm:h-2" />
       )}
       {crypto.change}
     </div>
     {/* Delete Button */}
     <div className="flex justify-end col-span-1">
       <button
-        className="p-2 rounded-md border border-gray-500 hover:bg-white/10 transition-colors w-8 h-8 flex items-center justify-center"
+        className="p-1 sm:p-2 rounded-md border border-gray-500 hover:bg-white/10 transition-colors w-6 h-6 sm:w-8 sm:h-8 flex items-center justify-center"
         onClick={() => onDelete(crypto.symbol)}
         aria-label={`Delete ${crypto.name}`}
       >
-        <Trash2 size={16} className="text-white" />
+        <Trash2 size={13} className="sm:w-4 sm:h-4 text-white" />
       </button>
     </div>
   </div>
@@ -82,17 +82,17 @@ const Watchlist = () => {
   };
 
   return (
-    <div className="col-span-2 bg-[#18181b] rounded-2xl p-4 sm:p-6 max-w-full h-full">
-      <div className="flex justify-between items-center mb-4">
-        <h3 className="text-xl sm:text-2xl font-extrabold text-white flex items-end gap-2">
-          <span className="font-['Schibsted_Grotesk'] text-[30px] leading-[20px] font-weight-700">My Watchlist</span>
+    <div className="col-span-2 bg-[#18181b] rounded-2xl p-2 sm:p-6 max-w-full h-full mx-4 sm:mx-0">
+      <div className="flex justify-between items-center mb-2 sm:mb-4">
+        <h3 className="text-lg sm:text-2xl font-extrabold text-white flex items-end gap-2">
+          <span className="font-['Schibsted_Grotesk'] text-[20px] sm:text-[30px] leading-[16px] sm:leading-[20px] font-weight-700">My Watchlist</span>
         </h3>
         <button
-          className="relative px-4 py-2 text-[16px] font-medium text-black bg-gradient-to-r from-purple-400 via-white to-pink-300 rounded-xl shadow-black/30 drop-shadow-lg transform transition-all duration-300 ease-in-out active:scale-95 font-['Schibsted_Grotesk'] shadow-[inset_-4px_0_8px_rgba(0,0,0,0.3),inset_4px_0_8px_rgba(0,0,0,0.3)] flex items-center gap-2"
+          className="relative px-2 sm:px-4 py-1.5 sm:py-2 text-[13px] sm:text-[16px] font-medium text-black bg-gradient-to-r from-purple-400 via-white to-pink-300 rounded-xl shadow-black/30 drop-shadow-lg transform transition-all duration-300 ease-in-out active:scale-95 font-['Schibsted_Grotesk'] shadow-[inset_-4px_0_8px_rgba(0,0,0,0.3),inset_4px_0_8px_rgba(0,0,0,0.3)] flex items-center gap-1.5 sm:gap-2"
           style={{ boxShadow: '0 4px 24px 0 rgba(236, 72, 153, 0.15)' }}
           onClick={() => setShowModal(true)}
         >
-          <Plus size={18} />
+          <Plus size={15} className="sm:w-[18px] sm:h-[18px]" />
           Add Coin
         </button>
       </div>
