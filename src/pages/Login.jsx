@@ -1,8 +1,8 @@
 import { useState } from 'react';
-import Background from '../../assets/Login.png';
-import Logo from '../../assets/Logo.svg';
-import Button from '../Common/Button';
-import GoogleIcon from '../../assets/Google.svg';
+import Background from '../assets/Login.png';
+import Logo from '../assets/Logo.svg';
+import Button from '../Components/Common/Button';
+import GoogleIcon from '../assets/Google.svg';
 import { useNavigate } from 'react-router-dom';
 
 const Login = () => {

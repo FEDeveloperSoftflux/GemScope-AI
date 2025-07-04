@@ -74,21 +74,22 @@
 }
 
 .actioncard-title {
-  font-family: 'Schibsted Grotesk', sans-serif;
-  font-weight: 500;
+  font-family: 'Schibsted Grotesk';
+  font-weight: 600;
   margin-bottom: 0.25rem;
-  color: #fff;
-  font-size: 18px; /* 1xl equivalent */
+  color: #FFFFFF/80;
+  font-size: 18px; 
 }
 
 .action-description {
   font-family: 'Lato', sans-serif;
-  font-weight: 300;
+  font-weight: 400;
   margin-bottom: 0.25rem;
   color: #fff;
-  font-size: 13px; /* 1xl equivalent */
+  font-size: 13px; 
   margin-right: 40px;
-  line-height: 1.1; 
+  line-height: 1.1;
+  letter-spacing:0.18px; 
 }
 
 

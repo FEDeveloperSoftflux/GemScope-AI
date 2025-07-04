@@ -1,21 +1,19 @@
 import React, { useState } from 'react';
-import Sidebar from '../Components/Sections/Dashboard/Sidebar';
-import DHeader from '../Components/Sections/Dashboard/DHeader';
-import Background from '../assets/ActivateaiBG.png';
-import ActivateAIIcon from '../assets/ActivateAI.svg';
-import AIAnalysisModal from '../Components/Sections/Dashboard/modal/AIAnalysisModal';
-import UpgradeRequiredModal from '../Components/Sections/Dashboard/modal/UpgradeRequiredModal';
-import BitcoinLogo from '../assets/Bitcoin1.svg';
-import Meter from '../assets/Meter.svg'
-import DownloadG from '../assets/DownloadG.svg';
-import BinanceLogo from '../assets/Binance.svg';
-import GithubRepo from '../assets/GithubRepo.svg';
-import GithubRepo2 from '../assets/GitRepo2.svg';
-
-import Binance from '../assets/Binance2.svg';
-import Bybit from '../assets/Bybit.svg';
-import OKX from '../assets/OKX.svg';
-import CoinBase from '../assets/CoinBase.svg';
+import Sidebar from '../../Components/Sections/Dashboard/Sidebar';
+import DHeader from '../../Components/Sections/Dashboard/DHeader';
+import Background from '../../assets/ActivateaiBG.png';
+import ActivateAIIcon from '../../assets/ActivateAI.svg';
+import AIAnalysisModal from '../../Components/Sections/Dashboard/modal/AIAnalysisModal';
+import UpgradeRequiredModal from '../../Components/Sections/Dashboard/modal/UpgradeRequiredModal';
+import BitcoinLogo from '../../assets/Bitcoin1.svg';
+import Meter from '../../assets/Meter.svg'
+import DownloadG from '../../assets/DownloadG.svg';
+import GithubRepo from '../../assets/GithubRepo.svg';
+import GithubRepo2 from '../../assets/GitRepo2.svg';
+import Binance from '../../assets/Binance2.svg';
+import Bybit from '../../assets/Bybit.svg';
+import OKX from '../../assets/OKX.svg';
+import CoinBase from '../../assets/CoinBase.svg';
 
 const promptOptions = [
   'Show me a hidden gem',

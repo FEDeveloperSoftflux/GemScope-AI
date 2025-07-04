@@ -1,12 +1,12 @@
 import React, { useState } from 'react';
-import Sidebar from '../Components/Sections/Dashboard/Sidebar';
-import DHeader from '../Components/Sections/Dashboard/DHeader';
-import Background from '../assets/ActivateaiBG.png';
-import ActivateAIIcon from '../assets/ActivateAI.svg';
-import AIAnalysisModal from '../Components/Sections/Dashboard/modal/AIAnalysisModal';
-import UpgradeRequiredModal from '../Components/Sections/Dashboard/modal/UpgradeRequiredModal';
-import BitcoinLogo from '../assets/Bitcoin1.svg';
-import DownloadG from '../assets/DownloadG.svg';
+import Sidebar from '../../Components/Sections/Dashboard/Sidebar';
+import DHeader from '../../Components/Sections/Dashboard/DHeader';
+import Background from '../../assets/ActivateaiBG.png';
+import ActivateAIIcon from '../../assets/ActivateAI.svg';
+import AIAnalysisModal from '../../Components/Sections/Dashboard/modal/AIAnalysisModal';
+import UpgradeRequiredModal from '../../Components/Sections/Dashboard/modal/UpgradeRequiredModal';
+import BitcoinLogo from '../../assets/Bitcoin1.svg';
+import DownloadG from '../../assets/DownloadG.svg';
 
 const promptOptions = [
   'Show me a hidden gem',
@@ -81,7 +81,7 @@ const ActivateAI = ({ plan, setUserPlan }) => {
         <DHeader title="Activate AI" icon={ActivateAIIcon} plan={plan} setUserPlan={setUserPlan} />
         <div className="mt-4 flex flex-col w-full">
           <div
-            className="w-full max-w-full md:max-w-6xl mx-auto rounded-3xl p-5 overflow-hidden shadow-lg"
+            className="w-full max-w-6xl mx-auto rounded-3xl p-5 overflow-hidden shadow-lg"
             style={{
               background: `url(${Background}) center/cover no-repeat`,
               boxShadow: '0 4px 32px 0 rgba(186, 148, 255, 0.15)'

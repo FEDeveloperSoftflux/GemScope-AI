@@ -16,6 +16,7 @@ const PricingCard = ({
   buttonTextClassName = '',
   width = 'w-[300px]',
   buttonSizeClasses = "px-18 py-3 text-[16px]",
+  fromBilling = false,
   ...props 
 }) => {
   return (
@@ -26,7 +27,10 @@ const PricingCard = ({
         {...props}
       >
         {popular && (
-          <div className="absolute top-4 ml-40 bg-white/20 text-white px-5 py-2 rounded-full text-[10px] font-medium shadow-md z-20 backdrop-blur-md font-['Lato']" >
+          <div className={fromBilling
+            ? "absolute top-4 right-4 bg-blue-700 text-white text-xs px-2 py-1 rounded-full font-semibold z-20 backdrop-blur-md font-['Lato']"
+            : "absolute top-4 ml-40 bg-white/20 text-white px-5 py-2 rounded-full text-[10px] font-medium shadow-md z-20 backdrop-blur-md font-['Lato']"
+          }>
             Most popular
           </div>
         )}

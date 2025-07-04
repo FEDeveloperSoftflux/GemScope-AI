@@ -1,7 +1,7 @@
 import { useState } from 'react';
-import Background from '../../assets/Background.png';
-import Logo from '../../assets/Logo.svg';
-import Button from '../Common/Button';
+import Background from '../assets/Background.png';
+import Logo from '../assets/Logo.svg';
+import Button from '../Components/Common/Button';
 import PhoneInput from 'react-phone-input-2';
 import 'react-phone-input-2/lib/style.css';
 

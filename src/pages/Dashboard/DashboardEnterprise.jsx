@@ -1,17 +1,15 @@
 import React, { useState } from 'react';
-import Sidebar from '../Components/Sections/Dashboard/Sidebar';
-import DHeader from '../Components/Sections/Dashboard/DHeader';
-import WelcomeSection from '../Components/Sections/Dashboard/Welcome';
-import ActionCards from '../Components/Sections/Dashboard/ActionCard';
-import Watchlist from '../Components/Sections/Dashboard/Watchlist';
-import RightSidebar from '../Components/Sections/Dashboard/RightBar';
-import PricingCard from '../Components/Sections/PricingCard';
-import CrossButton from '../Components/Common/CrossButton';
-import CurveDao from '../assets/CurveDAO.png';
-import COTI from '../assets/COTI.svg';
-import XDC from '../assets/XDC.svg';
-import WhatsHot from '../Components/Sections/Dashboard/WhatsHot';
-import SupportModal from '../Components/Sections/Dashboard/modal/SupportModal';
+import Sidebar from '../../Components/Sections/Dashboard/Sidebar';
+import DHeader from '../../Components/Sections/Dashboard/DHeader';
+import WelcomeSection from '../../Components/Sections/Dashboard/Welcome';
+import ActionCards from '../../Components/Sections/Dashboard/ActionCard';
+import Watchlist from '../../Components/Sections/Dashboard/Watchlist';
+import CrossButton from '../../Components/Common/CrossButton';
+import CurveDao from '../../assets/CurveDAO.png';
+import COTI from '../../assets/COTI.svg';
+import XDC from '../../assets/XDC.svg';
+import WhatsHot from '../../Components/Sections/Dashboard/WhatsHot';
+import SupportModal from '../../Components/Sections/Dashboard/modal/SupportModal';
 
 const CryptoDashboard = ({ plan = "free", setUserPlan }) => {
   // Sample data 

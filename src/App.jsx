@@ -4,27 +4,21 @@ import Network from './assets/Network.svg';
 import Shield from './assets/Shield.svg';
 import Header from './Layout/Header';
 import Footer from './Layout/Footer';
-import AICrypto from './Components/Sections/AICrypto';
-import LifeChanging from './Components/Sections/LifeChanging';
-import FAQ from './Components/Sections/FAQ';
-import Pricing from './Components/Sections/Pricing';
-import CTA from './Components/Sections/CTA';
-import Features from './Components/Sections/Feature';
-import HeroContent from './Components/Sections/Hero';
 import PrivacyPolicy from './Components/Sections/PrivacyPolicy';
 import TermsAndCondition from './Components/Sections/Terms&Condition';
-import Login from './Components/Sections/Login';
-import CreateAccount from './Components/Sections/CreateAccount';
-import Verification from './Components/Sections/Verification';
-import Dashboard from './pages/Dashboard';
-import DashboardPro from './pages/DashboardPro';
-import DashboardEnterprise from './pages/DashboardEnterprise';
-import ActivateAI from './pages/ActivateAI';
-import ActivateAIPro from './pages/ActivateaiPro';
-import ActivateAIEnterprise from './pages/ActivateaiEnterprise';
+import Login from './pages/Login';
+import CreateAccount from './pages/CreateAccount';
+import Verification from './pages/Verification';
+import Dashboard from './pages/Dashboard/DashboardFree';
+import DashboardPro from './pages/Dashboard//DashboardPro';
+import DashboardEnterprise from './pages/Dashboard/DashboardEnterprise';
+import ActivateAI from './pages/ActivateAI/ActivateaiFree';
+import ActivateAIPro from './pages/ActivateAI/ActivateaiPro';
+import ActivateAIEnterprise from './pages/ActivateAI/ActivateaiEnterprise';
 import History from './pages/History';
 import Billing from './pages/Billing';
 import Account from './pages/Account';
+import Home from './pages/Home';
 
 
 import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
@@ -170,19 +164,14 @@ const AppContent = () => {
       <main>
         <Routes>
           <Route path="/" element={
-            <>
-              <HeroContent />
-              <Features features={features} />
-              <AICrypto  />
-              <LifeChanging />
-              <FAQ 
-                faqData={faqData} 
-                openFaqIndex={openFaqIndex}
-                onFaqToggle={handleFaqToggle}
-              />
-              <Pricing pricingPlans={pricingPlans} onPlanSelection={handlePlanSelection} /> 
-              <CTA />
-            </>
+            <Home 
+              features={features}
+              faqData={faqData}
+              openFaqIndex={openFaqIndex}
+              onFaqToggle={handleFaqToggle}
+              pricingPlans={pricingPlans}
+              onPlanSelection={handlePlanSelection}
+            />
           } />
           <Route path="/privacy" element={<PrivacyPolicy />} />
           <Route path="/terms" element={<TermsAndCondition />} />

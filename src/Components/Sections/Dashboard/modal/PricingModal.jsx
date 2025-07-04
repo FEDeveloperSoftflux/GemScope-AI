@@ -2,7 +2,7 @@ import React from 'react';
 import PricingCard from '../../PricingCard';
 import CrossButton from '../../../Common/CrossButton';
 
-const PricingModal = ({ show, onClose, pricingPlans }) => {
+const PricingModal = ({ show, onClose, pricingPlans, fromBilling }) => {
   if (!show) return null;
   return (
     <div className="fixed inset-0 flex items-center justify-center backdrop-blur-lg bg-black/10 z-50">
@@ -16,6 +16,7 @@ const PricingModal = ({ show, onClose, pricingPlans }) => {
               buttonTextClassName="whitespace-nowrap" 
               width="w-[270px]" 
               buttonSizeClasses="px-8 py-2 text-sm"
+              fromBilling={fromBilling}
             />
           ))}
         </div>

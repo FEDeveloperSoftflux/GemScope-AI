@@ -100,7 +100,7 @@ const Billing = ({ plan = "free", setUserPlan }) => {
         <DHeader title="Billing" icon={BillingIcon} plan={plan} setUserPlan={setUserPlan} />
         {plan === 'free' ? (
           <>
-            <div className="my-4 p-4 bg-[#202020] text-gray-200/50 rounded-lg text-center font-semibold font-['Schibsted_Grotesk']">
+            <div className="my-4 p-4 text-gray-200/50 rounded-xl text-center font-medium font-['Schibsted_Grotesk']">
               This is a Free Plan Subscription, therefore no payments are made
             </div>
             <div className="flex justify-center mt-4">
@@ -220,7 +220,7 @@ const Billing = ({ plan = "free", setUserPlan }) => {
           </div>
         )}
       </div>
-      <PricingModal show={showPricingModal} onClose={() => setShowPricingModal(false)} pricingPlans={pricingPlans} />
+      <PricingModal show={showPricingModal} onClose={() => setShowPricingModal(false)} pricingPlans={pricingPlans} fromBilling={true} />
     </div>
   );
 };
