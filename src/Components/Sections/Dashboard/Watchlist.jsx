@@ -82,7 +82,7 @@ const Watchlist = () => {
   };
 
   return (
-    <div className="col-span-2 bg-[#18181b] rounded-2xl p-4 sm:p-6 max-w-full">
+    <div className="col-span-2 bg-[#18181b] rounded-2xl p-4 sm:p-6 max-w-full h-full">
       <div className="flex justify-between items-center mb-4">
         <h3 className="text-xl sm:text-2xl font-extrabold text-white flex items-end gap-2">
           <span className="font-['Schibsted_Grotesk'] text-[30px] leading-[20px] font-weight-700">My Watchlist</span>

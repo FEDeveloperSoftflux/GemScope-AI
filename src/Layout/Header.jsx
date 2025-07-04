@@ -14,15 +14,15 @@ const Header = () => {
           <div className="flex items-center justify-between w-full h-full py-3 md:py-6">
             {/* Logo Container */}
             <div className="flex items-center space-x-2">
-              <img src={logo} alt="Logo" className="w-[50.6px] h-[42.31px] " />
-              <span className="font-['Schibsted_Grotesk']  text-white text-[25px] leading-[18px] tracking-[-0.28px]  font-weight-800">
+              <img src={logo} alt="Logo" className="w-8 h-8 md:w-[50.6px] md:h-[42.31px]" />
+              <span className="font-['Schibsted_Grotesk'] text-white text-[18px] md:text-[25px] leading-[14px] md:leading-[18px] tracking-[-0.28px] font-weight-800">
                 GemScope AI
               </span>
             </div>
             {/* Login Button - Always visible, responsive sizing */}
             <div className="font-schibsted">
               <Link to="/login">
-              <button className="relative px-10 py-2 text-[16px] font-medium  text-black bg-gradient-to-r from-purple-400 via-white to-pink-300 rounded-xl 
+              <button className="relative px-6 py-2 text-[12px] md:px-10 md:py-2 md:text-[16px] font-medium text-black bg-gradient-to-r from-purple-400 via-white to-pink-300 rounded-xl 
            shadow-black/60 drop-shadow-lg transform transition-all duration-300 ease-in-out active:scale-95
            font-['Schibsted_Grotesk'] shadow-[inset_-4px_0_8px_rgba(0,0,0,0.3),inset_4px_0_8px_rgba(0,0,0,0.3)]">
         Login
@@ -35,8 +35,8 @@ const Header = () => {
         {isSpecialPage && (
           <div className="flex justify-center items-center h-full py-3 md:py-6">
             <div className="flex items-center space-x-2">
-              <img src={logo} alt="Logo" className="w-6 h-6 md:w-[50px] md:h-[42.31px]" />
-              <span className="text-white text-[25px] leading-[18px] tracking-[-0.28px]"  style={{ fontFamily: 'Schibsted Grotesk' }}>GemScope AI</span>
+              <img src={logo} alt="Logo" className="w-8 h-8 md:w-[50px] md:h-[42.31px]" />
+              <span className="text-white text-[18px] md:text-[25px] leading-[14px] md:leading-[18px] tracking-[-0.28px]"  style={{ fontFamily: 'Schibsted Grotesk' }}>GemScope AI</span>
             </div>
           </div>
         )}

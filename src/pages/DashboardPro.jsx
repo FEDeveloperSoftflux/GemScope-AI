@@ -80,11 +80,11 @@ const CryptoDashboard = ({ plan = "free", setUserPlan }) => {
     <div className="h-screen bg-black text-white flex flex-col md:flex-row">
       <Sidebar />
       
-      <div className="flex-1 p-6 overflow-y-auto flex flex-col min-h-0">
+      <div className="flex-1 p-6 overflow-y-auto flex flex-col min-h-0 mb-4">
         <DHeader plan={plan} setUserPlan={setUserPlan} />
         <WelcomeSection />
         <ActionCards onSupportClick={() => setShowSupportModal(true)} />
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 md:ml-10 mt-4 flex-1 min-h-[60vh] items-start">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 md:ml-10 mt-4 flex-1 min-h-[60vh] items-stretch">
           <Watchlist cryptoData={cryptoData} className="col-span-2" />
           <RightSidebar hotTokens={hotTokens} onUpgradeClick={() => setShowPricingCard(true)} className="col-span-1" />
         </div>
@@ -98,7 +98,6 @@ const CryptoDashboard = ({ plan = "free", setUserPlan }) => {
                     key={idx} 
                     {...plan} 
                     buttonTextClassName="whitespace-nowrap" 
-                    width="w-full" 
                     buttonSizeClasses="px-12 py-2 text-sm"
                   />
                 ))}

@@ -163,25 +163,38 @@ const ActivateAI = ({ plan, setUserPlan }) => {
               boxShadow: '0 4px 32px 0 rgba(186, 148, 255, 0.15)'
             }}
           >
-            <h1 className="text-[50px] font-medium mb-4 text-white text-center font-[Schibsted_Grotesk]">
+            <h1 className="text-3xl sm:text-4xl md:text-5xl font-medium mb-4 text-white text-center font-[Schibsted_Grotesk]">
               AI Powered <span className="bg-gradient-to-r from-yellow-400 via-orange-400 via-red-400  to-red-500 bg-clip-text text-transparent">Search & Analytics</span>
             </h1>
-            <p className="text-white/70 text-center mb-8 text-[17px] font-['Lato] leading[28.8px]tracking-[0.18px]">Use natural language to discover and analyse cryptocurrency opportunities</p>
-            <div className="relative w-[800px] h-[65px] mx-auto mb-6 ">
+            <p className="text-white/70 text-center mb-8 text-base sm:text-lg md:text-[17px] font-['Lato'] leading[28.8px] tracking-[0.18px]">Use natural language to discover and analyse cryptocurrency opportunities</p>
+            {/* Responsive Search Bar */}
+            <div className="relative w-full max-w-full md:w-[800px] mx-auto mb-6 flex flex-col md:block">
               <input
                 type="text"
-                className="w-full  h-[55px] px-4 py-2 pr-28 rounded-xl bg-[#0F0F0F] text-white border border-[#2e2e2e] placeholder-gray-400 focus:outline-none font-['Schibsted_Grotesk']"
+                className="w-full h-[50px] md:h-[55px] px-4 py-2 md:pr-28 rounded-xl bg-[#0F0F0F] text-white border border-[#2e2e2e] placeholder-gray-400 focus:outline-none font-['Schibsted_Grotesk']"
                 placeholder="Give me a Crypto coin with high investment potential..."
                 value={search}
                 onChange={e => setSearch(e.target.value)}
               />
-              <button
-                className="absolute top-[26px] right-2 transform -translate-y-1/2 px-6 py-1 rounded-xl font-semibold text-lg bg-gradient-to-r from-purple-400 via-white to-pink-300 text-black shadow-lg transition hover:scale-105"
-                style={{ boxShadow: '0 4px 24px 0 rgba(236, 72, 153, 0.15)' }}
-                onClick={handleSearch}
-              >
-                Search
-              </button>
+              {/* Desktop: button inside input, Mobile: button below input */}
+              <div className="hidden md:block">
+                <button
+                  className="absolute top-[26px] right-2 transform -translate-y-1/2 px-6 py-1 rounded-xl font-semibold text-lg bg-gradient-to-r from-purple-400 via-white to-pink-300 text-black shadow-lg transition hover:scale-105"
+                  style={{ boxShadow: '0 4px 24px 0 rgba(236, 72, 153, 0.15)' }}
+                  onClick={handleSearch}
+                >
+                  Search
+                </button>
+              </div>
+              <div className="block md:hidden mt-3 w-full flex justify-center">
+                <button
+                  className="px-6 py-2 rounded-xl font-semibold text-base bg-gradient-to-r from-purple-400 via-white to-pink-300 text-black shadow-lg transition hover:scale-105 w-2/3"
+                  style={{ boxShadow: '0 4px 24px 0 rgba(236, 72, 153, 0.15)' }}
+                  onClick={handleSearch}
+                >
+                  Search
+                </button>
+              </div>
             </div>
             {/* Prompt Buttons */}
             <div className="flex flex-col items-center w-full mt-8 gap-8">
@@ -405,7 +418,7 @@ const ActivateAI = ({ plan, setUserPlan }) => {
                   {exchangeCoinData.map((exchange, idx) => (
                     <tr key={idx} className={`transition text-white border-t border-[#232323] w-full flex${idx === exchangeCoinData.length - 1 ? ' rounded-bl-2xl rounded-br-2xl overflow-hidden' : ''} gap-8`}>
                       {/* Exchange Number */}
-                      <td className="py-4 px-6 flex-1 flex items-center font-['Schibsted_Grotesk'] text-left">{idx + 1}</td>
+                      <td className="py-4 px-6 flex-1 flex items-center justify-center font-['Schibsted_Grotesk'] text-center">{idx + 1}</td>
                       {/* Exchange Listing: logo, name, type */}
                       <td className="py-4 px-6 flex-1 flex items-center gap-3 font-['Schibsted_Grotesk'] text-center">
                         <span

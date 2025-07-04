@@ -82,14 +82,14 @@ const LifeChanging = () => {
                 </div>
               </div>
           
-              <div className="bg-zinc-950 border border-white/10 rounded-2xl  w-full sm:w-1/2 relative overflow-hidden min-h-[300px] p-6">
-              <h3 className="text-white text-[20px] font-bold mb-4 leading-[26px] tracking-[-0.4px] font-['Lato']">
+              <div className="bg-zinc-950 border border-white/10 rounded-2xl  w-full sm:w-1/2 relative overflow-hidden min-h-[300px] sm:min-h-[340px] p-4 sm:p-6">
+              <h3 className="text-white text-[16px] sm:text-[20px] font-bold mb-3 sm:mb-4 leading-[20px] sm:leading-[26px] tracking-[-0.4px] font-['Lato']">
                 What you don't know can cost<br />you thousands of $
                 </h3>
-              <p className="text-white/70 font-['Lato'] text-[16px] leading-[20px] mr-10">
+              <p className="text-white/70 font-['Lato'] text-[13px] sm:text-[16px] leading-[18px] sm:leading-[20px] mr-2 sm:mr-10">
                 One wrong move could waste your time. More importantly, your portfolio could be completely wiped out. GemScope helps you avoid rug pulls and keeps you from HODL'ing unworthy coins.
                 </p>
-                <img src={OverlayImage} alt="image" className="absolute bottom-0 left-1/2 -translate-x-1/2 w-80 h-65 mb-2 align-middle"/>
+                <img src={OverlayImage} alt="image" className="absolute bottom-0 left-1/2 -translate-x-1/2 w-40 sm:w-80 h-auto mb-2 align-middle"/>
               </div>
           
             </div>

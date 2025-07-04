@@ -28,11 +28,12 @@ const CTA = () => {
             Manage The Risk, <br/> Maximise Your Potential
           </h2>
           
-          <p className="text-[20px] text-gray-300 mb-8 max-w-2xl mr-20 ml-20 font-['Lato'] font-weight-400 leading-[32px] tracking-[0.18px] mt-10">
+          <p className="text-[20px] text-gray-300 mb-8 max-w-2xl mr-20 ml-20 font-['Lato'] font-weight-400 leading-[32px] tracking-[0.18px] mt-10
+            xs:text-[16px] xs:mb-5 xs:mx-auto xs:leading-[24px] xs:mt-6">
           GemScope doesn't just protect your portfolio — it brings you one step closer to life changing gains.
           </p>
           
-          <form onSubmit={handleSubmit} className="flex flex-col sm:flex-row gap-4 justify-center max-w-md mx-auto">
+          <form onSubmit={handleSubmit} className="flex flex-col xs:flex-col sm:flex-row gap-4 justify-center max-w-md mx-auto w-full">
             <div className="flex-1 font-['Lato'] font-weight-700 text-[16px] leading-[26px] tracking-[-0.4px]">
               <input
                 type="email"
@@ -57,7 +58,8 @@ const CTA = () => {
                 left: '327.83px',
                 borderRadius: '8px'
               }}
-              className="text-white transition-all duration-200 transform hover:scale-105 shadow-lg hover:shadow-xl whitespace-nowrap"
+              className="text-white transition-all duration-200 transform hover:scale-105 shadow-lg hover:shadow-xl whitespace-nowrap
+                xs:w-full xs:mt-1 xs:mx-auto"
             >
               <span className="font-['Lato'] font-weight-700 font-medium text-[14px] ">Join Waitlist</span>
             </button>

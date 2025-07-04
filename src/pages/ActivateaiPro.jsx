@@ -414,7 +414,7 @@ const ActivateAI = ({ plan, setUserPlan }) => {
                   {exchangeCoinData.map((exchange, idx) => (
                     <tr key={idx} className={`transition text-white border-t border-[#232323] w-full flex${idx === exchangeCoinData.length - 1 ? ' rounded-bl-2xl rounded-br-2xl overflow-hidden' : ''} gap-8`}>
                       {/* Exchange Number */}
-                      <td className="py-4 px-6 flex-1 flex items-center font-['Schibsted_Grotesk'] text-left">{idx + 1}</td>
+                      <td className="py-4 px-6 flex-1 flex items-center justify-center font-['Schibsted_Grotesk'] text-center">{idx + 1}</td>
                       {/* Exchange Listing: logo, name, type */}
                       <td className="py-4 px-6 flex-1 flex items-center gap-3 font-['Schibsted_Grotesk'] text-center">
                         <span

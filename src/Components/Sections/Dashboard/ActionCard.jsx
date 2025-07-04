@@ -57,7 +57,7 @@ const ActionCards = ({ onSupportClick }) => {
   ];
 
   return (
-    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mb-6 ml-0 sm:ml-4 lg:ml-10 ">
+    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 ml-0 sm:ml-4 lg:ml-10 ">
       {cards.map((card, index) => (
         <ActionCard key={index} {...card} />
       ))}
