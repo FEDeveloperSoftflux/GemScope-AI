@@ -256,19 +256,19 @@ const Billing = ({ plan = "free", setUserPlan }) => {
               </div>
             </div>
 
-            {/* Table/Cards Container */}
-            <div className="w-full max-w-6xl mx-auto rounded-3xl p-2 sm:p-4 lg:p-6 bg-[#202020] shadow-lg border border-[#23232B]">
+            {/* Table/Cards Container - Now stretches to full width */}
+            <div className="w-full rounded-3xl p-2 sm:p-4 lg:p-6 bg-[#202020] shadow-lg border border-[#23232B]">
               
               {/* Desktop Table View - Hidden on mobile */}
               <div className="hidden lg:block overflow-x-auto">
-                <table className="min-w-full text-left text-sm">
+                <table className="w-full text-left text-sm table-auto">
                   <thead>
                     <tr className="bg-black text-white text-sm">
-                      <th className="py-2 px-4 font-normal font-['Schibsted_Grotesk'] text-gray-400 rounded-tl-2xl rounded-bl-2xl text-center">Payment Number</th>
-                      <th className="py-2 px-4 font-normal font-['Schibsted_Grotesk'] text-gray-400 text-center">Subscription Plan</th>
-                      <th className="py-2 px-4 font-normal font-['Schibsted_Grotesk'] text-gray-400 text-center">Total Amount</th>
-                      <th className="py-2 px-4 font-normal font-['Schibsted_Grotesk'] text-gray-400 text-center">Date/Time</th>
-                      <th className="py-2 px-4 font-normal font-['Schibsted_Grotesk'] text-gray-400 rounded-tr-2xl rounded-br-2xl pl-21">Invoice</th>
+                      <th className="py-2 px-4 font-normal font-['Schibsted_Grotesk'] text-gray-400 rounded-tl-2xl rounded-bl-2xl text-center w-[15%]">Payment Number</th>
+                      <th className="py-2 px-4 font-normal font-['Schibsted_Grotesk'] text-gray-400 text-center w-[20%]">Subscription Plan</th>
+                      <th className="py-2 px-4 font-normal font-['Schibsted_Grotesk'] text-gray-400 text-center w-[15%]">Total Amount</th>
+                      <th className="py-2 px-4 font-normal font-['Schibsted_Grotesk'] text-gray-400 text-center w-[20%]">Date/Time</th>
+                      <th className="py-2 px-4 font-normal font-['Schibsted_Grotesk'] text-gray-400 rounded-tr-2xl rounded-br-2xl text-center w-[30%]">Invoice</th>
                     </tr>
                   </thead>
                   <tbody className="bg-[#202020]">
@@ -292,18 +292,16 @@ const Billing = ({ plan = "free", setUserPlan }) => {
                         </td>
                         {/* Invoice */}
                         <td className="py-4 px-4">
-                          <div className="flex items-center justify-between w-full">
-                            <div className="mx-auto">
-                              <button 
-                                onClick={() => handleViewInvoice(row.id)}
-                                className="px-2 py-1 rounded-xl bg-[#202020] hover:bg-[#3a3a3a] text-white text-[13px] font-['Schibsted_Grotesk'] border border-gray-600 transition"
-                              >
-                                View Invoice
-                              </button>
-                            </div>
+                          <div className="flex items-center justify-center gap-4">
+                            <button 
+                              onClick={() => handleViewInvoice(row.id)}
+                              className="px-3 py-1.5 rounded-xl bg-[#202020] hover:bg-[#3a3a3a] text-white text-[13px] font-['Schibsted_Grotesk'] border border-gray-600 transition whitespace-nowrap"
+                            >
+                              View Invoice
+                            </button>
                             <button
                               onClick={() => handleDownload(row.id)}
-                              className="cursor-pointer text-white/60 hover:text-white transition"
+                              className="cursor-pointer text-white/60 hover:text-white transition p-1"
                               title="Download Invoice"
                             >
                               <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">

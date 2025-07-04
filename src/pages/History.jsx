@@ -225,116 +225,122 @@ const History = ({ plan = "free", setUserPlan }) => {
             </div>
           </div>
 
-          {/* Table Container */}
-          <div className="w-full max-w-6xl mx-auto rounded-3xl p-2 sm:p-4 lg:p-6 bg-[#202020] shadow-lg border border-[#23232B]">
+          {/* Table Container - Now fully responsive and stretchable */}
+          <div className="w-full rounded-3xl p-2 sm:p-4 lg:p-6 bg-[#202020] shadow-lg border border-[#23232B]">
             
             {/* Desktop Table View - Hidden on mobile */}
-            <div className="hidden lg:block overflow-x-auto">
-              <table className="min-w-full text-left text-sm">
-                <thead>
-                  <tr className="bg-black text-white text-sm">
-                    <th className="py-2 px-0 font-semibold font-['Schibsted_Grotesk'] bg-black rounded-tl-2xl rounded-bl-2xl w-8"></th>
-                    <th className="py-2 px-1 font-normal font-['Schibsted_Grotesk'] text-gray-400">Search Number</th>
-                    <th className="py-2 px-4 font-normal font-['Schibsted_Grotesk'] text-gray-400">Search Details</th>
-                    <th className="py-2 px-4 font-normal font-['Schibsted_Grotesk'] text-gray-400">Date/Time</th>
-                    <th className="py-2 px-4 font-normal font-['Schibsted_Grotesk'] text-gray-400">Tier</th>
-                    <th className="py-2 px-4 font-normal font-['Schibsted_Grotesk'] text-gray-400 rounded-tr-2xl rounded-br-2xl"></th>
-                  </tr>
-                </thead>
-                <tbody className="bg-[#202020]">
-                  {filteredData.map((row, idx) => (
-                    <tr key={row.id} className="hover:bg-[#2a2a2a] transition text-white">
-                      {/* Checkbox cell */}
-                      <td className="py-2 px-2 align-middle">
-                        <div className="flex items-center h-full">
-                          <CustomCheckbox
-                            checked={selected.includes(row.id)}
-                            onChange={() => handleSelect(row.id)}
-                          />
-                        </div>
-                      </td>
+            <div className="hidden lg:block w-full">
+              <div className="overflow-x-auto">
+                <table className="w-full text-left text-sm table-auto">
+                  <thead>
+                    <tr className="bg-black text-white text-sm">
+                      <th className="py-2 px-2 font-semibold font-['Schibsted_Grotesk'] bg-black rounded-tl-2xl rounded-bl-2xl w-[40px]"></th>
+                      <th className="py-2 px-4 font-normal font-['Schibsted_Grotesk'] text-gray-400 w-[120px]">Search Number</th>
+                      <th className="py-2 px-4 font-normal font-['Schibsted_Grotesk'] text-gray-400 min-w-[300px]">Search Details</th>
+                      <th className="py-2 px-4 font-normal font-['Schibsted_Grotesk'] text-gray-400 w-[180px]">Date/Time</th>
+                      <th className="py-2 px-4 font-normal font-['Schibsted_Grotesk'] text-gray-400 w-[120px]">Tier</th>
+                      <th className="py-2 px-4 font-normal font-['Schibsted_Grotesk'] text-gray-400 rounded-tr-2xl rounded-br-2xl w-[150px]"></th>
+                    </tr>
+                  </thead>
+                  <tbody className="bg-[#202020]">
+                    {filteredData.map((row, idx) => (
+                      <tr key={row.id} className="hover:bg-[#2a2a2a] transition text-white">
+                        {/* Checkbox cell */}
+                        <td className="py-2 px-2 align-middle">
+                          <div className="flex items-center justify-center h-full">
+                            <CustomCheckbox
+                              checked={selected.includes(row.id)}
+                              onChange={() => handleSelect(row.id)}
+                            />
+                          </div>
+                        </td>
 
-                      {/* ID */}
-                      <td className="py-4 px-2 text-white/80 font-['Schibsted_Grotesk'] text-[14px] font-light">
-                        {row.id.toString().padStart(2, '0')}
-                      </td>
+                        {/* ID */}
+                        <td className="py-4 px-4 text-white/80 font-['Schibsted_Grotesk'] text-[14px] font-light">
+                          {row.id.toString().padStart(2, '0')}
+                        </td>
 
-                      {/* Detail */}
-                      <td className="py-4 px-2 text-white/80 font-['Schibsted_Grotesk'] text-[14px] font-light">
-                        {row.detail}
-                      </td>
+                        {/* Detail - This column will expand to fill available space */}
+                        <td className="py-4 px-4 text-white/80 font-['Schibsted_Grotesk'] text-[14px] font-light">
+                          <div className="break-words">
+                            {row.detail}
+                          </div>
+                        </td>
 
-                      {/* Date */}
-                      <td className="py-4 px-2 text-white/80 font-['Schibsted_Grotesk'] text-[14px] font-light">
-                        {row.date}
-                      </td>
+                        {/* Date */}
+                        <td className="py-4 px-4 text-white/80 font-['Schibsted_Grotesk'] text-[14px] font-light whitespace-nowrap">
+                          {row.date}
+                        </td>
 
-                      {/* Tier badge */}
-                      <td className="py-4 px-4">
-                        <span
-                          className={`
-                            bg-gradient-to-b 
-                            ${row.tier === 'Free' && 'from-[#F5DBE0]/5 to-[#C32388]/20'} 
-                            ${row.tier === 'PRO' && 'from-[#2a1a3c] to-[#181c2b]'} 
-                            ${row.tier === 'ENTERPRISE' && 'from-[#16213e] to-[#1a2238]'} 
-                            text-[12px] font-normal rounded-full px-3 py-1 inline-block
-                          `}
-                        >
+                        {/* Tier badge */}
+                        <td className="py-4 px-4">
                           <span
                             className={`
-                              bg-clip-text text-transparent 
-                              ${row.tier === 'Free' && 'bg-gradient-to-b from-pink-400 to-pink-300'}
-                              ${row.tier === 'PRO' && 'bg-gradient-to-b from-purple-400 to-purple-300'}
-                              ${row.tier === 'ENTERPRISE' && 'bg-gradient-to-b from-blue-600 to-blue-400'}
+                              bg-gradient-to-b 
+                              ${row.tier === 'Free' && 'from-[#F5DBE0]/5 to-[#C32388]/20'} 
+                              ${row.tier === 'PRO' && 'from-[#2a1a3c] to-[#181c2b]'} 
+                              ${row.tier === 'ENTERPRISE' && 'from-[#16213e] to-[#1a2238]'} 
+                              text-[12px] font-normal rounded-full px-3 py-1 inline-block whitespace-nowrap
                             `}
                           >
-                            {row.tier}
+                            <span
+                              className={`
+                                bg-clip-text text-transparent 
+                                ${row.tier === 'Free' && 'bg-gradient-to-b from-pink-400 to-pink-300'}
+                                ${row.tier === 'PRO' && 'bg-gradient-to-b from-purple-400 to-purple-300'}
+                                ${row.tier === 'ENTERPRISE' && 'bg-gradient-to-b from-blue-600 to-blue-400'}
+                              `}
+                            >
+                              {row.tier}
+                            </span>
                           </span>
-                        </span>
-                      </td>
+                        </td>
 
-                      {/* Action buttons */}
-                      <td className="py-4 px-4 flex gap-3 items-center justify-end text-right">
-                        <button className="px-2 py-1 rounded-xl bg-[#202020] hover:bg-[#3a3a3a] text-white text-[13px] font-['Schibsted_Grotesk'] border border-gray-600 transition">
-                          View Detail
-                        </button>
-                        <button
-                          onClick={() => handleDelete(row.id)}
-                          className="text-white hover:text-red-400 transition p-1"
-                          title="Delete"
+                        {/* Action buttons */}
+                        <td className="py-4 px-4">
+                          <div className="flex gap-2 items-center justify-end">
+                            <button className="px-2 py-1 rounded-xl bg-[#202020] hover:bg-[#3a3a3a] text-white text-[13px] font-['Schibsted_Grotesk'] border border-gray-600 transition whitespace-nowrap">
+                              View Detail
+                            </button>
+                            <button
+                              onClick={() => handleDelete(row.id)}
+                              className="text-white hover:text-red-400 transition p-1 flex-shrink-0"
+                              title="Delete"
+                            >
+                              <svg
+                                xmlns="http://www.w3.org/2000/svg"
+                                className="h-5 w-5"
+                                fill="none"
+                                viewBox="0 0 24 24"
+                                stroke="currentColor"
+                              >
+                                <path
+                                  strokeLinecap="round"
+                                  strokeLinejoin="round"
+                                  strokeWidth={2}
+                                  d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16"
+                                />
+                              </svg>
+                            </button>
+                          </div>
+                        </td>
+                      </tr>
+                    ))}
+
+                    {/* No data row */}
+                    {filteredData.length === 0 && (
+                      <tr>
+                        <td
+                          colSpan="6"
+                          className="py-6 text-center text-gray-400 font-['Schibsted_Grotesk']"
                         >
-                          <svg
-                            xmlns="http://www.w3.org/2000/svg"
-                            className="h-5 w-5"
-                            fill="none"
-                            viewBox="0 0 24 24"
-                            stroke="currentColor"
-                          >
-                            <path
-                              strokeLinecap="round"
-                              strokeLinejoin="round"
-                              strokeWidth={2}
-                              d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16"
-                            />
-                          </svg>
-                        </button>
-                      </td>
-                    </tr>
-                  ))}
-
-                  {/* No data row */}
-                  {filteredData.length === 0 && (
-                    <tr>
-                      <td
-                        colSpan="6"
-                        className="py-6 text-center text-gray-400 font-['Schibsted_Grotesk']"
-                      >
-                        No records found.
-                      </td>
-                    </tr>
-                  )}
-                </tbody>
-              </table>
+                          No records found.
+                        </td>
+                      </tr>
+                    )}
+                  </tbody>
+                </table>
+              </div>
             </div>
 
             {/* Mobile Card View - Hidden on desktop */}
