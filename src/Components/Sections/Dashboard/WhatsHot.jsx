@@ -29,15 +29,15 @@ const defaultHotTokens = [
 
 // Hot Token Component
 const HotToken = ({ token }) => (
-  <div className="flex items-center justify-between py-3 sm:py-4">
+  <div className="flex items-center justify-between py-2 sm:py-3 md:py-4">
     {/* Token Icon & Name */}
     <div className="flex items-center min-w-0 flex-1">
-      <div className="flex-none w-8 h-8 sm:w-9 sm:h-9 md:w-10 md:h-10 flex items-center justify-center rounded-full mr-2 sm:mr-3">
-        <img src={token.icon} alt={token.name} className="w-5 h-5 sm:w-6 sm:h-6 md:w-8 md:h-8" />
+      <div className="flex-none w-6 h-6 sm:w-8 sm:h-8 md:w-9 md:h-9 lg:w-10 lg:h-10 flex items-center justify-center rounded-full mr-2 sm:mr-3">
+        <img src={token.icon} alt={token.name} className="w-4 h-4 sm:w-5 sm:h-5 md:w-6 md:h-6 lg:w-8 lg:h-8" />
       </div>
       <div className="min-w-0 flex-1">
-        <p className="font-semibold text-white font-['Schibsted_Grotesk'] text-sm sm:text-[15px] leading-[20px] truncate">{token.name}</p>
-        <p className="text-[10px] sm:text-[11px] md:text-xs text-gray-400 uppercase truncate font-['Lato']">
+        <p className="font-semibold text-white font-['Schibsted_Grotesk'] text-xs sm:text-sm md:text-[15px] lg:text-base leading-tight truncate">{token.name}</p>
+        <p className="text-[9px] sm:text-[10px] md:text-[11px] lg:text-xs text-gray-400 uppercase truncate font-['Lato']">
           ${typeof token.value === 'number' ? token.value.toLocaleString() : '0.00'}
         </p>
       </div>
@@ -45,7 +45,7 @@ const HotToken = ({ token }) => (
 
     {/* Percentage Change */}
     <div className="flex-none ml-2 sm:ml-3">
-      <span className="flex items-center text-green-400 font-normal text-xs sm:text-sm font-['Schibsted_Grotesk'] whitespace-nowrap">
+      <span className="flex items-center text-green-400 font-normal text-[10px] sm:text-xs md:text-sm lg:text-base font-['Schibsted_Grotesk'] whitespace-nowrap">
         <img src={TrendUp} alt="trend up" className="w-2 h-2 mr-1 flex-none" />
         {token.change}
       </span>
@@ -58,11 +58,13 @@ const WhatsHot = ({ hotTokens }) => {
   const tokens = hotTokens && hotTokens.length > 0 ? hotTokens : defaultHotTokens;
 
   return (
-    <div className="bg-[#18191C] rounded-xl sm:rounded-2xl p-3 sm:p-4 md:p-6 shadow-md w-[calc(100%-2rem)] sm:w-full lg:max-w-2xl lg:mx-auto mx-auto mt-4 sm:mt-0">
-      <h3 className="font-bold text-base sm:text-lg md:text-xl lg:text-2xl text-white mb-3 sm:mb-4 md:mb-6 text-left font-['Schibsted_Grotesk']">
+    <div className="bg-[#18191C] rounded-xl sm:rounded-2xl p-3 sm:p-4 md:p-5 lg:p-6 shadow-md 
+    w-[calc(100%-2rem)] sm:w-full h-full flex flex-col mx-auto mt-4 sm:mt-0">
+      <h3 className="font-bold text-sm sm:text-base md:text-lg lg:text-xl xl:text-2xl text-white 
+      mb-2 sm:mb-3 md:mb-4 lg:mb-6 text-left font-['Schibsted_Grotesk'] flex-shrink-0">
         What's Hot? <span role="img" aria-label="fire">🔥</span>
       </h3>
-      <div>
+      <div className="flex-grow min-h-0 flex flex-col justify-center">
         {tokens.map((token, index) => (
           <React.Fragment key={index}>
             <HotToken token={token} />

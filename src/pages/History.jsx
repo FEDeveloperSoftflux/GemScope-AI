@@ -166,7 +166,7 @@ const History = ({ plan = "free", setUserPlan }) => {
             {/* Search and Select All - Mobile: Stack vertically, Desktop: Side by side */}
             <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-3 sm:gap-4 w-full lg:max-w-xl">
               {/* Search Input */}
-              <div className="relative w-full sm:w-[180px] lg:ml-8">
+              <div className="relative w-full sm:w-[180px] lg:ml-2">
                 <span className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400">
                   <img src={SearchIcon} alt="Search" className="w-4 h-4 ml-2" />
                 </span>

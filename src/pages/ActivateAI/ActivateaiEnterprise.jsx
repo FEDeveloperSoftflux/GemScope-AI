@@ -535,7 +535,7 @@ const ActivateAI = ({ plan, setUserPlan }) => {
             </div>
           </div>
           <div className="rounded-3xl px-6 py-6 bg-[#202020] shadow-lg border border-[#23232B] w-full max-w-full mx-auto mb-0 pb-0 flex items-center">
-            <span className="text-2xl mr-3 mb-8">✅</span>
+            <span className="text-2xl mr-4 mb-9">✅</span>
             <span className="text-white text-2xl font-semibild mb-8 font-['Schibsted_Grotesk']">Normal Social Behavior</span>
           </div>
         </div>
