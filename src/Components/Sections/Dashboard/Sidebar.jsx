@@ -92,7 +92,7 @@ const Sidebar = () => {
         <img
           src={Background}
           alt="Background"
-          className="absolute bottom-0 left-0 w-full h-50 object-cover z-0"
+          className="absolute bottom-0 left-0 w-full h-70 object-cover z-0"
           style={{ pointerEvents: 'none' }}
         />
 

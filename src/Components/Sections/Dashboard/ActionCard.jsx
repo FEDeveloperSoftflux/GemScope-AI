@@ -10,7 +10,12 @@ import Downloads from '../../../assets/Downloads.svg'
 const ActionCard = ({ title, description, icon: Icon, svgIcon, badgeText, onClick }) => (
   <div
     className={"rounded-xl p-4  sm:h-38 lg:h-35 relative overflow-hidden cursor-pointer  hove:translate-y-1"}
-    style={{ backgroundImage: `url(${Background1})`, backgroundSize: 'cover', backgroundPosition: 'bottom' }}
+    style={{ 
+      backgroundImage: `url(${Background1})`, 
+      backgroundSize: 'cover', 
+      backgroundPosition: 'bottom', 
+      boxShadow: '0 8px 40px 0 rgba(120, 60, 200, 0.38)' 
+    }}
     onClick={onClick}
   >
     <div className="absolute top-2 right-2 text-xs bg-black/20 px-2 py-1 rounded">
