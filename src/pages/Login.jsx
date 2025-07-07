@@ -45,7 +45,7 @@ const Login = () => {
   };
 
   return (
-    <div className="h-screen flex flex-col lg:flex-row bg-black  p-3 sm:p-5 rounded-3xl lg:rounded-4xl">
+    <div className="h-screen overflow-auto flex flex-col lg:flex-row bg-black  p-3 sm:p-5 rounded-3xl lg:rounded-4xl">
       {/* Left Panel */}
       <div
       className="hidden lg:flex w-full lg:flex-1 relative flex-col justify-between p-4 sm:p-6 md:p-8 lg:p-10 pl-2 sm:pl-4 md:pl-8 lg:pl-10 rounded-3xl lg:rounded-4xl h-[40vh] lg:h-auto mb-4 lg:mb-0"
@@ -163,7 +163,7 @@ const Login = () => {
         </div>
 
         {/* Create Account */}
-        <div className="absolute bottom-2 left-1/2 transform -translate-x-1/2 flex justify-center items-center text-white/60 text-sm text-center">
+        <div className="flex justify-center items-center text-white/60 text-sm text-center mt-4 mb-2">
           <span>Don't have an account?</span>
           <button
             onClick={handleCreateAccount}

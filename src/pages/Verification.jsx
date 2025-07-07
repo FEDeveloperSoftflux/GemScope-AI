@@ -49,10 +49,10 @@ const Verification = () => {
 
   return (
     <>
-      <div className="min-h-screen flex flex-col lg:flex-row bg-black overflow-hidden p-5">
+      <div className="h-screen overflow-auto flex flex-col lg:flex-row bg-black p-5">
               {/* Left Panel */}
       <div
-      className="w-full lg:flex-1 relative flex flex-col justify-between p-4 sm:p-6 md:p-8 lg:p-10 pl-2 sm:pl-4 md:pl-8 lg:pl-10 rounded-3xl lg:rounded-4xl h-[40vh] lg:h-auto mb-4 lg:mb-0"
+      className="hidden lg:flex w-full lg:flex-1 relative flex-col justify-between p-4 sm:p-6 md:p-8 lg:p-10 pl-2 sm:pl-4 md:pl-8 lg:pl-10 rounded-3xl lg:rounded-4xl h-[40vh] lg:h-auto mb-4 lg:mb-0"
       style={{
         backgroundImage: `url(${Background})`,
         backgroundSize: 'cover',
