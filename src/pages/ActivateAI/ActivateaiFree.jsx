@@ -189,7 +189,7 @@ const ActivateAI = ({ plan, setUserPlan }) => {
               <table className="w-full text-center" style={{ minWidth: '800px' }}>
                 <thead>
                   <tr className="bg-black text-white text-xs sm:text-sm">
-                    <th className="py-2 px-2 sm:px-4 lg:px-6 font-semibold font-['Schibsted_Grotesk'] bg-black rounded-tl-xl sm:rounded-tl-2xl rounded-bl-xl sm:rounded-bl-2xl text-left whitespace-nowrap">
+                    <th className="py-2 px-6 font-semibold font-['Schibsted_Grotesk'] bg-black rounded-tl-2xl rounded-bl-2xl text-center">
                       Coin Name
                     </th>
                     <th className="py-2 px-2 sm:px-4 lg:px-6 font-normal font-['Schibsted_Grotesk'] text-gray-400 text-center whitespace-nowrap">
