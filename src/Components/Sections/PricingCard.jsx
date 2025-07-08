@@ -27,10 +27,7 @@ const PricingCard = ({
         {...props}
       >
         {popular && (
-          <div className={fromBilling
-            ? "absolute top-4 right-4 bg-blue-700 text-white text-xs px-2 py-1 rounded-full font-semibold z-20 backdrop-blur-md font-['Lato']"
-            : "absolute top-4 ml-40 bg-white/20 text-white px-5 py-2 rounded-full text-[10px] font-medium shadow-md z-20 backdrop-blur-md font-['Lato']"
-          }>
+          <div className="absolute top-4 right-2 bg-white/20 text-white text-xs px-3 py-1 rounded-full font-medium z-20 backdrop-blur-md font-['Lato'] whitespace-nowrap">
             Most popular
           </div>
         )}

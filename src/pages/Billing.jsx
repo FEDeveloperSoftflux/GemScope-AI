@@ -198,7 +198,7 @@ const Billing = ({ plan = "free", setUserPlan }) => {
         
         {plan === 'free' ? (
           <>
-            <div className="my-4 p-6 text-gray-200/50 rounded-xl text-center font-bold font-['Schibsted_Grotesk'] mx-2 sm:mx-0 text-[18px]">
+            <div className="my-4 p-6 text-white rounded-xl text-center font-bold font-['Schibsted_Grotesk'] mx-2 sm:mx-0 text-[18px]">
               This is a Free Plan Subscription, therefore no payments are made
             </div>
             <div className="flex justify-center mt-4 px-4 sm:px-0">

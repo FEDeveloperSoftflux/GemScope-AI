@@ -57,7 +57,7 @@ const CryptoDashboard = ({ plan = "free", setUserPlan }) => {
         
       ],
       color: "bg-[linear-gradient(180.57deg,_#0808FF_-4.69%,_#4EBBFF_130.44%)]",
-      popular: false,
+      popular: true,
       iconBg :"bg-blue-400/40"
       
     },

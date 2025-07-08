@@ -196,7 +196,7 @@ const Account = ({ plan = "free", setUserPlan }) => {
                   <div className="flex justify-end gap-3 mt-4">
                     <button 
                       type="submit" 
-                      className="px-4 sm:px-6 py-2 rounded-lg bg-gradient-to-r from-purple-400 via-white to-pink-300 text-black font-semibold font-['Schibsted_Grotesk'] text-sm sm:text-base"
+                      className="px-4 sm:px-6 py-2 rounded-lg bg-gradient-to-r from-purple-400 via-white to-pink-300 text-black font-medium font-['Schibsted_Grotesk'] text-sm sm:text-base"
                     >
                       Update Password
                     </button>
